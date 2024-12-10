@@ -17,8 +17,8 @@ export default function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html lang="en" className={`${inter.className}`}>
-			<body>
+		<html suppressHydrationWarning lang="en">
+			<body className={`antialiased ${inter.className}`}>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					{children}
 				</ThemeProvider>

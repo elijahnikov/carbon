@@ -27,63 +27,6 @@ export default function HomePage() {
 		{ hex: "#D8D8D8", name: "Light 6 - High Contrast" },
 	];
 
-	const badgeConfigurations = [
-		// Size variations
-		{ size: "sm", children: "Small Badge" },
-		{ size: "md", children: "Medium Badge" },
-		{ size: "lg", children: "Large Badge" },
-
-		// Color variations
-		{ color: "primary", children: "Primary" },
-		{
-			color: "primary",
-			children: "1.4k",
-			before: <Heart className="fill-current" />,
-		},
-		{ color: "green", children: "Green" },
-		{ color: "yellow", children: "Yellow" },
-		{ color: "red", children: "Red" },
-		{ color: "purple", children: "Purple" },
-		{ color: "blue", children: "Blue" },
-		{ color: "indigo", children: "Indigo" },
-		{ color: "orange", children: "Orange" },
-		{ color: "pink", children: "Pink" },
-		{ color: "teal", children: "Teal" },
-
-		// Shape variations
-		{ shape: "rounded", children: "Rounded" },
-		{ shape: "pill", children: "Pill" },
-
-		// Stroke variations
-		{ stroke: true, children: "With Stroke" },
-		{ stroke: false, children: "No Stroke" },
-
-		// Combined variations
-		{
-			size: "lg",
-			color: "blue",
-			shape: "pill",
-			stroke: true,
-			before: <Share />,
-			children: "Share",
-		},
-		{
-			size: "md",
-			color: "green",
-			shape: "rounded",
-			before: <Rocket />,
-			after: <BadgeCheck />,
-			children: "Complete",
-		},
-		{
-			size: "sm",
-			color: "red",
-			shape: "pill",
-			before: <Briefcase />,
-			className: "border-dashed",
-			children: "Work",
-		},
-	];
 	return (
 		<main className="flex  max-h-[50vh] flex-col items-center justify-center">
 			<ThemeToggle />

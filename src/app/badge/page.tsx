@@ -1,3 +1,4 @@
+import ThemeToggle from "@/components/common/theme-toggle";
 import Badge, { type BadgeProps } from "@/components/ui/badge";
 import { BadgeCheck, Briefcase, Heart, Rocket, Share } from "lucide-react";
 
@@ -61,6 +62,7 @@ export default function BadgePage() {
 	];
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-center">
+			<ThemeToggle />
 			<div className="max-w-3xl flex flex-wrap gap-4">
 				{badgeConfigurations.map((config, index) => (
 					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
