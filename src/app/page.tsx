@@ -157,12 +157,12 @@ export default function HomePage() {
 				<Badge size="lg" shape="rounded" color="indigo">
 					<p>Completed</p>
 				</Badge> */}
-				{badgeConfigurations.map((config, index) => (
+				{/* {badgeConfigurations.map((config, index) => (
 					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 					<Badge key={index} {...config}>
 						{config.children}
 					</Badge>
-				))}
+				))} */}
 			</div>
 		</main>
 	);
