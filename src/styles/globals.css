@@ -5,9 +5,11 @@
 @layer base {
 	:root {
 		--border: 0 0% 90%;
+		--background: 0 0% 94%;
 	}
 
 	.dark {
 		--border: 0 0% 18%;
+		--background: 0 0% 10%;
 	}
 }

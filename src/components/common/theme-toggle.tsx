@@ -13,7 +13,7 @@ export default function ThemeToggle() {
 	}, []);
 
 	if (!mounted) {
-		return null; // Return null on server-side
+		return null;
 	}
 
 	const currentTheme = theme === "system" ? systemTheme : theme;

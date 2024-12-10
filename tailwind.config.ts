@@ -11,6 +11,8 @@ export default {
 			},
 			colors: {
 				border: "hsl(var(--border))",
+				background: "hsl(var(--background))",
+				foreground: "hsl(var(--foreground))",
 				carbon: {
 					DEFAULT: "#F0F0F0",
 					100: "#F8F8F8",
