@@ -2,11 +2,34 @@ import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
+	darkMode: ["class"],
 	content: ["./src/**/*.tsx"],
 	theme: {
 		extend: {
 			fontFamily: {
 				sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+			},
+			colors: {
+				border: "hsl(var(--border))",
+				carbon: {
+					DEFAULT: "#F0F0F0",
+					100: "#F8F8F8",
+					200: "#F0F0F0",
+					300: "#E8E8E8",
+					400: "#E0E0E0",
+					500: "#D8D8D8",
+				},
+				"carbon-dark": {
+					DEFAULT: "#1A1A1A",
+					100: "#121212",
+					200: "#1A1A1A",
+					300: "#242424",
+					400: "#2E2E2E",
+					500: "#383838",
+				},
+			},
+			borderColor: {
+				DEFAULT: "hsl(var(--border))",
 			},
 			boxShadow: {
 				xs: "0 1px 2px 0 rgba(18, 18, 23, 0.05)",

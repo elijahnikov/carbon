@@ -1,3 +1,16 @@
+import {
+	BadgeCheck,
+	Briefcase,
+	Heart,
+	PersonStanding,
+	Rocket,
+	Share,
+	User,
+} from "lucide-react";
+import ThemeToggle from "../components/common/theme-toggle";
+import Badge from "../components/ui/badge";
+import { cn } from "../components/utils/cn";
+
 export default function HomePage() {
 	const darkColors = [
 		{ hex: "#121212", name: "Dark 2 - Secondary BG" },
@@ -13,42 +26,143 @@ export default function HomePage() {
 		{ hex: "#E0E0E0", name: "Light 5 - Borders" },
 		{ hex: "#D8D8D8", name: "Light 6 - High Contrast" },
 	];
+
+	const badgeConfigurations = [
+		// Size variations
+		{ size: "sm", children: "Small Badge" },
+		{ size: "md", children: "Medium Badge" },
+		{ size: "lg", children: "Large Badge" },
+
+		// Color variations
+		{ color: "primary", children: "Primary" },
+		{
+			color: "primary",
+			children: "1.4k",
+			before: <Heart className="fill-current" />,
+		},
+		{ color: "green", children: "Green" },
+		{ color: "yellow", children: "Yellow" },
+		{ color: "red", children: "Red" },
+		{ color: "purple", children: "Purple" },
+		{ color: "blue", children: "Blue" },
+		{ color: "indigo", children: "Indigo" },
+		{ color: "orange", children: "Orange" },
+		{ color: "pink", children: "Pink" },
+		{ color: "teal", children: "Teal" },
+
+		// Shape variations
+		{ shape: "rounded", children: "Rounded" },
+		{ shape: "pill", children: "Pill" },
+
+		// Stroke variations
+		{ stroke: true, children: "With Stroke" },
+		{ stroke: false, children: "No Stroke" },
+
+		// Combined variations
+		{
+			size: "lg",
+			color: "blue",
+			shape: "pill",
+			stroke: true,
+			before: <Share />,
+			children: "Share",
+		},
+		{
+			size: "md",
+			color: "green",
+			shape: "rounded",
+			before: <Rocket />,
+			after: <BadgeCheck />,
+			children: "Complete",
+		},
+		{
+			size: "sm",
+			color: "red",
+			shape: "pill",
+			before: <Briefcase />,
+			className: "border-dashed",
+			children: "Work",
+		},
+	];
 	return (
-		<main className="flex  min-h-screen flex-col items-center justify-center">
-			<div className="w-full flex items-center p-16 justify-center h-[50vh] space-y-4 bg-[#1A1A1A]">
-				<div className="grid w-[75%] grid-cols-3 gap-4 md:grid-cols-5">
-					{darkColors.map((color, index) => (
-						<div
-							key={color.hex}
-							className="overflow-hidden dark:shadow-overlay-dark shadow-overlay border border-[#2F2F2F] rounded-xl"
-						>
-							<div
-								className="h-24 flex flex-end flex-col p-2"
-								style={{ backgroundColor: color.hex }}
-							>
-								<p className="text-neutral-400">#{index + 1}</p>{" "}
-							</div>
-						</div>
-					))}
+		<main className="flex  max-h-[50vh] flex-col items-center justify-center">
+			<ThemeToggle />
+			<div className="w-full grid grid-cols-5 gap-4 rounded-xl">
+				<div
+					className={cn(
+						"h-24 flex flex-end flex-col p-2 rounded-xl shadow-overlay dark:shadow-none border",
+						"dark:bg-carbon-dark-100 bg-carbon-100",
+					)}
+				>
+					<p className="text-neutral-400">#1</p>{" "}
+				</div>
+				<div
+					className={cn(
+						"h-24 flex flex-end flex-col p-2 rounded-xl border ",
+						"dark:bg-carbon-dark-200 bg-carbon-200",
+					)}
+				>
+					<p className="text-neutral-400">#2</p>{" "}
+				</div>
+				<div
+					className={cn(
+						"h-24 flex flex-end flex-col p-2 rounded-xl border ",
+						"dark:bg-carbon-dark-300 bg-carbon-300",
+					)}
+				>
+					<p className="text-neutral-400">#3</p>{" "}
+				</div>
+				<div
+					className={cn(
+						"h-24 flex flex-end flex-col p-2 rounded-xl border ",
+						"dark:bg-carbon-dark-400 bg-carbon-400",
+					)}
+				>
+					<p className="text-neutral-400">#4</p>{" "}
+				</div>
+				<div
+					className={cn(
+						"h-24 flex flex-end flex-col p-2 rounded-xl border ",
+						"dark:bg-carbon-dark-500 bg-carbon-500",
+					)}
+				>
+					<p className="text-neutral-400">#5</p>{" "}
 				</div>
 			</div>
 
-			<div className="w-full h-[50vh] flex items-center justify-center bg-[#F0F0F0] p-16 space-y-4">
-				<div className="grid w-[75%] grid-cols-3 gap-4 md:grid-cols-5">
-					{lightColors.map((color, index) => (
-						<div
-							key={color.hex}
-							className="overflow-hidden shadow-overlay border border-[#E5E5E5] rounded-xl"
-						>
-							<div
-								className="h-24 flex flex-end flex-col p-2"
-								style={{ backgroundColor: color.hex }}
-							>
-								<p className="text-neutral-400">#{index + 1}</p>{" "}
-							</div>
-						</div>
-					))}
+			<div className="max-w-[50vw] flex-wrap flex items-center p-16 justify-center space-x-4 h-[25vh] bg-[#F0F0F0] dark:bg-[#1A1A1A]">
+				{/* <div className="bg-yellow-600/50 rounded-md px-2 ring-inset py-1 ring-1 ring-yellow-700">
+					<p className="font-medium text-yellow-200 text-sm">In progress</p>
 				</div>
+				<div className="bg-red-600/50 rounded-md px-2 ring-inset py-1 ring-1 ring-red-700">
+					<p className="font-medium text-red-200 text-sm">Cancelled</p>
+				</div>
+				<div className="bg-purple-600/50 rounded-md px-2 ring-inset py-1 ring-1 ring-purple-700">
+					<p className="font-medium text-purple-200 text-sm">Internal</p>
+				</div> */}
+				{/* <Badge
+					className="border-dashed"
+					before={<PersonStanding />}
+					color="primary"
+				>
+					<p>Completed</p>
+				</Badge>
+				<Badge before={<BadgeCheck />} after={<BadgeCheck />} color="red">
+					<p>Completed</p>
+				</Badge>
+				<Badge color="teal">
+					<p>Completed</p>
+				</Badge>
+				<Badge before={<User />}>123</Badge>
+				<Badge size="lg" shape="rounded" color="indigo">
+					<p>Completed</p>
+				</Badge> */}
+				{badgeConfigurations.map((config, index) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+					<Badge key={index} {...config}>
+						{config.children}
+					</Badge>
+				))}
 			</div>
 		</main>
 	);
