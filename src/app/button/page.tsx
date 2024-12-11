@@ -1,155 +1,95 @@
 import ThemeToggle from "@/components/common/theme-toggle";
+import Badge from "@/components/ui/badge";
 import { Button, type ButtonProps } from "@/components/ui/button";
-import { BadgeCheck, Heart, Rocket, Send, Share, Trash, X } from "lucide-react";
+import {
+	Dialog,
+	DialogClose,
+	DialogContent,
+	DialogDescription,
+	DialogFooter,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+	ArrowRight,
+	BadgeCheck,
+	Delete,
+	ExternalLink,
+	Github,
+	Heart,
+	Mail,
+	Pencil,
+	Plus,
+	Rocket,
+	Save,
+	Send,
+	Share,
+	Trash,
+	Trash2,
+	User,
+	X,
+} from "lucide-react";
 
 export default function ButtonPage() {
-	const buttonConfigurations: ButtonProps[] = [
-		// Variant variations with default size
-		{ variant: "primary", children: "Primary" },
-		{ variant: "secondary", children: "Secondary" },
-		{ variant: "destructive", children: "Destructive" },
-		{ variant: "outline", children: "Outline" },
-		{ variant: "transparent", children: "Transparent" },
-		{ variant: "link", children: "Link" },
+	const variants = [
+		"primary",
+		"black",
+		"destructive",
+		"secondary",
+		"outline",
+		"transparent",
+		"link",
+	] as const;
 
-		// Size variations with primary variant
-		{ size: "sm", children: "Small" },
-		{ size: "md", children: "Medium" },
-		{ size: "lg", children: "Large" },
-
-		// Icons before/after
+	const buttons = [
+		{ text: "Save Changes", variant: "primary", before: <Save /> },
 		{
-			variant: "primary",
-			before: <Heart />,
-			children: "Like",
-		},
-		{
-			variant: "primary",
-			after: <Send />,
-			children: "Send",
-		},
-		{
-			variant: "primary",
-			before: <Heart />,
-			after: <Send />,
-			children: "Both Icons",
-		},
-
-		// Icon only buttons
-		{
-			variant: "primary",
-			isIconOnly: true,
-			children: <Heart />,
-		},
-		{
-			variant: "destructive",
-			isIconOnly: true,
-			children: <Trash />,
-		},
-		{
-			variant: "outline",
-			isIconOnly: true,
-			children: <X />,
-		},
-
-		// Combined variations
-		{
-			variant: "primary",
-			size: "lg",
-			before: <Share />,
-			children: "Share Large",
-		},
-		{
-			variant: "destructive",
-			size: "sm",
-			after: <Trash />,
-			children: "Delete Small",
-		},
-		{
-			variant: "outline",
+			text: "Sign in with Github",
+			variant: "black",
+			before: <Github />,
 			size: "md",
-			before: <Rocket />,
-			after: <BadgeCheck />,
-			children: "Launch Medium",
 		},
-
-		// Disabled state examples
+		{ text: "Delete Account", variant: "destructive", before: <Trash2 /> },
 		{
-			variant: "primary",
-			disabled: true,
-			children: "Disabled Primary",
+			text: "Send Message",
+			variant: "secondary",
+			after: <Send />,
+			shape: "pill",
 		},
+		{ text: "Add to Favorites", variant: "outline", before: <Heart /> },
+		{ text: "Edit Profile", variant: "transparent", before: <Pencil /> },
+		{ text: "Documentation", variant: "link", after: <ExternalLink /> },
+		{ text: "Share", variant: "primary", after: <Share />, size: "sm" },
 		{
-			variant: "destructive",
-			disabled: true,
-			children: "Disabled Destructive",
+			text: "Get Started",
+			variant: "black",
+			shape: "pill",
+			after: <ArrowRight />,
+			size: "lg",
 		},
 	];
 
 	return (
-		<div className="min-h-screen p-8">
-			<ThemeToggle />
-			<div className="max-w-4xl space-y-8">
-				{/* Group buttons by section */}
-				<div className="space-y-2">
-					<h2 className="text-lg font-semibold">Variants</h2>
-					<div className="flex flex-wrap gap-2">
-						{buttonConfigurations.slice(0, 6).map((config, index) => (
+		<div className="min-h-screen min-w-screen p-16 flex flex-col items-center justify-center">
+			<div className="grid grid-cols-3 max-w-[700px] w-full">
+				{[...Array(9)].map((_, index) => {
+					const { text, ...button } = buttons[index];
+					return (
+						<div
 							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							<Button key={index} {...config} />
-						))}
-					</div>
-				</div>
-
-				<div className="space-y-2">
-					<h2 className="text-lg font-semibold">Sizes</h2>
-					<div className="space-x-2">
-						{buttonConfigurations.slice(6, 9).map((config, index) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							<Button key={index} {...config} />
-						))}
-					</div>
-				</div>
-
-				<div className="space-y-2">
-					<h2 className="text-lg font-semibold">With Icons</h2>
-					<div className="flex flex-wrap gap-2">
-						{buttonConfigurations.slice(9, 12).map((config, index) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							<Button key={index} {...config} />
-						))}
-					</div>
-				</div>
-
-				<div className="space-y-2">
-					<h2 className="text-lg font-semibold">Icon Only</h2>
-					<div className="flex flex-wrap gap-2">
-						{buttonConfigurations.slice(12, 15).map((config, index) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							<Button key={index} {...config} />
-						))}
-					</div>
-				</div>
-
-				<div className="space-y-2">
-					<h2 className="text-lg font-semibold">Combined Variations</h2>
-					<div className="space-x-2 flex items-center">
-						{buttonConfigurations.slice(15, 18).map((config, index) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							<Button key={index} {...config} />
-						))}
-					</div>
-				</div>
-
-				<div className="space-y-2">
-					<h2 className="text-lg font-semibold">Disabled States</h2>
-					<div className="flex flex-wrap gap-2">
-						{buttonConfigurations.slice(18).map((config, index) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							<Button key={index} {...config} />
-						))}
-					</div>
-				</div>
+							key={index}
+							className={`
+              min-h-[100px] min-w-[80px] flex items-center justify-center
+              ${index < 6 ? "border-b" : ""} 
+              ${index % 3 !== 2 ? "border-r" : ""} 
+              border-dashed
+            `}
+						>
+							<Button {...button}>{text}</Button>
+						</div>
+					);
+				})}
 			</div>
 		</div>
 	);

@@ -1,3 +1,13 @@
+import { Button } from "@/components/ui/button";
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogFooter,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from "@/components/ui/dialog";
 import {
 	BadgeCheck,
 	Briefcase,
@@ -30,8 +40,8 @@ export default function HomePage() {
 	return (
 		<main className="flex  max-h-[50vh] flex-col items-center justify-center">
 			<ThemeToggle />
-			<div className="w-full grid grid-cols-5 gap-4 rounded-xl">
-				<div
+			<div className="w-full max-w-[300px] gap-4 rounded-xl">
+				{/* <div
 					className={cn(
 						"h-24 flex flex-end flex-col p-2 rounded-xl shadow-overlay dark:shadow-none border",
 						"dark:bg-carbon-dark-100 bg-carbon-100",
@@ -46,16 +56,46 @@ export default function HomePage() {
 					)}
 				>
 					<p className="text-neutral-400">#2</p>{" "}
-				</div>
+				</div> */}
+				<Dialog>
+					<DialogTrigger asChild>
+						<Button>Open</Button>
+					</DialogTrigger>
+					<DialogContent>
+						<DialogHeader>
+							<DialogTitle>Edit profile</DialogTitle>
+							<DialogDescription>
+								Make changes to your account here.
+							</DialogDescription>
+						</DialogHeader>
+						<div className="w-max gap-2">
+							<Badge color="green">
+								<p>Completed</p>
+							</Badge>
+						</div>
+						<DialogFooter className="flex flex-col gap-2">
+							<Button size={"md"} variant={"secondary"}>
+								Cancel
+							</Button>
+							<Button size="md" className="w-full">
+								Save
+							</Button>
+						</DialogFooter>
+					</DialogContent>
+				</Dialog>
 				<div
 					className={cn(
-						"h-24 flex flex-end flex-col p-2 rounded-xl border ",
-						"dark:bg-carbon-dark-300 bg-carbon-300",
+						"flex flex-end flex-col border-carbon-400 shadow-overlay p-4 rounded-xl border-0 dark:border-t dark:border-carbon-dark-500",
+						"dark:bg-carbon-dark-300 bg-carbon-100",
 					)}
 				>
-					<p className="text-neutral-400">#3</p>{" "}
+					<p className="text-neutral-400">#3</p>
+					<div className="flex flex-col gap-2">
+						<Button>Save</Button>
+						<Button variant={"secondary"}>Cancel</Button>
+					</div>
 				</div>
-				<div
+				{/* <div
 					className={cn(
 						"h-24 flex flex-end flex-col p-2 rounded-xl border ",
 						"dark:bg-carbon-dark-400 bg-carbon-400",
@@ -70,42 +110,7 @@ export default function HomePage() {
 					)}
 				>
 					<p className="text-neutral-400">#5</p>{" "}
-				</div>
-			</div>
-
-			<div className="max-w-[50vw] flex-wrap flex items-center p-16 justify-center space-x-4 h-[25vh] bg-[#F0F0F0] dark:bg-[#1A1A1A]">
-				{/* <div className="bg-yellow-600/50 rounded-md px-2 ring-inset py-1 ring-1 ring-yellow-700">
-					<p className="font-medium text-yellow-200 text-sm">In progress</p>
-				</div>
-				<div className="bg-red-600/50 rounded-md px-2 ring-inset py-1 ring-1 ring-red-700">
-					<p className="font-medium text-red-200 text-sm">Cancelled</p>
-				</div>
-				<div className="bg-purple-600/50 rounded-md px-2 ring-inset py-1 ring-1 ring-purple-700">
-					<p className="font-medium text-purple-200 text-sm">Internal</p>
 				</div> */}
-				{/* <Badge
-					className="border-dashed"
-					before={<PersonStanding />}
-					color="primary"
-				>
-					<p>Completed</p>
-				</Badge>
-				<Badge before={<BadgeCheck />} after={<BadgeCheck />} color="red">
-					<p>Completed</p>
-				</Badge>
-				<Badge color="teal">
-					<p>Completed</p>
-				</Badge>
-				<Badge before={<User />}>123</Badge>
-				<Badge size="lg" shape="rounded" color="indigo">
-					<p>Completed</p>
-				</Badge> */}
-				{/* {badgeConfigurations.map((config, index) => (
-					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-					<Badge key={index} {...config}>
-						{config.children}
-					</Badge>
-				))} */}
 			</div>
 		</main>
 	);

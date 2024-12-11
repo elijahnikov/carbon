@@ -4,31 +4,39 @@ import * as React from "react";
 import { cn } from "../utils/cn";
 
 const buttonVariants = cva(
-	"rounded-lg select-none font-medium animate transition-colors focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 duration-100 inline-flex items-center justify-center whitespace-nowrap",
+	"select-none cursor-auto font-medium animate transition-colors focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 duration-100 inline-flex items-center justify-center whitespace-nowrap",
 	{
 		variants: {
 			variant: {
 				primary:
-					"bg-blue-500 active:bg-blue-500/80 hover:bg-blue-500/90 ring-1 dark:ring-blue-600 ring-blue-400 border-blue-300 border-b dark:border-blue-400 outline-blue-600 text-white",
+					"bg-blue-500 active:bg-blue-500/80 hover:bg-blue-500/90 ring-1 ring-inset dark:ring-blue-400 ring-blue-400 border-blue-500 border-b dark:border-blue-600 outline-blue-600 text-white",
+				black:
+					"bg-black text-neutral-200 dark:bg-black border-b ring-1 ring-inset dark:ring-neutral-800 ring-neutral-700 shadow-sm dark:shadow-overlay-dark dark:border-carbon-dark-400 border-carbon-dark-500/20 dark:hover:bg-neutral-900 dark:active:bg-neutral-800 hover:bg-neutral-300/80 active:bg-neutral-300/60",
 				destructive:
 					"bg-red-500 active:bg-red-500/80 hover:bg-red-500/90 ring-1 dark:ring-red-600 ring-red-400 border-red-300 border-b dark:border-red-400 outline-red-600 text-white",
 				secondary:
-					"dark:bg-neutral-800 dark:hover:bg-neutral-700/80 dark:active:bg-neutral-700 dark:text-neutral-200 bg-neutral-300 hover:bg-neutral-300/80 active:bg-neutral-300/60 text-neutral-700",
+					"dark:bg-neutral-700 dark:hover:bg-neutral-600/80 dark:active:bg-neutral-600 dark:text-neutral-200 bg-neutral-300 hover:bg-neutral-300/80 active:bg-neutral-300/60 text-neutral-600",
 				outline:
-					"border dark:border-carbon-dark-500 border-carbon-dark-500/20 dark:hover:bg-neutral-700/80 dark:active:bg-neutral-700 dark:text-neutral-200 bg-transparent hover:bg-neutral-300/80 active:bg-neutral-300/60 text-neutral-700",
+					"border shadow-sm dark:shadow-sm-dark dark:border-carbon-dark-500 border-carbon-dark-500/20 dark:hover:bg-neutral-700/80 dark:active:bg-neutral-700 dark:text-neutral-300 bg-transparent hover:bg-neutral-300/80 active:bg-neutral-300/60 text-neutral-600",
 				transparent:
 					"bg-transparent dark:hover:bg-neutral-700/80 hover:bg-neutral-300/80 dark:active:bg-neutral-700 active:bg-neutral-300/60 dark:text-neutral-200 text-neutral-700",
 				link: "p-0 hover:underline hover:text-blue-500 underline-offset-4",
 			},
+			shape: {
+				rounded: "rounded-lg",
+				square: "rounded-none",
+				pill: "rounded-full",
+			},
 			size: {
-				sm: "text-md px-3 py-2 leading-4",
-				md: "text-md px-6 py-2 leading-5",
-				lg: "text-lg leading-6 px-6 py-3",
+				sm: "text-md px-2 py-1.5 leading-4",
+				md: "text-md px-3 py-2 leading-5",
+				lg: "text-lg leading-5 px-4 py-2",
 			},
 		},
 		defaultVariants: {
 			variant: "primary",
 			size: "sm",
+			shape: "rounded",
 		},
 	},
 );
@@ -42,6 +50,7 @@ export const iconVariants = cva("text-current m-0 p-0", {
 			destructive: "",
 			transparent: "",
 			link: "",
+			black: "",
 		},
 		size: {
 			sm: "size-4",
@@ -68,9 +77,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 	(
 		{
 			className,
+			shape = "rounded",
 			variant = "primary",
 			size = "sm",
 			before,
+			disabled,
 			after,
 			isIconOnly = false,
 			asChild = false,
@@ -121,11 +132,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 		return (
 			<Component
 				className={cn(
-					buttonVariants({ variant, size }),
+					buttonVariants({ variant, size, shape }),
 					variant === "link" && children && "focus-visible:outline-0",
 					className,
 				)}
 				ref={ref}
+				disabled={disabled}
 				{...props}
 			>
 				{innerContent}
