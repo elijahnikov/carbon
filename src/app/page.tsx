@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import {
 	Dialog,
 	DialogContent,
@@ -11,6 +12,7 @@ import {
 import {
 	BadgeCheck,
 	Briefcase,
+	CircleCheck,
 	Heart,
 	PersonStanding,
 	Rocket,
@@ -61,7 +63,7 @@ export default function HomePage() {
 					<DialogTrigger asChild>
 						<Button>Open</Button>
 					</DialogTrigger>
-					<DialogContent>
+					<DialogContent className="max-w-sm">
 						<DialogHeader>
 							<DialogTitle>Edit profile</DialogTitle>
 							<DialogDescription>
@@ -69,8 +71,8 @@ export default function HomePage() {
 							</DialogDescription>
 						</DialogHeader>
 						<div className="w-max gap-2">
-							<Badge color="green">
-								<p>Completed</p>
+							<Badge before={<CircleCheck />} color="green">
+								<p>5.2k</p>
 							</Badge>
 						</div>
 						<DialogFooter className="flex flex-col gap-2">
@@ -95,6 +97,15 @@ export default function HomePage() {
 						<Button variant={"secondary"}>Cancel</Button>
 					</div>
 				</div>
+
+				<Card className="mt-4">
+					<h1>Edit profile</h1>
+					<p>Make changes to your account here.</p>
+					<div className="flex mt-4 flex-col gap-2">
+						<Button>Save</Button>
+						<Button variant={"secondary"}>Cancel</Button>
+					</div>
+				</Card>
 				{/* <div
 					className={cn(
 						"h-24 flex flex-end flex-col p-2 rounded-xl border ",
