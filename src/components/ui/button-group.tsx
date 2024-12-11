@@ -5,17 +5,17 @@ import * as React from "react";
 import { cn } from "../utils/cn";
 import { Button } from "./button";
 
-export interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
+export type ButtonGroupProps = React.HTMLAttributes<HTMLDivElement> & {
 	size?: "sm" | "md" | "lg";
 	disabled?: boolean;
 	orientation?: "horizontal" | "vertical";
-}
+};
 
-interface ButtonGroupContextProps {
+type ButtonGroupContextProps = {
 	size?: ButtonGroupProps["size"];
 	disabled?: ButtonGroupProps["disabled"];
 	orientation?: ButtonGroupProps["orientation"];
-}
+};
 
 export type ButtonGroupElement = HTMLDivElement;
 

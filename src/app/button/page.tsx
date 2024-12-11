@@ -99,18 +99,27 @@ export default function ButtonPage() {
 			</div>
 			<ButtonGroup>
 				<ButtonGroupItem
+					onClick={() => {
+						console.log("delete");
+					}}
 					before={<Trash className="size-4" />}
 					variant="secondary"
 				>
 					Delete
 				</ButtonGroupItem>
 				<ButtonGroupItem
+					onClick={() => {
+						console.log("save");
+					}}
 					before={<Save className="size-4" />}
 					variant="secondary"
 				>
 					Save
 				</ButtonGroupItem>
 				<ButtonGroupItem
+					onClick={() => {
+						console.log("edit");
+					}}
 					before={<Pencil className="size-4" />}
 					variant="secondary"
 				>

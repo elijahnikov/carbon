@@ -6,12 +6,14 @@
 	:root {
 		--border: 0 0% 90%;
 		--background: 0 0% 94%;
-    --card: 0 0% 97%
+    --card: 0 0% 97%;
+    --input: 0 0% 94%;
 	}
 
 	.dark {
 		--border: 0 0% 18%;
 		--background: 0 0% 10%;
-		--card: 0 0% 14%
+		--card: 0 0% 14%;
+    --input: 0 0% 7%;
 	}
 }
