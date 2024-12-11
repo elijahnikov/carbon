@@ -1,6 +1,9 @@
+"use client";
+
 import ThemeToggle from "@/components/common/theme-toggle";
 import Badge from "@/components/ui/badge";
 import { Button, type ButtonProps } from "@/components/ui/button";
+import { ButtonGroup, ButtonGroupItem } from "@/components/ui/button-group";
 import {
 	Dialog,
 	DialogClose,
@@ -21,6 +24,7 @@ import {
 	Mail,
 	Pencil,
 	Plus,
+	PlusIcon,
 	Rocket,
 	Save,
 	Send,
@@ -74,6 +78,7 @@ export default function ButtonPage() {
 		<div className="min-h-screen min-w-screen p-16 flex flex-col items-center justify-center">
 			<div className="grid grid-cols-3 max-w-[700px] w-full">
 				{[...Array(9)].map((_, index) => {
+					// @ts-ignore
 					const { text, ...button } = buttons[index];
 					return (
 						<div
@@ -86,11 +91,32 @@ export default function ButtonPage() {
               border-dashed
             `}
 						>
+							{/* @ts-ignore */}
 							<Button {...button}>{text}</Button>
 						</div>
 					);
 				})}
 			</div>
+			<ButtonGroup>
+				<ButtonGroupItem
+					before={<Trash className="size-4" />}
+					variant="secondary"
+				>
+					Delete
+				</ButtonGroupItem>
+				<ButtonGroupItem
+					before={<Save className="size-4" />}
+					variant="secondary"
+				>
+					Save
+				</ButtonGroupItem>
+				<ButtonGroupItem
+					before={<Pencil className="size-4" />}
+					variant="secondary"
+				>
+					Edit
+				</ButtonGroupItem>
+			</ButtonGroup>
 		</div>
 	);
 }
