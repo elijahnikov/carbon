@@ -1,3 +1,5 @@
+"use client";
+
 import ThemeToggle from "@/components/common/theme-toggle";
 import {
 	Avatar,
@@ -9,31 +11,34 @@ import { AvatarGroup, AvatarGroupItem } from "@/components/ui/avatar-group";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
+import { PresentationIcon } from "lucide-react";
+import { useState } from "react";
 
 export default function InputPage() {
+	const [checked, setChecked] = useState(false);
 	return (
 		<div className="min-h-screen min-w-screen p-16 flex flex-col items-center justify-center">
 			<ThemeToggle />
 			<Card>
+				<Button size={"sm"} isIconOnly variant={"outline"}>
+					<PresentationIcon className="w-4 h-4" />
+				</Button>
 				<div className="flex items-center gap-2">
-					<Avatar
+					{/* <Avatar
 						src={
 							"https://images.unsplash.com/photo-1560800452-f2d475982b96?auto=format&fit=crop&w=250&h=250"
 						}
-					/>
+					/> */}
 
-					<AvatarGroup size={"lg"}>
+					<Switch id="testing" onCheckedChange={setChecked} checked={checked} />
+					<p>{checked ? "Checked" : "Unchecked"}</p>
+					{/* <AvatarGroup size={"lg"}>
 						<AvatarGroupItem src="https://github.com/shadcn.png" />
 						<AvatarGroupItem src="https://github.com/shadcn.png" />
 						<AvatarGroupItem src="https://github.com/shadcn.png" />
-					</AvatarGroup>
-					<div className="flex flex-col leading-none">
-						<p className="font-medium">John Doe </p>
-						<p className="text-sm text-neutral-500 dark:text-neutral-400">
-							john.doe@example.com
-						</p>
-					</div>
+					</AvatarGroup> */}
 				</div>
 				<div className="min-w-[400px] flex flex-col gap-2">
 					<p className="font-medium">Email</p>
