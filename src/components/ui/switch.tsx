@@ -13,7 +13,7 @@ const Switch = React.forwardRef<
 			"items-center rounded-full",
 
 			// Colors and theme-specific styling
-			"data-[state=checked]:bg-blue-500 data-[state=unchecked]:bg-input",
+			"data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
 			"dark:shadow-sm-dark dark:ring-1 dark:ring-border",
 			"shadow-overlay",
 

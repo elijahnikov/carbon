@@ -16,14 +16,16 @@ const Checkbox = React.forwardRef<
 			"shrink-0",
 
 			// Border and colors
-			"border border-primary",
-			"ring-inset dark:ring-blue-400 ring-blue-400",
-			"outline-blue-600",
+			"border-b border-primary",
+			"ring-inset ring-primary-ring",
+			"outline-primary-outline",
 
 			// States
-			"data-[state=checked]:bg-blue-500 data-[state=checked]:text-primary-foreground",
+			"data-[state=checked]:border-b data-[state=unchecked]:border",
+			"data-[state=checked]:bg-primary data-[state=unchecked]:bg-input data-[state=checked]:text-primary-foreground",
 			"data-[state=checked]:ring-1 data-[state=unchecked]:ring-0",
-			"data-[state=checked]:border-blue-500 dark:data-[state=checked]:border-blue-600 dark:data-[state=unchecked]:border-white",
+			"data-[state=checked]:border-primary-border dark:data-[state=checked]:border-primary-border",
+			"dark:data-[state=unchecked]:border-carbon-dark-500 data-[state=unchecked]:border-carbon-500",
 			"disabled:cursor-not-allowed disabled:opacity-50",
 
 			// Focus styles
