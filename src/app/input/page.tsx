@@ -5,6 +5,7 @@ import {
 	AvatarImage,
 	AvatarRoot,
 } from "@/components/ui/avatar";
+import { AvatarGroup, AvatarGroupItem } from "@/components/ui/avatar-group";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -21,6 +22,12 @@ export default function InputPage() {
 							"https://images.unsplash.com/photo-1560800452-f2d475982b96?auto=format&fit=crop&w=250&h=250"
 						}
 					/>
+
+					<AvatarGroup size={"lg"}>
+						<AvatarGroupItem src="https://github.com/shadcn.png" />
+						<AvatarGroupItem src="https://github.com/shadcn.png" />
+						<AvatarGroupItem src="https://github.com/shadcn.png" />
+					</AvatarGroup>
 					<div className="flex flex-col leading-none">
 						<p className="font-medium">John Doe </p>
 						<p className="text-sm text-neutral-500 dark:text-neutral-400">
