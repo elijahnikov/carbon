@@ -13,11 +13,11 @@ const buttonVariants = cva(
 				destructive:
 					"bg-destructive active:bg-destructive-active hover:bg-destructive-hover ring-1 ring-inset ring-destructive-ring  border-b border-destructive-border outline-destructive-outline text-white",
 				black:
-					"bg-black text-neutral-200 dark:bg-black border-b ring-1 ring-inset dark:ring-neutral-800 ring-neutral-700 dark:border-carbon-dark-400 border-carbon-dark-500/20 dark:hover:bg-neutral-900 dark:active:bg-neutral-800 hover:bg-neutral-300/80 active:bg-neutral-300/60",
+					"bg-black text-secondary-foreground dark:bg-black border-b ring-1 ring-inset dark:ring-neutral-800 ring-neutral-700 dark:border-carbon-dark-400 border-carbon-dark-500/20 dark:hover:bg-neutral-900 dark:active:bg-neutral-800 hover:bg-neutral-300/80 active:bg-neutral-300/60",
 				secondary:
-					"dark:bg-neutral-700 dark:hover:bg-neutral-600/80 dark:active:bg-neutral-600 dark:text-neutral-200 bg-neutral-300 hover:bg-neutral-300/80 active:bg-neutral-300/60 text-neutral-600",
+					"bg-secondary hover:bg-secondary-hover active:bg-secondary-active text-secondary-foreground",
 				outline:
-					"shadow-sm dark:shadow-sm-dark ring-1 ring-inset dark:ring-carbon-dark-500 ring-carbon-dark-500/20 dark:hover:bg-neutral-700/80 dark:active:bg-neutral-700 dark:text-neutral-300 bg-transparent hover:bg-neutral-300/80 active:bg-neutral-300/60 text-neutral-600",
+					"shadow-sm dark:shadow-sm-dark ring-1 ring-inset dark:ring-carbon-dark-500 ring-carbon-dark-500/20 hover:bg-secondary-hover active:bg-secondary-active bg-transparent text-secondary-foreground",
 				transparent:
 					"bg-transparent dark:hover:bg-neutral-700/80 hover:bg-neutral-300/80 dark:active:bg-neutral-700 active:bg-neutral-300/60 dark:text-neutral-200 text-neutral-700",
 				link: "p-0 hover:underline hover:text-blue-500 underline-offset-4",

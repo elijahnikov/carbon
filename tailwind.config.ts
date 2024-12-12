@@ -23,6 +23,12 @@ export default {
 					border: "hsl(var(--primary-border))",
 					foreground: "hsl(var(--primary-foreground))",
 				},
+				secondary: {
+					DEFAULT: "hsl(var(--secondary))",
+					hover: "hsl(var(--secondary-hover))",
+					active: "hsl(var(--secondary-active))",
+					foreground: "hsl(var(--secondary-foreground))",
+				},
 				destructive: {
 					DEFAULT: "hsl(var(--destructive))",
 					hover: "hsl(var(--destructive-hover))",
