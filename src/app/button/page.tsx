@@ -14,6 +14,7 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "@/components/ui/dialog";
+import { cn } from "@/components/utils/cn";
 import {
 	ArrowRight,
 	BadgeCheck,
@@ -76,13 +77,16 @@ export default function ButtonPage() {
 
 	return (
 		<div className="min-h-screen min-w-screen p-16 flex flex-col items-center justify-center">
+			<ThemeToggle />
+			<div className="bg-red-500 active:bg-red-500/80 hover:bg-red-500/90 ring-1 ring-inset dark:ring-red-600 ring-red-400 border-red-300 border-b dark:border-red-400 outline-red-600 text-white">
+				background
+			</div>
 			<div className="grid grid-cols-3 max-w-[700px] w-full">
 				{[...Array(9)].map((_, index) => {
 					// @ts-ignore
 					const { text, ...button } = buttons[index];
 					return (
 						<div
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 							key={index}
 							className={`
               min-h-[100px] min-w-[80px] flex items-center justify-center
@@ -91,41 +95,22 @@ export default function ButtonPage() {
               border-dashed
             `}
 						>
-							{/* @ts-ignore */}
 							<Button {...button}>{text}</Button>
 						</div>
 					);
 				})}
 			</div>
-			<ButtonGroup>
-				<ButtonGroupItem
-					onClick={() => {
-						console.log("delete");
-					}}
-					before={<Trash className="size-4" />}
-					variant="secondary"
-				>
-					Delete
-				</ButtonGroupItem>
-				<ButtonGroupItem
-					onClick={() => {
-						console.log("save");
-					}}
-					before={<Save className="size-4" />}
-					variant="secondary"
-				>
-					Save
-				</ButtonGroupItem>
-				<ButtonGroupItem
-					onClick={() => {
-						console.log("edit");
-					}}
-					before={<Pencil className="size-4" />}
-					variant="secondary"
-				>
-					Edit
-				</ButtonGroupItem>
-			</ButtonGroup>
+			{/*"bg-blue-500 active:bg-blue-500/80 hover:bg-blue-500/90 ring-1 ring-inset dark:ring-blue-400 ring-blue-400 border-blue-500 border-b dark:border-blue-600 outline-blue-600 text-white",
+			 */}
+
+			<div className="h-8 w-fit bg-red-500/80">active</div>
+			<div className="h-8 w-fit bg-red-500/90">hover</div>
+			<div className="h-8 w-fit bg-red-400">ring</div>
+			<div className="h-8 w-fit bg-red-600">ring dark</div>
+			<div className="h-8 w-fit bg-red-300">border</div>
+			<div className="h-8 w-fit bg-red-400">border dark</div>
+			<div className="h-8 w-fit bg-red-600">outline</div>
+			<div className="h-8 w-fit bg-white text-black border">text</div>
 		</div>
 	);
 }

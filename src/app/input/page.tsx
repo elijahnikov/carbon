@@ -10,6 +10,7 @@ import {
 import { AvatarGroup, AvatarGroupItem } from "@/components/ui/avatar-group";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,9 +23,6 @@ export default function InputPage() {
 		<div className="min-h-screen min-w-screen p-16 flex flex-col items-center justify-center">
 			<ThemeToggle />
 			<Card>
-				<Button size={"sm"} isIconOnly variant={"outline"}>
-					<PresentationIcon className="w-4 h-4" />
-				</Button>
 				<div className="flex items-center gap-2">
 					{/* <Avatar
 						src={
@@ -41,6 +39,7 @@ export default function InputPage() {
 					</AvatarGroup> */}
 				</div>
 				<div className="min-w-[400px] flex flex-col gap-2">
+					<Checkbox />
 					<p className="font-medium">Email</p>
 					<Input placeholder="Enter your email" />
 					<p className="font-medium">Username</p>

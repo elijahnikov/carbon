@@ -12,9 +12,25 @@ export default {
 			colors: {
 				border: "hsl(var(--border))",
 				background: "hsl(var(--background))",
+				foreground: "hsl(var(--foreground))",
 				card: "hsl(var(--card))",
 				input: "hsl(var(--input))",
-				foreground: "hsl(var(--foreground))",
+				primary: {
+					DEFAULT: "hsl(var(--primary))",
+					hover: "hsl(var(--primary-hover))",
+					active: "hsl(var(--primary-active))",
+					ring: "hsl(var(--primary-ring))",
+					border: "hsl(var(--primary-border))",
+					foreground: "hsl(var(--primary-foreground))",
+				},
+				destructive: {
+					DEFAULT: "hsl(var(--destructive))",
+					hover: "hsl(var(--destructive-hover))",
+					active: "hsl(var(--destructive-active))",
+					ring: "hsl(var(--destructive-ring))",
+					border: "hsl(var(--destructive-border))",
+					foreground: "hsl(var(--destructive-foreground))",
+				},
 				carbon: {
 					DEFAULT: "#F0F0F0",
 					100: "#F8F8F8",
