@@ -1,6 +1,8 @@
 "use client";
 
 import ThemeToggle from "@/components/common/theme-toggle";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+
 import {
 	Avatar,
 	AvatarFallback,
@@ -8,52 +10,97 @@ import {
 	AvatarRoot,
 } from "@/components/ui/avatar";
 import { AvatarGroup, AvatarGroupItem } from "@/components/ui/avatar-group";
+import Badge from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
-import { PresentationIcon } from "lucide-react";
+import {
+	AlertCircle,
+	BadgeCent,
+	BatteryWarning,
+	CircleIcon,
+	DollarSign,
+	FileWarning,
+	PersonStanding,
+	PresentationIcon,
+	RocketIcon,
+	ShieldCheck,
+	Terminal,
+	TerminalSquare,
+	UserCheck,
+} from "lucide-react";
 import { useState } from "react";
 
 export default function InputPage() {
-	const [checked, setChecked] = useState(false);
 	return (
 		<div className="min-h-screen min-w-screen p-16 flex flex-col items-center justify-center">
 			<ThemeToggle />
-			<Card>
-				<div className="flex items-center gap-2">
-					{/* <Avatar
-						src={
-							"https://images.unsplash.com/photo-1560800452-f2d475982b96?auto=format&fit=crop&w=250&h=250"
-						}
-					/> */}
-					<Avatar size={"sm"}>
-						<AvatarFallback>A</AvatarFallback>
-					</Avatar>
-					<Switch id="testing" onCheckedChange={setChecked} checked={checked} />
-					<p>{checked ? "Checked" : "Unchecked"}</p>
-					{/* <AvatarGroup size={"lg"}>
-						<AvatarGroupItem src="https://github.com/shadcn.png" />
-						<AvatarGroupItem src="https://github.com/shadcn.png" />
-						<AvatarGroupItem src="https://github.com/shadcn.png" />
-					</AvatarGroup> */}
-				</div>
-				<div className="min-w-[400px] flex flex-col gap-2">
-					<Checkbox />
-					<p className="font-medium">Email</p>
-					<Input placeholder="Enter your email" />
-					<p className="font-medium">Username</p>
-					<Input placeholder="Enter your username" />
-
-					<Textarea placeholder="Enter your message" />
-					<div className="flex justify-end gap-2 items-center mt-4">
-						<Button variant="outline">Cancel</Button>
-						<Button>Save</Button>
+			{/* <Alert icon={<AlertCircle />}>
+				<AlertTitle>Heads up!</AlertTitle>
+				<AlertDescription>
+					You can add components to your app using the cli.
+				</AlertDescription>
+			</Alert> */}
+			<div className="grid grid-cols-2 gap-4 w-full items-center">
+				<Alert icon={<AlertCircle />}>
+					<AlertTitle>Error</AlertTitle>
+					<AlertDescription>
+						Your session has expired. Please log in again.
+					</AlertDescription>
+				</Alert>
+				<Alert variant={"error"}>
+					<AlertTitle>Error</AlertTitle>
+					<AlertDescription>
+						Your session has expired. Please log in again.
+					</AlertDescription>
+				</Alert>
+				<Alert variant={"success"}>
+					<AlertTitle>Error</AlertTitle>
+					<AlertDescription>
+						Your session has expired. Please log in again.
+					</AlertDescription>
+				</Alert>
+				<Alert variant={"warning"}>
+					<AlertTitle>Error</AlertTitle>
+					<AlertDescription>
+						Your session has expired. Please log in again.
+					</AlertDescription>
+				</Alert>
+				<Alert variant={"message"}>
+					<AlertTitle>Error</AlertTitle>
+					<AlertDescription>
+						Your session has expired. Please log in again.
+					</AlertDescription>
+				</Alert>
+			</div>
+			{/* <Card>
+				<div className=" flex flex-col gap-2">
+					<div className="max-w-[300px] flex flex-wrap gap-2">
+						<Badge>Primary</Badge>
+						<Badge before={<DollarSign />} color="green">
+							500
+						</Badge>
+						<Badge before={<AlertCircle />} color="red">
+							Red
+						</Badge>
+						<Badge before={<BatteryWarning />} color="yellow">
+							Yellow
+						</Badge>
+						<Badge before={<UserCheck />} color="teal">
+							Teal
+						</Badge>
+						<Badge before={<RocketIcon />} color="orange">
+							Orange
+						</Badge>
+						<Badge before={<ShieldCheck />} color="purple">
+							Purple
+						</Badge>
 					</div>
 				</div>
-			</Card>
+			</Card> */}
 		</div>
 	);
 }
