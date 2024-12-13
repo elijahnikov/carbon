@@ -20,6 +20,11 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import {
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+} from "@/components/ui/popover";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -27,10 +32,12 @@ import {
 	ArrowRight,
 	BadgeCent,
 	BatteryWarning,
+	Check,
 	CircleIcon,
 	DollarSign,
 	FileWarning,
 	InfoIcon,
+	MessageCircle,
 	PersonStanding,
 	PresentationIcon,
 	RocketIcon,
@@ -41,77 +48,75 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
+const alerts = [
+	{
+		variant: "default",
+		title: "Information",
+		description:
+			"This is a general information message that requires attention.",
+		icon: <InfoIcon />,
+		actions: [
+			{ label: "Acknowledge", before: <Check />, variant: "outline" },
+			{ label: "Learn More", after: <ArrowRight />, variant: "transparent" },
+		],
+	},
+	{
+		variant: "error",
+		title: "Operation Failed",
+		description:
+			"There was an error processing your request. Please try again.",
+		icon: <AlertCircle />,
+	},
+	{
+		variant: "success",
+		title: "Successfully Saved",
+		description: "Your changes have been saved successfully.",
+		icon: <ShieldCheck />,
+	},
+	{
+		variant: "warning",
+		title: "Update Required",
+		description: "Your application needs to be updated to the latest version.",
+		icon: <BatteryWarning />,
+	},
+	{
+		variant: "message",
+		title: "New Message",
+		description: "You have received a new message from the system.",
+		icon: <MessageCircle />,
+	},
+];
+
 export default function InputPage() {
 	return (
-		<div className="min-h-screen min-w-screen p-16 flex flex-col items-center justify-center">
+		<div className="min-h-screen min-w-screen p-16 flex flex-col items-center justify-center gap-4">
 			<ThemeToggle />
-			{/* <Alert icon={<AlertCircle />}>
-				<AlertTitle>Heads up!</AlertTitle>
-				<AlertDescription>
-					You can add components to your app using the cli.
-				</AlertDescription>
-			</Alert> */}
-			<div className="grid grid-cols-2 gap-4 w-full items-center">
-				<Alert icon={<InfoIcon />}>
-					<AlertTitle>
-						A new software update is available. See what's new.
-					</AlertTitle>
-					<AlertFooter>
-						<Button variant="secondary" size="xs" after={<ArrowRight />}>
-							View the changelog
-						</Button>
-					</AlertFooter>
-				</Alert>
-				<Alert variant={"error"}>
-					<AlertTitle>Error</AlertTitle>
-					<AlertDescription>
-						Your session has expired. Please log in again.
-					</AlertDescription>
-				</Alert>
-				<Alert variant={"success"}>
-					<AlertTitle>Error</AlertTitle>
-					<AlertDescription>
-						Your session has expired. Please log in again.
-					</AlertDescription>
-				</Alert>
-				<Alert variant={"warning"}>
-					<AlertTitle>Error</AlertTitle>
-					<AlertDescription>
-						Your session has expired. Please log in again.
-					</AlertDescription>
-				</Alert>
-				<Alert variant={"message"}>
-					<AlertTitle>Error</AlertTitle>
-					<AlertDescription>
-						Your session has expired. Please log in again.
-					</AlertDescription>
-				</Alert>
-			</div>
-			{/* <Card>
-				<div className=" flex flex-col gap-2">
-					<div className="max-w-[300px] flex flex-wrap gap-2">
-						<Badge>Primary</Badge>
-						<Badge before={<DollarSign />} color="green">
-							500
-						</Badge>
-						<Badge before={<AlertCircle />} color="red">
-							Red
-						</Badge>
-						<Badge before={<BatteryWarning />} color="yellow">
-							Yellow
-						</Badge>
-						<Badge before={<UserCheck />} color="teal">
-							Teal
-						</Badge>
-						<Badge before={<RocketIcon />} color="orange">
-							Orange
-						</Badge>
-						<Badge before={<ShieldCheck />} color="purple">
-							Purple
-						</Badge>
+			<Card className="flex w-[350px] flex-col gap-4 items-center justify-center">
+				<Card className="h-12 w-12">1</Card>
+				<h1 className="font-medium text-lg  mb-2 text-carbon-500">
+					Badge examples
+				</h1>
+				<Popover>
+					<PopoverTrigger asChild>
+						<Button>Open</Button>
+					</PopoverTrigger>
+					<PopoverContent className="flex flex-col gap-2" side="top">
+						<Input placeholder="Enter your username" />
+						<Button>hello</Button>
+					</PopoverContent>
+				</Popover>
+				<div className="flex flex-col gap-4 w-full">
+					<div className="flex flex-col gap-1">
+						<p>Username</p>
+						<Input placeholder="Enter your username" />
 					</div>
+					<div className="flex flex-col gap-1">
+						<p>Password</p>
+						<Input type="password" placeholder="Enter your password" />
+					</div>
+					<Button className="w-full">Submit</Button>
 				</div>
-			</Card> */}
+			</Card>
 		</div>
 	);
 }

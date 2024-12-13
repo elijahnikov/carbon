@@ -102,6 +102,7 @@ export default function ButtonPage() {
 			</div>
 			{/*"bg-blue-500 active:bg-blue-500/80 hover:bg-blue-500/90 ring-1 ring-inset dark:ring-blue-400 ring-blue-400 border-blue-500 border-b dark:border-blue-600 outline-blue-600 text-white",
 			 */}
+
 			<div className="  active:bg-neutral-300/60 text-neutral-600">example</div>
 			<div className="h-8 w-fit bg-neutral-300">background</div>
 			<div className="h-8 w-fit bg-neutral-700">background dark</div>

@@ -105,10 +105,17 @@ const AlertDescription = React.forwardRef<HTMLDivElement, AlertProps>(
 
 const AlertFooter = React.forwardRef<HTMLDivElement, AlertProps>(
 	({ children, className, ...props }, ref) => {
+		if (!children) return null;
+		const Component = React.isValidElement(children) ? Slot : "span";
+
 		return (
-			<div className={cn("gap-2 flex mt-1", className)} ref={ref} {...props}>
+			<Component
+				className={cn("gap-2 flex mt-2", className)}
+				ref={ref}
+				{...props}
+			>
 				{children}
-			</div>
+			</Component>
 		);
 	},
 );
