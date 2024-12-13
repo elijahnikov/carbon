@@ -20,15 +20,15 @@ const alertVariants = cva(
 		variants: {
 			variant: {
 				default:
-					"bg-card border-border border dark:ring-carbon-dark-500 ring-0 shadow-overlay dark:shadow-sm-dark dark:ring-1 ring-inset dark:[&_h4]:text-white [&_h4]:text-black text-secondary-foreground",
+					"bg-card border-border border dark:ring-carbon-dark-500 ring-0 shadow-overlay dark:shadow-sm-dark dark:ring-1 ring-inset dark:[&_h4]:text-white [&_h4]:text-carbon-dark-500 text-secondary-foreground",
 				error:
-					"dark:bg-destructive/50 bg-destructive/20 border-destructive-ring border shadow-sm dark:shadow-sm-dark ring-destructive-border ring-1 ring-inset dark:[&_h4]:text-white [&_h4]:text-black text-carbon-dark-500 dark:text-secondary-foreground",
+					"dark:bg-destructive/50 bg-destructive/20 border-destructive-ring border shadow-sm dark:shadow-sm-dark ring-destructive-border ring-1 ring-inset dark:[&_h4]:text-red-200 [&_h4]:text-red-600 text-red-500 dark:text-red-300",
 				success:
-					"dark:bg-green-500/50 bg-green-500/20 dark:border-green-700 border-green-500 border shadow-sm dark:shadow-sm-dark dark:ring-green-500 ring-green-300 ring-1 ring-inset dark:[&_h4]:text-white [&_h4]:text-black text-carbon-dark-500 dark:text-secondary-foreground",
+					"dark:bg-green-500/50 bg-green-500/20 dark:border-green-700 border-green-500 border shadow-sm dark:shadow-sm-dark dark:ring-green-500 ring-green-300 ring-1 ring-inset dark:[&_h4]:text-green-200 [&_h4]:text-green-800 text-green-700 dark:text-green-300",
 				warning:
-					"dark:bg-yellow-500/50 bg-yellow-500/20 dark:border-yellow-700 border-yellow-500 border shadow-sm dark:shadow-sm-dark dark:ring-yellow-500 ring-yellow-300 ring-1 ring-inset dark:[&_h4]:text-white [&_h4]:text-black text-carbon-dark-500 dark:text-secondary-foreground",
+					"dark:bg-yellow-500/50 bg-yellow-500/20 dark:border-yellow-700 border-yellow-500 border shadow-sm dark:shadow-sm-dark dark:ring-yellow-500 ring-yellow-300 ring-1 ring-inset dark:[&_h4]:text-yellow-200 [&_h4]:text-yellow-800 text-yellow-700 dark:text-yellow-300",
 				message:
-					"dark:bg-blue-500/50 bg-blue-500/20 dark:border-blue-700 border-blue-500 border shadow-sm dark:shadow-sm-dark dark:ring-blue-500 ring-blue-300 ring-1 ring-inset dark:[&_h4]:text-white [&_h4]:text-black text-carbon-dark-500 dark:text-secondary-foreground",
+					"dark:bg-blue-500/50 bg-blue-500/20 dark:border-blue-700 border-blue-500 border shadow-sm dark:shadow-sm-dark dark:ring-blue-500 ring-blue-300 ring-1 ring-inset dark:[&_h4]:text-blue-200 [&_h4]:text-blue-800 text-blue-700 dark:text-blue-300",
 			},
 			size: {
 				sm: "",
