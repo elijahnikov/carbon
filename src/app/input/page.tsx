@@ -19,6 +19,23 @@ import Badge from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+	DropdownMenu,
+	DropdownMenuCheckboxItem,
+	DropdownMenuContent,
+	DropdownMenuGroup,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuPortal,
+	DropdownMenuRadioGroup,
+	DropdownMenuRadioItem,
+	DropdownMenuSeparator,
+	DropdownMenuShortcut,
+	DropdownMenuSub,
+	DropdownMenuSubContent,
+	DropdownMenuSubTrigger,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import {
 	Popover,
@@ -34,17 +51,32 @@ import {
 	BatteryWarning,
 	Check,
 	CircleIcon,
+	Cloud,
+	CreditCard,
 	DollarSign,
 	FileWarning,
+	Github,
 	InfoIcon,
+	Keyboard,
+	LifeBuoy,
+	LogOut,
+	Mail,
 	MessageCircle,
+	MessageSquare,
 	PersonStanding,
+	Plus,
+	PlusCircle,
 	PresentationIcon,
 	RocketIcon,
+	Settings,
 	ShieldCheck,
 	Terminal,
 	TerminalSquare,
+	User,
 	UserCheck,
+	UserIcon,
+	UserPlus,
+	Users,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -88,6 +120,8 @@ const alerts = [
 ];
 
 export default function InputPage() {
+	const [position, setPosition] = useState("bottom");
+
 	return (
 		<div className="min-h-screen min-w-screen p-16 flex flex-col items-center justify-center gap-4">
 			<ThemeToggle />
@@ -103,6 +137,90 @@ export default function InputPage() {
 					<PopoverContent className="flex flex-col gap-2" side="top">
 						<Input placeholder="Enter your username" />
 						<Button>hello</Button>
+
+						<DropdownMenu>
+							<DropdownMenuTrigger asChild>
+								<Button variant="outline">Open</Button>
+							</DropdownMenuTrigger>
+							<DropdownMenuContent className="w-56">
+								<DropdownMenuGroup>
+									<DropdownMenuItem>
+										<User />
+										<span>Profile</span>
+										<DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+									</DropdownMenuItem>
+									<DropdownMenuItem>
+										<CreditCard />
+										<span>Billing</span>
+										<DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+									</DropdownMenuItem>
+									<DropdownMenuItem>
+										<Settings />
+										<span>Settings</span>
+										<DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+									</DropdownMenuItem>
+									<DropdownMenuItem>
+										<Keyboard />
+										<span>Keyboard shortcuts</span>
+										<DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+									</DropdownMenuItem>
+								</DropdownMenuGroup>
+								<DropdownMenuSeparator />
+								<DropdownMenuGroup>
+									<DropdownMenuItem>
+										<Users />
+										<span>Team</span>
+									</DropdownMenuItem>
+									<DropdownMenuSub>
+										<DropdownMenuSubTrigger>
+											<UserPlus />
+											<span>Invite users</span>
+										</DropdownMenuSubTrigger>
+										<DropdownMenuPortal>
+											<DropdownMenuSubContent>
+												<DropdownMenuItem>
+													<Mail />
+													<span>Email</span>
+												</DropdownMenuItem>
+												<DropdownMenuItem>
+													<MessageSquare />
+													<span>Message</span>
+												</DropdownMenuItem>
+												<DropdownMenuSeparator />
+												<DropdownMenuItem>
+													<PlusCircle />
+													<span>More...</span>
+												</DropdownMenuItem>
+											</DropdownMenuSubContent>
+										</DropdownMenuPortal>
+									</DropdownMenuSub>
+									<DropdownMenuItem>
+										<Plus />
+										<span>New Team</span>
+										<DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+									</DropdownMenuItem>
+								</DropdownMenuGroup>
+								<DropdownMenuSeparator />
+								<DropdownMenuItem>
+									<Github />
+									<span>GitHub</span>
+								</DropdownMenuItem>
+								<DropdownMenuItem>
+									<LifeBuoy />
+									<span>Support</span>
+								</DropdownMenuItem>
+								<DropdownMenuItem disabled>
+									<Cloud />
+									<span>API</span>
+								</DropdownMenuItem>
+								<DropdownMenuSeparator />
+								<DropdownMenuItem>
+									<LogOut />
+									<span>Log out</span>
+									<DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+								</DropdownMenuItem>
+							</DropdownMenuContent>
+						</DropdownMenu>
 					</PopoverContent>
 				</Popover>
 				<div className="flex flex-col gap-4 w-full">

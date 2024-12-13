@@ -44,6 +44,10 @@ export default {
 					300: "#E8E8E8",
 					400: "#E0E0E0",
 					500: "#D8D8D8",
+					600: "#D0D0D0",
+					700: "#C8C8C8",
+					800: "#C0C0C0",
+					900: "#B8B8B8",
 				},
 				"carbon-dark": {
 					DEFAULT: "#1A1A1A",
