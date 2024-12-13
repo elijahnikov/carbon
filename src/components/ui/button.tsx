@@ -28,7 +28,8 @@ const buttonVariants = cva(
 				pill: "rounded-full",
 			},
 			size: {
-				sm: "text-md px-2 py-1.5 leading-4",
+				xs: "text-xs px-1 py-1 leading-4",
+				sm: "text-sm px-2 py-1.5 leading-4",
 				md: "text-md px-3 py-2 leading-5",
 				lg: "text-lg leading-5 px-4 py-2",
 			},
@@ -53,6 +54,7 @@ export const iconVariants = cva("text-current m-0 p-0", {
 			black: "",
 		},
 		size: {
+			xs: "size-4",
 			sm: "size-4",
 			md: "size-5",
 			lg: "size-6",

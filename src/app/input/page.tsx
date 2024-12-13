@@ -1,7 +1,12 @@
 "use client";
 
 import ThemeToggle from "@/components/common/theme-toggle";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import {
+	Alert,
+	AlertDescription,
+	AlertFooter,
+	AlertTitle,
+} from "@/components/ui/alert";
 
 import {
 	Avatar,
@@ -19,11 +24,13 @@ import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import {
 	AlertCircle,
+	ArrowRight,
 	BadgeCent,
 	BatteryWarning,
 	CircleIcon,
 	DollarSign,
 	FileWarning,
+	InfoIcon,
 	PersonStanding,
 	PresentationIcon,
 	RocketIcon,
@@ -45,11 +52,15 @@ export default function InputPage() {
 				</AlertDescription>
 			</Alert> */}
 			<div className="grid grid-cols-2 gap-4 w-full items-center">
-				<Alert icon={<AlertCircle />}>
-					<AlertTitle>Error</AlertTitle>
-					<AlertDescription>
-						Your session has expired. Please log in again.
-					</AlertDescription>
+				<Alert icon={<InfoIcon />}>
+					<AlertTitle>
+						A new software update is available. See what's new.
+					</AlertTitle>
+					<AlertFooter>
+						<Button variant="secondary" size="xs" after={<ArrowRight />}>
+							View the changelog
+						</Button>
+					</AlertFooter>
 				</Alert>
 				<Alert variant={"error"}>
 					<AlertTitle>Error</AlertTitle>

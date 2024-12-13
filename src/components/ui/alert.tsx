@@ -1,13 +1,18 @@
+"use client";
+
 import { Slot } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
 import {
 	AlertCircle,
 	AlertTriangle,
 	CheckCircle,
+	CircleXIcon,
 	MessageCircle,
+	XIcon,
 } from "lucide-react";
 import * as React from "react";
 import { cn } from "../utils/cn";
+import { Button } from "./button";
 
 const alertVariants = cva(
 	"border px-4 py-3 relative rounded-lg max-w-lg min-w-lg w-full",
@@ -98,6 +103,16 @@ const AlertDescription = React.forwardRef<HTMLDivElement, AlertProps>(
 	},
 );
 
+const AlertFooter = React.forwardRef<HTMLDivElement, AlertProps>(
+	({ children, className, ...props }, ref) => {
+		return (
+			<div className={cn("gap-2 flex mt-1", className)} ref={ref} {...props}>
+				{children}
+			</div>
+		);
+	},
+);
+
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 	(
 		{ children, variant, size, className, icon, noIcon = false, ...props },
@@ -115,7 +130,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 		};
 
 		const innerContent = (
-			<span className="flex">
+			<span className="flex w-full">
 				{/* if icon is explicitly passed as null then dont render anything */}
 				{/* if icon prop is not passed then render the default icon for the variant */}
 				{/* if icon is passed render said icon */}
@@ -140,4 +155,4 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 	},
 );
 
-export { Alert, AlertTitle, AlertDescription };
+export { Alert, AlertTitle, AlertDescription, AlertFooter };
