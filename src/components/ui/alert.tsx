@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import * as React from "react";
 import { cn } from "../utils/cn";
-import { Button } from "./button";
 
 const alertVariants = cva(
 	"border px-4 py-3 relative rounded-lg max-w-lg min-w-lg w-full",

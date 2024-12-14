@@ -19,7 +19,8 @@ import {
 	Share,
 	User,
 } from "lucide-react";
-import ThemeToggle from "../components/common/theme-toggle";
+
+import ThemeToggle from "@/components/common/theme-toggle";
 import Badge from "../components/ui/badge";
 import { cn } from "../components/utils/cn";
 
@@ -63,7 +64,7 @@ export default function HomePage() {
 					<DialogTrigger asChild>
 						<Button>Open</Button>
 					</DialogTrigger>
-					<DialogContent className="max-w-sm">
+					<DialogContent className="max-w-">
 						<DialogHeader>
 							<DialogTitle>Edit profile</DialogTitle>
 							<DialogDescription>

@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import "@/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
@@ -23,6 +24,7 @@ export default function RootLayout({
 			>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					{children}
+					<Toaster position="bottom-center" />
 				</ThemeProvider>
 			</body>
 		</html>

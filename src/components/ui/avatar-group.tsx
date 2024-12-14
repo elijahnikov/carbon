@@ -47,18 +47,19 @@ type AvatarMoreLabelProps = React.HTMLAttributes<HTMLDivElement> & {
 };
 
 const AvatarMoreLabel = React.forwardRef<AvatarElement, AvatarMoreLabelProps>(
-	({ size, className, children, ...otherProps }, ref) => {
+	({ size, className, label, children, ...otherProps }, ref) => {
 		return (
 			<Avatar
 				ref={ref}
 				asChild={React.isValidElement(children)}
 				className={cn(
-					"aspect-auto h-full bg-surface-200 px-2 font-medium text-white ring-2 ring-background dark:text-white",
+					"aspect-auto h-full bg-card px-2 font-medium text-secondary-foreground dark:text-white",
 					className,
 				)}
 				size={size}
 				{...otherProps}
 			>
+				{!children && <span>{label}</span>}
 				{children}
 			</Avatar>
 		);

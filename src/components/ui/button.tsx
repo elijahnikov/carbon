@@ -11,13 +11,13 @@ const buttonVariants = cva(
 				primary:
 					"bg-primary active:bg-primary-active hover:bg-primary-hover ring-1 ring-inset ring-primary-ring border-primary-border border-b outline-primary-outline text-white",
 				destructive:
-					"bg-destructive active:bg-destructive-active hover:bg-destructive-hover ring-1 ring-inset ring-destructive-ring  border-b border-destructive-border outline-destructive-outline text-white",
+					"bg-destructive active:bg-destructive-active hover:bg-destructive-hover ring-1 ring-inset ring-destructive-border  border-b border-destructive-ring outline-destructive-outline text-white",
 				black:
 					"bg-carbon-dark-100 text-white dark:text-secondary-foreground border-b ring-1 ring-inset ring-carbon-dark-500 border-carbon-dark-300 dark:ring-carbon-dark-300 dark:border-carbon-dark-500 active:bg-carbon-dark-300 hover:bg-carbon-dark-200",
 				secondary:
 					"bg-secondary hover:bg-secondary-hover active:bg-secondary-active text-secondary-foreground",
 				outline:
-					"shadow-sm dark:shadow-sm-dark ring-1 ring-inset dark:ring-carbon-dark-500 ring-carbon-dark-500/20 hover:bg-secondary-hover active:bg-secondary-active bg-transparent text-secondary-foreground",
+					"shadow-sm dark:shadow-sm-dark ring-1 ring-inset dark:ring-carbon-dark-500 ring-carbon-dark-500/20 hover:bg-secondary-hover bg-white dark:bg-carbon-dark-300 active:bg-secondary-active text-secondary-foreground",
 				transparent:
 					"bg-transparent text-secondary-foreground hover:bg-secondary-hover active:bg-secondary-active",
 				link: "p-0 hover:underline hover:text-primary underline-offset-4",
@@ -29,7 +29,7 @@ const buttonVariants = cva(
 			},
 			size: {
 				xs: "text-xs px-1 py-1 leading-4",
-				sm: "text-sm px-2 py-1.5 leading-4",
+				sm: "text-sm px-2 py-2 leading-4",
 				md: "text-md px-3 py-2 leading-5",
 				lg: "text-lg leading-5 px-4 py-2",
 			},
