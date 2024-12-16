@@ -2,6 +2,7 @@
 
 import ThemeToggle from "@/components/common/theme-toggle";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -22,6 +23,8 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Slider } from "@/components/ui/slider";
+import { Switch } from "@/components/ui/switch";
 import {
 	Tooltip,
 	TooltipContent,
@@ -33,12 +36,12 @@ import { toast } from "sonner";
 
 export default function ToastPage() {
 	return (
-		<div className="min-h-screen min-w-screen p-16 flex flex-col items-center justify-center">
+		<div className="min-h-screen gap-4 min-w-screen p-16 flex flex-col items-center justify-center">
 			<ThemeToggle />
-			<div className="flex flex-col gap-2">
-				<Skeleton className="h-12 w-12 rounded-full" />
-				<Skeleton className="h-6 w-[300px] rounded-xl" />
-				<Skeleton className="h-6 w-[200px] rounded-xl" />
+			<Switch />
+			<Checkbox />
+			<div className="w-[200px]">
+				<Slider defaultValue={[50]} max={100} step={10} />
 			</div>
 			{/* <Input placeholder="Search" /> */}
 			<Select>
