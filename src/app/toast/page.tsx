@@ -3,6 +3,25 @@
 import ThemeToggle from "@/components/common/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import {
+	Select,
+	SelectContent,
+	SelectGroup,
+	SelectItem,
+	SelectLabel,
+	SelectSeparator,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
+import {
 	Tooltip,
 	TooltipContent,
 	TooltipProvider,
@@ -15,79 +34,81 @@ export default function ToastPage() {
 	return (
 		<div className="min-h-screen min-w-screen p-16 flex flex-col items-center justify-center">
 			<ThemeToggle />
-			<TooltipProvider>
-				<Tooltip>
-					<TooltipTrigger asChild>
-						<Button
-							onClick={() =>
-								toast.error("You need to log in to continue.", {
-									action: {
-										label: "Log in",
-										onClick: () => {
-											console.log("clicked");
-										},
-									},
-								})
-							}
-						>
-							toast
-						</Button>
-					</TooltipTrigger>
-					<TooltipContent className="flex items-center gap-2">
-						<div className="space-y-2">
-							<div className="text-[13px] font-medium">Tuesday, Aug 13</div>
-							<div className="flex items-center gap-2 text-xs">
-								<svg
-									width="8"
-									height="8"
-									fill="currentColor"
-									viewBox="0 0 8 8"
-									xmlns="http://www.w3.org/2000/svg"
-									className="shrink-0 text-indigo-500"
-									aria-hidden="true"
-								>
-									<circle cx="4" cy="4" r="4"></circle>
-								</svg>
-								<span className="flex grow gap-2">
-									Sales <span className="ml-auto">$40</span>
-								</span>
-							</div>
-							<div className="flex items-center gap-2 text-xs">
-								<svg
-									width="8"
-									height="8"
-									fill="currentColor"
-									viewBox="0 0 8 8"
-									xmlns="http://www.w3.org/2000/svg"
-									className="shrink-0 text-purple-500"
-									aria-hidden="true"
-								>
-									<circle cx="4" cy="4" r="4"></circle>
-								</svg>
-								<span className="flex grow gap-2">
-									Revenue <span className="ml-auto">$74</span>
-								</span>
-							</div>
-							<div className="flex items-center gap-2 text-xs">
-								<svg
-									width="8"
-									height="8"
-									fill="currentColor"
-									viewBox="0 0 8 8"
-									xmlns="http://www.w3.org/2000/svg"
-									className="shrink-0 text-rose-500"
-									aria-hidden="true"
-								>
-									<circle cx="4" cy="4" r="4"></circle>
-								</svg>
-								<span className="flex grow gap-2">
-									Costs <span className="ml-auto">$410</span>
-								</span>
-							</div>
-						</div>
-					</TooltipContent>
-				</Tooltip>
-			</TooltipProvider>
+			{/* <Input placeholder="Search" /> */}
+			<Select>
+				<SelectTrigger className="w-[280px]">
+					<SelectValue placeholder="Select a timezone" />
+				</SelectTrigger>
+				<SelectContent>
+					<SelectGroup>
+						<SelectLabel>North America</SelectLabel>
+						<SelectItem value="est">Eastern Standard Time (EST)</SelectItem>
+						<SelectItem value="cst">Central Standard Time (CST)</SelectItem>
+						<SelectItem value="mst">Mountain Standard Time (MST)</SelectItem>
+						<SelectItem value="pst">Pacific Standard Time (PST)</SelectItem>
+						<SelectItem value="akst">Alaska Standard Time (AKST)</SelectItem>
+						<SelectItem value="hst">Hawaii Standard Time (HST)</SelectItem>
+					</SelectGroup>
+					<SelectGroup>
+						<SelectLabel>Europe & Africa</SelectLabel>
+						<SelectItem value="gmt">Greenwich Mean Time (GMT)</SelectItem>
+						<SelectItem value="cet">Central European Time (CET)</SelectItem>
+						<SelectItem value="eet">Eastern European Time (EET)</SelectItem>
+						<SelectItem value="west">
+							Western European Summer Time (WEST)
+						</SelectItem>
+						<SelectItem value="cat">Central Africa Time (CAT)</SelectItem>
+						<SelectItem value="eat">East Africa Time (EAT)</SelectItem>
+					</SelectGroup>
+					<SelectSeparator />
+					<SelectGroup>
+						<SelectLabel>Asia</SelectLabel>
+						<SelectItem value="msk">Moscow Time (MSK)</SelectItem>
+						<SelectItem value="ist">India Standard Time (IST)</SelectItem>
+						<SelectItem value="cst_china">China Standard Time (CST)</SelectItem>
+						<SelectItem value="jst">Japan Standard Time (JST)</SelectItem>
+						<SelectItem value="kst">Korea Standard Time (KST)</SelectItem>
+						<SelectItem value="ist_indonesia">
+							Indonesia Central Standard Time (WITA)
+						</SelectItem>
+					</SelectGroup>
+					<SelectGroup>
+						<SelectLabel>Australia & Pacific</SelectLabel>
+						<SelectItem value="awst">
+							Australian Western Standard Time (AWST)
+						</SelectItem>
+						<SelectItem value="acst">
+							Australian Central Standard Time (ACST)
+						</SelectItem>
+						<SelectItem value="aest">
+							Australian Eastern Standard Time (AEST)
+						</SelectItem>
+						<SelectItem value="nzst">
+							New Zealand Standard Time (NZST)
+						</SelectItem>
+						<SelectItem value="fjt">Fiji Time (FJT)</SelectItem>
+					</SelectGroup>
+					<SelectGroup>
+						<SelectLabel>South America</SelectLabel>
+						<SelectItem value="art">Argentina Time (ART)</SelectItem>
+						<SelectItem value="bot">Bolivia Time (BOT)</SelectItem>
+						<SelectItem value="brt">Brasilia Time (BRT)</SelectItem>
+						<SelectItem value="clt">Chile Standard Time (CLT)</SelectItem>
+					</SelectGroup>
+				</SelectContent>
+			</Select>
+			Copy
+			<DropdownMenu>
+				<DropdownMenuTrigger>Open</DropdownMenuTrigger>
+				<DropdownMenuContent>
+					<DropdownMenuLabel>My Account</DropdownMenuLabel>
+					<DropdownMenuSeparator />
+					<DropdownMenuItem>Profile</DropdownMenuItem>
+					<DropdownMenuItem>Billing</DropdownMenuItem>
+					<DropdownMenuItem>Team</DropdownMenuItem>
+					<DropdownMenuItem>Subscription</DropdownMenuItem>
+				</DropdownMenuContent>
+			</DropdownMenu>
 		</div>
 	);
 }
