@@ -83,6 +83,16 @@ export default {
 				"overlay-dark":
 					"0px 1px 2px 0px rgba(0, 0, 0, 0.2), 0px 2px 4px 0px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.2), 0px 8px 16px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 1px rgba(0, 0, 0, 0.3)",
 			},
+			animation: {
+				shimmer: "shimmer 1.5s infinite",
+			},
+			keyframes: {
+				shimmer: {
+					"100%": {
+						transform: "translateX(100%)",
+					},
+				},
+			},
 		},
 	},
 	plugins: [require("tailwindcss-animate")],

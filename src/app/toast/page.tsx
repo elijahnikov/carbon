@@ -21,6 +21,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
 	Tooltip,
 	TooltipContent,
@@ -34,6 +35,11 @@ export default function ToastPage() {
 	return (
 		<div className="min-h-screen min-w-screen p-16 flex flex-col items-center justify-center">
 			<ThemeToggle />
+			<div className="flex flex-col gap-2">
+				<Skeleton className="h-12 w-12 rounded-full" />
+				<Skeleton className="h-6 w-[300px] rounded-xl" />
+				<Skeleton className="h-6 w-[200px] rounded-xl" />
+			</div>
 			{/* <Input placeholder="Search" /> */}
 			<Select>
 				<SelectTrigger className="w-[280px]">
