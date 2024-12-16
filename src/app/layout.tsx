@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import "@/styles/globals.css";
 
-import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
@@ -20,7 +20,7 @@ export default function RootLayout({
 	return (
 		<html suppressHydrationWarning lang="en">
 			<body
-				className={`min-h-screen bg-background antialiased ${inter.className}`}
+				className={`min-h-screen bg-background antialiased ${inter.className} ${GeistMono.variable}`}
 			>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					{children}
