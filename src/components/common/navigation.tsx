@@ -19,9 +19,16 @@ const links = [
 
 export default function Navigation() {
 	return (
-		<div className="h-12 w-full border-b flex items-center justify-center">
-			<div className="w-[85%] flex items-center justify-between h-12">
-				<CarbonLogo />
+		<div className="h-12 z-50 bg-background fixed w-full border-b flex items-center justify-center">
+			<div className="w-full px-2 flex items-center justify-between h-12">
+				<Link href="/">
+					<div className="flex items-center gap-2">
+						<CarbonLogo />
+						<p className="text-lg font-bold font-mono uppercase text-secondary-foreground">
+							Carbon
+						</p>
+					</div>
+				</Link>
 				<div className="flex items-center gap-4">
 					{links.map((link) => (
 						<Button

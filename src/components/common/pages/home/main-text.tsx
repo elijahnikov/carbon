@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { logos, variations } from "@/lib/constants";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HyperText } from "../../hyper-text";
 
@@ -65,8 +66,12 @@ export default function MainText() {
 					Radix. Simply copy what you need and ship faster.
 				</div>
 				<div className="flex items-center gap-2">
-					<Button after={<ArrowUpRight />}>Get started</Button>
-					<Button variant={"secondary"}>View components</Button>
+					<Button after={<ArrowUpRight />} asChild>
+						<Link href="/docs/introduction">Get started</Link>
+					</Button>
+					<Button variant={"secondary"} asChild>
+						<Link href="/docs/components">View components</Link>
+					</Button>
 				</div>
 			</div>
 		</div>

@@ -1,3 +1,4 @@
+import Navigation from "@/components/common/navigation";
 import { Toaster } from "@/components/ui/sonner";
 import "@/styles/globals.css";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
 				className={`min-h-screen bg-background antialiased ${inter.className} ${GeistMono.variable}`}
 			>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+					<Navigation />
 					{children}
 					<Toaster position="bottom-center" />
 				</ThemeProvider>
