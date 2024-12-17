@@ -1,4 +1,4 @@
-import Navigation from "@/components/common/pages/navigation";
+import Navigation from "@/components/common/navigation";
 
 export default function LandingLayout({
 	children,

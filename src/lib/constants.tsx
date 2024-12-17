@@ -1,5 +1,5 @@
 export const variations = [
-	"app",
+	"web app",
 	"dashboard",
 	"platform",
 	"marketplace",
@@ -7,7 +7,7 @@ export const variations = [
 	"analytics suite",
 	"SaaS product",
 	"landing page",
-	"ecommerce store",
+	"e-commerce store",
 	"CRM system",
 	"enterprise tool",
 	"startup MVP",
@@ -62,7 +62,7 @@ export const logos = {
 		// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			fill="#ffff"
+			className="dark:fill-white fill-black"
 			width="20"
 			height="20"
 			style={{ marginRight: "3px" }}
@@ -70,7 +70,7 @@ export const logos = {
 		>
 			<path
 				d="M12 25a8 8 0 1 1 0-16v16zM12 0H4v8h8V0zM17 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
-				fill="#ffff"
+				className="dark:fill-white fill-black"
 			/>
 		</svg>
 	),

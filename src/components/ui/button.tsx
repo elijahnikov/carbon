@@ -17,7 +17,7 @@ const buttonVariants = cva(
 				secondary:
 					"bg-secondary hover:bg-secondary-hover active:bg-secondary-active text-secondary-foreground",
 				outline:
-					"shadow-sm dark:shadow-sm-dark ring-1 ring-inset dark:ring-carbon-dark-500 ring-carbon-dark-500/20 hover:bg-secondary-hover bg-white dark:bg-carbon-dark-300 active:bg-secondary-active text-secondary-foreground",
+					"shadow-xs dark:shadow-sm-dark ring-1 ring-inset dark:ring-carbon-dark-500 ring-carbon-dark-500/20 dark:hover:bg-secondary-hover hover:bg-secondary-hover bg-white dark:bg-carbon-dark-300 active:bg-secondary-active text-secondary-foreground",
 				transparent:
 					"bg-transparent text-secondary-foreground hover:bg-secondary-hover active:bg-secondary-active",
 				link: "p-0 hover:underline hover:text-primary underline-offset-4",
