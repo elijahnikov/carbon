@@ -40,7 +40,7 @@ const alertVariants = cva(
 	},
 );
 
-const icons = {
+const icons: Record<string, React.ReactElement<HTMLElement>> = {
 	default: <AlertCircle />,
 	success: <CheckCircle />,
 	error: <AlertTriangle />,
@@ -133,6 +133,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 			return <Component className={iconClasses}>{icon}</Component>;
 		};
 
+		const defaultIcon = icons[variant as keyof typeof icons] ?? <AlertCircle />;
 		const innerContent = (
 			<span className="flex w-full">
 				{/* if icon is explicitly passed as null then dont render anything */}
@@ -141,7 +142,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 				{noIcon
 					? null
 					: typeof icon === "undefined"
-						? renderIcon(icons[variant as keyof typeof icons])
+						? renderIcon(defaultIcon)
 						: renderIcon(icon)}
 				{children && <span className="px-1">{children}</span>}
 			</span>
