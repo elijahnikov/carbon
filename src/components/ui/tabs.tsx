@@ -83,7 +83,7 @@ const Tabs = React.forwardRef<TabsElement, TabsProps>(
 			className={cn(
 				"antialiased",
 				orientation === "vertical" && "flex flex-wrap space-x-6",
-				orientation === "horizontal" && "space-y-6",
+				orientation === "horizontal" && "space-y-3",
 				className,
 			)}
 			orientation={orientation}
