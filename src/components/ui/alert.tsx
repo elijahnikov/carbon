@@ -6,9 +6,7 @@ import {
 	AlertCircle,
 	AlertTriangle,
 	CheckCircle,
-	CircleXIcon,
 	MessageCircle,
-	XIcon,
 } from "lucide-react";
 import * as React from "react";
 import { cn } from "../utils/cn";

@@ -6,7 +6,6 @@ export default function Buttons() {
 	return (
 		<div className="flex flex-col items-center gap-2">
 			<Button
-				variant={"outline"}
 				onClick={() => {
 					toast.success("Invite successfully sent");
 				}}

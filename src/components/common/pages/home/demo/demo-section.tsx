@@ -16,7 +16,7 @@ import Otp from "./otp";
 
 export default function DemoSection() {
 	return (
-		<div className="flex flex-col items-center justify-center">
+		<div className="flex flex-col pb-2 items-center justify-center">
 			<div className="flex gap-4">
 				<div className="flex flex-col flex-end items-end gap-2">
 					<div className="top-3 relative">

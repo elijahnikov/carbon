@@ -82,8 +82,6 @@ export function SidebarNavigation() {
 
 	return (
 		<aside className="w-64 border-r px-6 pt-6 fixed top-12 bottom-0 overflow-y-auto">
-			{/* /docs/introduction */}
-			{pathname}
 			<nav className="gap-4 flex flex-col">
 				{Object.entries(navigationLinks).map(([section, links]) => (
 					<div key={section}>
