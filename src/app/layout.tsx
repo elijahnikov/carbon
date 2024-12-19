@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/sonner";
 import "@/styles/globals.css";
 
 import { GeistMono } from "geist/font/mono";
+import { Provider as JotaiProvider } from "jotai";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
@@ -23,16 +24,18 @@ export default function RootLayout({
 			<body
 				className={`min-h-screen bg-background antialiased ${inter.className} ${GeistMono.variable}`}
 			>
-				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<div
-						className="fixed inset-0 -z-10 pattern-cross dark:pattern-carbon-dark-500 pattern-bg-background 
+				<JotaiProvider>
+					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+						<div
+							className="fixed inset-0 -z-10 pattern-cross dark:pattern-carbon-dark-500 pattern-bg-background 
   pattern-size-4 pattern-opacity-20"
-					/>
+						/>
 
-					<Navigation />
-					{children}
-					<Toaster position="bottom-center" />
-				</ThemeProvider>
+						<Navigation />
+						{children}
+						<Toaster position="bottom-center" />
+					</ThemeProvider>
+				</JotaiProvider>
 			</body>
 		</html>
 	);

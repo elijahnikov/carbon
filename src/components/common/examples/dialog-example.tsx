@@ -52,11 +52,9 @@ export default function Example() {
 
 				<p className="text-center text-xs text-secondary-foreground">
 					By subscribing you agree to our{" "}
-					{/* biome-ignore lint/a11y/useValidAnchor: <explanation> */}
-					<a className="underline hover:no-underline" href="#">
-						Privacy Policy
-					</a>
-					.
+					<p className="underline cursor-pointer hover:no-underline">
+						Privacy Policy.
+					</p>
 				</p>
 			</DialogContent>
 		</Dialog>

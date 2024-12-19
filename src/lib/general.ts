@@ -15,3 +15,25 @@ export async function getExampleSource(filePath: string) {
 		return null;
 	}
 }
+
+export const splitJsxAndImports = (code: string) => {
+	const imports = code.split(/\n\s*\n/)[0];
+	// biome-ignore lint/correctness/noEmptyCharacterClassInRegex: <explanation>
+	const jsxRegex = /return\s*\(\s*([^]*?)\s*\);/;
+	const jsxMatch = code.match(jsxRegex);
+
+	let jsx = "";
+	if (jsxMatch) {
+		const rawJsx = jsxMatch[1];
+		// Remove the first two levels of indentation (8 spaces or 2 tabs)
+		jsx = rawJsx
+			? rawJsx
+					.split("\n")
+					.map((line) => line.replace(/^\t\t|\s{8}/, ""))
+					.join("\n")
+					.trim()
+			: "";
+	}
+
+	return { imports, jsx };
+};

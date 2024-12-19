@@ -7,7 +7,7 @@ export default async function CodeBlock({
 	source,
 	code,
 }: { source?: string; code?: string }) {
-	const file = (await getExampleSource(`src/${source}`)) ?? "";
+	const file = source ? ((await getExampleSource(`src/${source}`)) ?? "") : "";
 
 	const highlighter = await createHighlighter({
 		themes: ["poimandres", "github-light"],

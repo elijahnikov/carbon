@@ -1,3 +1,36 @@
+export const components = [
+	"alert",
+	"avatar",
+	"avatar-group",
+	"badge",
+	"button",
+	"button-group",
+	"card",
+	"checkbox",
+	"dialog",
+	"dropdown-menu",
+	"input",
+	"popover",
+	"select",
+	"skeleton",
+	"slider",
+	"toast",
+	"switch",
+	"textarea",
+	"tooltip",
+	"tabs",
+];
+
+export const comingSoon = [
+	"accordion",
+	"table",
+	"drawer",
+	"spinner",
+	"command",
+	"date-picker",
+	"label",
+];
+
 export const variations = [
 	"web app",
 	"dashboard",

@@ -1,4 +1,4 @@
-import type { components } from "@/components/common/sidebar-navigation";
+import type { components } from "./constants";
 
 type ComponentData = Record<
 	(typeof components)[number],
@@ -8,6 +8,7 @@ type ComponentData = Record<
 		installationSource: string;
 		radixSource?: string;
 		showcaseFileSource: string;
+		basicUsageFileSource?: string;
 		dependencies?: string[];
 		apiReference: ApiReference;
 		examples: Examples;
@@ -29,21 +30,37 @@ type Examples = Array<{
 }>;
 
 export const componentData: ComponentData = {
+	avatar: {
+		title: "Avatar",
+		description: "Displays an avatar to the user.",
+		showcaseFileSource: "components/common/examples/avatar-example.tsx",
+		installationSource: "components/ui/avatar.tsx",
+		dependencies: ["@radix-ui/react-avatar"],
+		apiReference: [],
+		examples: [],
+	},
 	alert: {
 		title: "Alert",
 		description: "Displays important information to the user.",
-		showcaseFileSource: "components/common/examples/alert-example.tsx",
+		showcaseFileSource: "components/common/examples/alert/showcase-example.tsx",
+		basicUsageFileSource:
+			"components/common/examples/alert/showcase-example.tsx",
 		installationSource: "components/ui/alert.tsx",
+		dependencies: ["@radix-ui/react-slot"],
 		apiReference: [],
 		examples: [],
 	},
 	"dropdown-menu": {
 		title: "Dropdown Menu",
 		description: "Displays a menu of options to the user.",
-		showcaseFileSource: "components/common/examples/dropdown-menu-example.tsx",
+		showcaseFileSource:
+			"components/common/examples/dropdown-menu/showcase-example.tsx",
+		basicUsageFileSource:
+			"components/common/examples/dropdown-menu/basic-example.tsx",
 		installationSource: "components/ui/dropdown-menu.tsx",
 		radixSource:
 			"https://www.radix-ui.com/primitives/docs/components/dropdown-menu",
+		dependencies: ["@radix-ui/react-dropdown-menu"],
 		apiReference: [],
 		examples: [],
 	},

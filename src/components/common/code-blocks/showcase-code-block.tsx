@@ -49,7 +49,7 @@ export default async function ShowcaseCodeBlock({
 					</div>
 				</TabsContent>
 				<TabsContent value="code">
-					<div className="relative dark:bg-carbon-dark-300 w-full overflow-auto min-h-[300px] max-h-[300px] rounded-xl dark:shadow-sm-dark ring-1 ring-carbon-dark-500">
+					<div className="relative dark:bg-carbon-dark-300 w-full overflow-auto  max-h-[300px] rounded-xl dark:shadow-sm-dark ring-1 ring-carbon-dark-500">
 						<CopyButton content={file} />
 						<div
 							className="h-full overflow-auto  font-mono text-sm [&>pre]:h-full [&>pre]:!bg-transparent [&>pre]:p-4 [&_code]:break-all"

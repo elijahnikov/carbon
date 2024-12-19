@@ -1,44 +1,12 @@
 "use client";
 
+import { comingSoon, components } from "@/lib/constants";
 import _ from "lodash";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Badge from "../ui/badge";
 import { cn } from "../utils/cn";
-
-export const components = [
-	"alert",
-	"avatar",
-	"avatar-group",
-	"badge",
-	"button",
-	"button-group",
-	"card",
-	"checkbox",
-	"dialog",
-	"dropdown-menu",
-	"input",
-	"popover",
-	"select",
-	"skeleton",
-	"slider",
-	"toast",
-	"switch",
-	"textarea",
-	"tooltip",
-	"tabs",
-];
-
-const comingSoon = [
-	"accordion",
-	"table",
-	"drawer",
-	"spinner",
-	"command",
-	"date-picker",
-	"label",
-];
 
 const allComponents = [
 	...components.map((component) => ({
