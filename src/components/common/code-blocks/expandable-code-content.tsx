@@ -10,15 +10,17 @@ export default function ExpandableCodeContent({
 	html: string;
 	isExpandable: boolean;
 }) {
-	const [isExpanded, setIsExpanded] = useState(false);
+	const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
 	return (
 		<div className="relative">
 			<div
 				className={`h-full overflow-auto font-mono text-sm [&>pre]:!bg-transparent [&>pre]:p-4 [&_code]:break-all ${
-					!isExpanded
-						? "max-h-[300px] pointer-events-none"
-						: "max-h-[600px] pointer-events-auto"
+					isExpandable
+						? !isExpanded
+							? "max-h-[300px] pointer-events-none"
+							: "max-h-[600px] pointer-events-auto"
+						: "max-h-[300px] pointer-events-auto"
 				}`}
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{ __html: html }}

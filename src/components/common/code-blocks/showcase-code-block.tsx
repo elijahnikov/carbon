@@ -1,5 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { getExampleSource } from "@/lib/utils";
+import { getExampleSource } from "@/lib/general";
 import { EyeIcon, TerminalSquareIcon } from "lucide-react";
 import dynamic from "next/dynamic";
 import { createHighlighter } from "shiki";
@@ -43,13 +43,13 @@ export default async function ShowcaseCodeBlock({
 					</TabsTrigger>
 				</TabsList>
 				<TabsContent value="preview">
-					<div className="border relative min-h-[300px] max-h-[300px] flex items-center justify-center rounded-xl p-4">
+					<div className="border relative bg-background min-h-[300px] max-h-[300px] flex items-center justify-center rounded-xl p-4">
 						<CopyButton content={file} />
 						<Component />
 					</div>
 				</TabsContent>
 				<TabsContent value="code">
-					<div className="relative dark:bg-carbon-dark-300 w-full overflow-auto min-h-max max-h-[300px] rounded-xl dark:shadow-sm-dark ring-1 ring-carbon-dark-500">
+					<div className="relative dark:bg-carbon-dark-300 w-full overflow-auto min-h-[300px] max-h-[300px] rounded-xl dark:shadow-sm-dark ring-1 ring-carbon-dark-500">
 						<CopyButton content={file} />
 						<div
 							className="h-full overflow-auto  font-mono text-sm [&>pre]:h-full [&>pre]:!bg-transparent [&>pre]:p-4 [&_code]:break-all"

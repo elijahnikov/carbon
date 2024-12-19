@@ -24,6 +24,11 @@ export default function RootLayout({
 				className={`min-h-screen bg-background antialiased ${inter.className} ${GeistMono.variable}`}
 			>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+					<div
+						className="fixed inset-0 -z-10 pattern-cross dark:pattern-carbon-dark-500 pattern-bg-background 
+  pattern-size-4 pattern-opacity-20"
+					/>
+
 					<Navigation />
 					{children}
 					<Toaster position="bottom-center" />

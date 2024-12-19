@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import Badge from "../ui/badge";
 import { cn } from "../utils/cn";
 
-const components = [
+export const components = [
 	"alert",
 	"avatar",
 	"avatar-group",
@@ -27,11 +27,11 @@ const components = [
 	"switch",
 	"textarea",
 	"tooltip",
+	"tabs",
 ];
 
 const comingSoon = [
 	"accordion",
-	"tabs",
 	"table",
 	"drawer",
 	"spinner",
@@ -81,7 +81,7 @@ export function SidebarNavigation() {
 	const pathname = usePathname();
 
 	return (
-		<aside className="w-64 border-r px-6 pt-6 fixed top-12 bottom-0 overflow-y-auto">
+		<aside className="w-64 bg-background border-r px-6 pt-6 fixed top-12 bottom-0 overflow-y-auto">
 			<nav className="gap-4 flex flex-col">
 				{Object.entries(navigationLinks).map(([section, links]) => (
 					<div key={section}>

@@ -1,4 +1,4 @@
-import { getExampleSource } from "@/lib/utils";
+import { getExampleSource } from "@/lib/general";
 import { createHighlighter } from "shiki";
 import CopyButton from "../component-docs/copy-button";
 import ExpandableCodeContent from "./expandable-code-content";

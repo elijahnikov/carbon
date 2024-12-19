@@ -24,9 +24,6 @@ export default function Navigation() {
 				<Link href="/">
 					<div className="flex items-center gap-2">
 						<CarbonLogo />
-						<p className="text-lg font-bold font-mono uppercase text-secondary-foreground">
-							Carbon
-						</p>
 					</div>
 				</Link>
 				<div className="flex items-center gap-4">
