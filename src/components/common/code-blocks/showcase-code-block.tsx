@@ -43,7 +43,7 @@ export default async function ShowcaseCodeBlock({
 					</TabsTrigger>
 				</TabsList>
 				<TabsContent value="preview">
-					<div className="border relative bg-background min-h-[300px] max-h-[300px] flex items-center justify-center rounded-xl p-4">
+					<div className="border relative bg-background min-h-[300px] max-h-[300px] overflow-auto flex items-center justify-center rounded-xl p-4">
 						<CopyButton content={file} />
 						<Component />
 					</div>

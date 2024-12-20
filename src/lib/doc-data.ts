@@ -1,6 +1,6 @@
 import type { components } from "./constants";
 
-type ComponentData = Record<
+export type ComponentData = Record<
 	(typeof components)[number],
 	{
 		title: string;
@@ -10,21 +10,26 @@ type ComponentData = Record<
 		showcaseFileSource: string;
 		basicUsageFileSource?: string;
 		dependencies?: string[];
-		apiReference: ApiReference;
+		apiReference?: ApiReference;
 		examples: Examples;
 	}
 >;
 
-type ApiReference = Array<{
+type Props = {
 	name: string;
+	tooltip?: string;
 	type: string;
 	default?: string;
-	description: string;
 	required?: boolean;
+};
+export type ApiReference = Array<{
+	title?: string;
+	description?: string;
+	props: Props[];
 }>;
 
-type Examples = Array<{
-	title: string;
+export type Examples = Array<{
+	title?: string;
 	description?: string;
 	source: string;
 }>;
@@ -47,8 +52,40 @@ export const componentData: ComponentData = {
 			"components/common/examples/alert/showcase-example.tsx",
 		installationSource: "components/ui/alert.tsx",
 		dependencies: ["@radix-ui/react-slot"],
-		apiReference: [],
-		examples: [],
+		apiReference: [
+			{
+				title: "<Alert	/>",
+				props: [
+					{
+						name: "variant",
+						type: "'default' | 'error' | 'success' | 'warning' | 'message'",
+						default: "default",
+					},
+					{
+						name: "size",
+						type: "'sm' | 'md' | 'lg'",
+						default: "md",
+					},
+					{
+						name: "icon",
+						type: "React.ReactElement<HTMLElement>",
+						default: undefined,
+					},
+					{
+						name: "noIcon",
+						type: "boolean",
+						default: "false | undefined",
+					},
+				],
+			},
+		],
+		examples: [
+			{
+				description:
+					"The following example shows all variants of the Alert component: `default`, `error`, `success`, `warning`, `message`.",
+				source: "components/common/examples/alert/alert-example.tsx",
+			},
+		],
 	},
 	"dropdown-menu": {
 		title: "Dropdown Menu",
