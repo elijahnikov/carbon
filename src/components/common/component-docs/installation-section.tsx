@@ -19,7 +19,7 @@ export default async function InstallationSection({
 
 	const { imports, jsx } = splitJsxAndImports(basicUsageFile);
 	return (
-		<div className="mt-8">
+		<section id="installation" className="mt-8">
 			<h1 className="text-xl mb-4 font-medium">Installation & Usage</h1>
 			<div className="flex flex-col gap-4">
 				{dependencies && dependencies.length > 0 && (
@@ -61,6 +61,6 @@ export default async function InstallationSection({
 				<CodeBlock code={imports} />
 				<CodeBlock code={jsx} />
 			</div>
-		</div>
+		</section>
 	);
 }

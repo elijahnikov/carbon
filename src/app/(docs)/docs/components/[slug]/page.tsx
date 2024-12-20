@@ -1,4 +1,4 @@
-import ComponentPage from "@/components/common/component-docs/component-page";
+import ComponentPage from "@/components/common/component-docs";
 import { components } from "@/lib/constants";
 import { redirect } from "next/navigation";
 

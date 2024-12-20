@@ -1,18 +1,20 @@
 import type { components } from "./constants";
 
+export type ComponentObject = {
+	title: string;
+	description: string;
+	installationSource: string;
+	radixSource?: string;
+	showcaseFileSource: string;
+	basicUsageFileSource?: string;
+	dependencies?: string[];
+	apiReference?: ApiReference;
+	examples: Examples;
+};
+
 export type ComponentData = Record<
 	(typeof components)[number],
-	{
-		title: string;
-		description: string;
-		installationSource: string;
-		radixSource?: string;
-		showcaseFileSource: string;
-		basicUsageFileSource?: string;
-		dependencies?: string[];
-		apiReference?: ApiReference;
-		examples: Examples;
-	}
+	ComponentObject
 >;
 
 type Props = {
@@ -23,6 +25,7 @@ type Props = {
 	required?: boolean;
 };
 export type ApiReference = Array<{
+	id: string;
 	title?: string;
 	description?: string;
 	props: Props[];
@@ -54,6 +57,7 @@ export const componentData: ComponentData = {
 		dependencies: ["@radix-ui/react-slot"],
 		apiReference: [
 			{
+				id: "alert",
 				title: "<Alert	/>",
 				props: [
 					{
@@ -84,6 +88,12 @@ export const componentData: ComponentData = {
 				description:
 					"The following example shows all variants of the Alert component: `default`, `error`, `success`, `warning`, `message`.",
 				source: "components/common/examples/alert/alert-example.tsx",
+			},
+			{
+				title: "Custom icon",
+				description:
+					"This example shows how to use a custom icon in the Alert component.",
+				source: "components/common/examples/alert/custom-icon-example.tsx",
 			},
 		],
 	},

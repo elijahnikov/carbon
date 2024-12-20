@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getExampleSource } from "@/lib/general";
+import { getCachedHighlighter } from "@/lib/highighter";
 import { EyeIcon, TerminalSquareIcon } from "lucide-react";
 import dynamic from "next/dynamic";
 import { createHighlighter } from "shiki";
@@ -11,10 +12,7 @@ export default async function ShowcaseCodeBlock({
 	const file = (await getExampleSource(`src/${filePath}`)) ?? "";
 	const Component = dynamic(() => import(`@/${filePath}`));
 
-	const highlighter = await createHighlighter({
-		themes: ["poimandres", "github-light"],
-		langs: ["tsx"],
-	});
+	const highlighter = await getCachedHighlighter();
 	const out = highlighter.codeToHtml(file, {
 		lang: "tsx",
 		themes: {

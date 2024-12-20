@@ -5,13 +5,16 @@ export default function ApiReferenceTable({
 	apiReference,
 }: { apiReference: ApiReference }) {
 	return (
-		<div className="mt-8">
+		<section id="api-reference" className="mt-8">
 			<h1 className="text-xl mb-4 font-medium">API Reference</h1>
 			{apiReference.map((api, index) => (
 				// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 				<div key={index}>
 					{api.title && (
-						<h2 className="text-lg font-semibold text-secondary-foreground">
+						<h2
+							id={api.id}
+							className="text-lg font-semibold text-secondary-foreground"
+						>
 							{api.title}
 						</h2>
 					)}
@@ -69,6 +72,6 @@ export default function ApiReferenceTable({
 					</div>
 				</div>
 			))}
-		</div>
+		</section>
 	);
 }
