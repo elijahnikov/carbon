@@ -6,39 +6,39 @@
 	:root {
 		--border: 0 0% 90%;
 		--background: 0 0% 94%;
-    --card: 0 0% 97%;
-    --input: 0 0% 100%;
+		--card: 0 0% 97%;
+		--input: 0 0% 100%;
 
-    --primary: 218 91% 60%;
-    --primary-hover: 218 90% 64%;
-    --primary-active: 218 88% 67%;
-    --primary-ring: 213 93% 67%;
-    --primary-border: 218 91% 60%;
-    --primary-outline: 221 83% 53%;
-    --primary-foreground: 0 0% 100%;
+		--primary: 218 91% 60%;
+		--primary-hover: 218 90% 64%;
+		--primary-active: 218 88% 67%;
+		--primary-ring: 213 93% 67%;
+		--primary-border: 218 91% 60%;
+		--primary-outline: 221 83% 53%;
+		--primary-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-hover: 0 84% 64%;
-    --destructive-active: 1 82% 67%;
-    --destructive-ring: 0 89% 71%;
-    --destructive-border: 0 94% 82%;
-    --destructive-outline: 0 72% 50%;
-    --destructive-foreground: 0 0% 100%;
+		--destructive: 0 84% 60%;
+		--destructive-hover: 0 84% 64%;
+		--destructive-active: 1 82% 67%;
+		--destructive-ring: 0 89% 71%;
+		--destructive-border: 0 94% 82%;
+		--destructive-outline: 0 72% 50%;
+		--destructive-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 83%;
-    --secondary-hover: 0 0% 85%;
-    --secondary-active: 0 0% 87%;
-    --secondary-foreground: 0 0% 32%
+		--secondary: 0 0% 83%;
+		--secondary-hover: 0 0% 85%;
+		--secondary-active: 0 0% 87%;
+		--secondary-foreground: 0 0% 32%;
 	}
 
 	.dark {
 		--border: 0 0% 18%;
 		--background: 0 0% 10%;
 		--card: 0 0% 14%;
-    --input: 0 0% 7%;
+		--input: 0 0% 7%;
 
-    --primary: 218 91% 60%;
-    --primary-hover: 218 73% 55%;
+		--primary: 218 91% 60%;
+		--primary-hover: 218 73% 55%;
 		--primary-active: 217 59% 50%;
 		--primary-ring: 213 93% 67%;
 		--primary-border: 221 83% 53%;
@@ -53,30 +53,35 @@
 		--destructive-outline: 0 72% 50%;
 		--destructive-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 25%;
-    --secondary-hover: 0 0% 28%;
-    --secondary-active: 0 0% 32%;
-    --secondary-foreground: 0 0% 90%;
+		--secondary: 0 0% 25%;
+		--secondary-hover: 0 0% 28%;
+		--secondary-active: 0 0% 32%;
+		--secondary-foreground: 0 0% 90%;
 	}
 }
 
 html.dark .shiki,
 html.dark .shiki span {
-  color: var(--shiki-dark) !important;
-  background-color: var(--shiki-dark-bg) !important;
-  /* Optional, if you also want font styles */
-  font-style: var(--shiki-dark-font-style) !important;
-  font-weight: var(--shiki-dark-font-weight) !important;
-  text-decoration: var(--shiki-dark-text-decoration) !important;
+	color: var(--shiki-dark) !important;
+	background-color: var(--shiki-dark-bg) !important;
+	/* Optional, if you also want font styles */
+	font-style: var(--shiki-dark-font-style) !important;
+	font-weight: var(--shiki-dark-font-weight) !important;
+	text-decoration: var(--shiki-dark-text-decoration) !important;
 }
 
 .shiki {
-  counter-reset: step;
-  counter-increment: step 0;
-  .line {
-    &::before {
-      counter-increment: step;
-      @apply mr-6 inline-block w-4 border-transparent text-right text-neutral-600 content-[counter(step)];
-    }
-  }
+	counter-reset: step;
+	counter-increment: step 0;
+	.line {
+		&::before {
+			counter-increment: step;
+			@apply mr-6 inline-block w-4 border-transparent text-right text-neutral-600 content-[counter(step)];
+		}
+	}
+}
+
+pre code {
+	font-family: "Geist Mono", monospace;
+	font-size: 13px;
 }

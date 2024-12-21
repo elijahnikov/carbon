@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { cn } from "@/components/utils/cn";
 import type { ComponentObject } from "@/lib/doc-data";
 import { TextIcon } from "lucide-react";
@@ -152,7 +151,7 @@ export default function SectionStepper({
 									? activeButtonClass
 									: "",
 							)}
-							onClick={() => scrollToSection("api-reference")}
+							onClick={() => scrollToSection("examples")}
 						>
 							Examples
 						</div>

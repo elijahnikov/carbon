@@ -57,7 +57,7 @@ const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
 				ref={ref}
 				className={cn(
 					"dark:shadow:none inline-flex flex-wrap items-stretch rounded-[9px] shadow-sm",
-					orientation === "vertical" && "flex-col divide-y",
+					orientation === "vertical" && "flex-col",
 					className,
 				)}
 				{...props}

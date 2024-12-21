@@ -156,7 +156,7 @@ export const componentData: ComponentData = {
 				id: "colors",
 				title: "Colors",
 				description:
-					"The following example shows all color variants of the Badge component: `primary`, `blue`, `green`, `red`, `yellow`, `purple`, `indigo`, `orange`, `pink`, `teal`.",
+					"The following example shows all color variants of the Badge component: `primary` `blue` `green` `red` `yellow` `purple` `indigo` `orange` `pink` `teal`.",
 				source: "components/common/examples/badge/color-example.tsx",
 			},
 			{
@@ -224,15 +224,116 @@ export const componentData: ComponentData = {
 				id: "variants",
 				title: "Variants",
 				description:
-					"The following example shows all variants of the Button component: `primary`, `destructive`, `black`, `secondary`, `outline`, `transparent`, `link`.",
+					"The following example shows all variants of the Button component: `primary` `destructive` `black` `secondary` `outline` `transparent` `link`.",
 				source: "components/common/examples/button/variant-example.tsx",
 			},
 			{
 				id: "icons",
 				title: "Icons",
 				description:
-					"The following example shows how to use an icon on the left or right side of the button.",
+					"The following example shows how to use an icon on the left or right side of the button using the `before` `after` and `isIconOnly` props.",
 				source: "components/common/examples/button/icon-example.tsx",
+			},
+			{
+				id: "disabled",
+				title: "Disabled",
+				description:
+					"The following example shows how to use the `disabled` prop on the button.",
+				source: "components/common/examples/button/disabled-example.tsx",
+			},
+		],
+	},
+	"button-group": {
+		title: "Button Group",
+		description: "Displays a group of buttons to the user.",
+		showcaseFileSource:
+			"components/common/examples/button-group/showcase-example.tsx",
+		installationSource: "components/ui/button-group.tsx",
+		basicUsageFileSource:
+			"components/common/examples/button-group/showcase-example.tsx",
+		apiReference: [
+			{
+				id: "button-group",
+				title: "<ButtonGroup />",
+				props: [
+					{
+						name: "orientation",
+						type: "'horizontal' | 'vertical'",
+						default: "horizontal",
+					},
+					{
+						name: "size",
+						type: "'sm' | 'md' | 'lg'",
+						default: "md",
+					},
+					{
+						name: "disabled",
+						type: "boolean",
+						default: "false",
+					},
+				],
+			},
+			{
+				id: "button-group-item",
+				title: "<ButtonGroupItem />",
+				props: [
+					{
+						name: "variant",
+						type: "'primary' | 'destructive' | 'black' | 'secondary' | 'outline' | 'transparent' | 'link'",
+						default: "primary",
+					},
+					{
+						name: "isIconOnly",
+						type: "boolean",
+						default: "false",
+					},
+					{
+						name: "before",
+						type: "React.ReactElement<HTMLElement>",
+						default: undefined,
+					},
+					{
+						name: "after",
+						type: "React.ReactElement<HTMLElement>",
+						default: undefined,
+					},
+					{
+						name: "asChild",
+						type: "boolean",
+						default: "false",
+					},
+				],
+			},
+		],
+		examples: [
+			{
+				id: "variants",
+				title: "Variants",
+				description:
+					"The following example shows all variants of the Button Group component: `primary` `secondary` `destructive`.",
+				source: "components/common/examples/button-group/variant-example.tsx",
+			},
+			{
+				id: "icons",
+				title: "Icons",
+				description:
+					"The following example shows how to use an icon on the left or right side of the button using the `before` `after` and `isIconOnly` props.",
+				source: "components/common/examples/button-group/icon-example.tsx",
+			},
+			{
+				id: "orientation",
+				title: "Orientation",
+				description:
+					"The following example shows how to use the `orientation` prop on the Button Group component.",
+				source:
+					"components/common/examples/button-group/orientation-example.tsx",
+			},
+			{
+				id: "size",
+				title: "Size",
+				description:
+					"The following example shows how to use the `size` prop on the Button Group component.",
+				source: "components/common/examples/button-group/size-example.tsx",
 			},
 		],
 	},
