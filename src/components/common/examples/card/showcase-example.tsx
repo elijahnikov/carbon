@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { DollarSign } from "lucide-react";
 
-export default function ShowcaseExample() {
+export default function CardExample() {
 	return (
 		<Card className="max-w-sm overflow-hidden">
 			<img

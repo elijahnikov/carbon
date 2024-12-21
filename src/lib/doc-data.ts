@@ -346,6 +346,49 @@ export const componentData: ComponentData = {
 		apiReference: [],
 		examples: [],
 	},
+	checkbox: {
+		title: "Checkbox",
+		description: "Displays a checkbox to the user.",
+		showcaseFileSource:
+			"components/common/examples/checkbox/showcase-example.tsx",
+		installationSource: "components/ui/checkbox.tsx",
+		basicUsageFileSource:
+			"components/common/examples/checkbox/basic-example.tsx",
+		apiReference: [
+			{
+				id: "checkbox",
+				title: "<Checkbox />",
+				props: [
+					{
+						name: "color",
+						type: "'primary' | 'green' | 'red' | 'yellow' | 'teal' | 'orange' | 'purple' | 'gray'",
+						default: "primary",
+					},
+					{
+						name: "size",
+						type: "'sm' | 'md' | 'lg'",
+						default: "md",
+					},
+				],
+			},
+		],
+		examples: [
+			{
+				id: "size",
+				title: "Size",
+				description:
+					"The following example shows how to use the `size` prop on the Checkbox component.",
+				source: "components/common/examples/checkbox/size-example.tsx",
+			},
+			{
+				id: "colors",
+				title: "Colors",
+				description:
+					"The following example shows how to use the `color` prop on the Checkbox component.",
+				source: "components/common/examples/checkbox/color-example.tsx",
+			},
+		],
+	},
 	"dropdown-menu": {
 		title: "Dropdown Menu",
 		description: "Displays a menu of options to the user.",
