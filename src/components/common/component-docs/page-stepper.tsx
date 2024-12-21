@@ -24,7 +24,7 @@ export default function PageStepper({ slug }: { slug: string }) {
 	);
 
 	return (
-		<div className="w-full flex items-center justify-between gap-4">
+		<div className="w-full flex mt-4 items-center justify-between gap-4">
 			<Button variant={"outline"} asChild before={<ChevronLeftIcon />}>
 				<Link href={`/components/${previousComponent}`}>
 					{_.startCase(previousComponent?.replace(/-/g, " ") ?? "")}

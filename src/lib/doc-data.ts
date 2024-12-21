@@ -337,6 +337,15 @@ export const componentData: ComponentData = {
 			},
 		],
 	},
+	card: {
+		title: "Card",
+		description: "Displays a card with content inside.",
+		showcaseFileSource: "components/common/examples/card/showcase-example.tsx",
+		installationSource: "components/ui/card.tsx",
+		basicUsageFileSource: "components/common/examples/card/basic-example.tsx",
+		apiReference: [],
+		examples: [],
+	},
 	"dropdown-menu": {
 		title: "Dropdown Menu",
 		description: "Displays a menu of options to the user.",
