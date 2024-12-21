@@ -25,9 +25,9 @@ export default function MoreExamples({ examples }: { examples: Examples }) {
 			<div className="flex flex-col gap-8">
 				{examples.map((example, index) => (
 					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-					<div key={index}>
-						<div className="mb-2">
-							<h1 className="text-md font-medium">{example.title}</h1>
+					<div key={index} id={example.id}>
+						<div className="mb-4">
+							<h1 className="text-lg mb-2 font-medium">{example.title}</h1>
 							{example.description && (
 								<div className="text-xs font-medium text-secondary-foreground">
 									{renderDescription(example.description)}

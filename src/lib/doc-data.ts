@@ -32,21 +32,27 @@ export type ApiReference = Array<{
 }>;
 
 export type Examples = Array<{
-	title?: string;
+	id: string;
+	title: string;
 	description?: string;
 	source: string;
 }>;
 
 export const componentData: ComponentData = {
+	// AVATAR
 	avatar: {
 		title: "Avatar",
 		description: "Displays an avatar to the user.",
-		showcaseFileSource: "components/common/examples/avatar-example.tsx",
+		showcaseFileSource:
+			"components/common/examples/avatar/showcase-example.tsx",
 		installationSource: "components/ui/avatar.tsx",
+		basicUsageFileSource:
+			"components/common/examples/avatar/showcase-example.tsx",
 		dependencies: ["@radix-ui/react-avatar"],
 		apiReference: [],
 		examples: [],
 	},
+	// ALERT
 	alert: {
 		title: "Alert",
 		description: "Displays important information to the user.",
@@ -54,7 +60,6 @@ export const componentData: ComponentData = {
 		basicUsageFileSource:
 			"components/common/examples/alert/showcase-example.tsx",
 		installationSource: "components/ui/alert.tsx",
-		dependencies: ["@radix-ui/react-slot"],
 		apiReference: [
 			{
 				id: "alert",
@@ -85,15 +90,149 @@ export const componentData: ComponentData = {
 		],
 		examples: [
 			{
+				id: "variants",
+				title: "Variants",
 				description:
 					"The following example shows all variants of the Alert component: `default`, `error`, `success`, `warning`, `message`.",
 				source: "components/common/examples/alert/alert-example.tsx",
 			},
 			{
+				id: "custom-icon",
 				title: "Custom icon",
 				description:
 					"This example shows how to use a custom icon in the Alert component.",
 				source: "components/common/examples/alert/custom-icon-example.tsx",
+			},
+		],
+	},
+	// BADGE
+	badge: {
+		title: "Badge",
+		description: "Displays a badge to the user.",
+		showcaseFileSource: "components/common/examples/badge/showcase-example.tsx",
+		installationSource: "components/ui/badge.tsx",
+		basicUsageFileSource:
+			"components/common/examples/badge/showcase-example.tsx",
+		apiReference: [
+			{
+				id: "badge",
+				title: "<Badge />",
+				props: [
+					{
+						name: "variant",
+						type: "'primary' | 'green' | 'yellow' | 'red' | 'purple' | 'blue' | 'indigo' | 'orange' | 'pink' | 'teal'",
+						default: "primary",
+					},
+					{
+						name: "size",
+						type: "'sm' | 'md' | 'lg'",
+						default: "md",
+					},
+					{
+						name: "shape",
+						type: "'rounded' | 'pill'",
+						default: "rounded",
+					},
+					{
+						name: "stroke",
+						type: "boolean",
+						default: "true",
+					},
+					{
+						name: "before",
+						type: "React.ReactElement<HTMLElement>",
+						default: undefined,
+					},
+					{
+						name: "after",
+						type: "React.ReactElement<HTMLElement>",
+						default: undefined,
+					},
+				],
+			},
+		],
+		examples: [
+			{
+				id: "colors",
+				title: "Colors",
+				description:
+					"The following example shows all color variants of the Badge component: `primary`, `blue`, `green`, `red`, `yellow`, `purple`, `indigo`, `orange`, `pink`, `teal`.",
+				source: "components/common/examples/badge/color-example.tsx",
+			},
+			{
+				id: "icons",
+				title: "Icons",
+				description:
+					"The following example shows how to use an icon on the left or right side of the badge.",
+				source: "components/common/examples/badge/icon-example.tsx",
+			},
+		],
+	},
+	button: {
+		title: "Button",
+		description: "Displays a button to the user.",
+		showcaseFileSource:
+			"components/common/examples/button/showcase-example.tsx",
+		installationSource: "components/ui/button.tsx",
+		basicUsageFileSource:
+			"components/common/examples/button/showcase-example.tsx",
+		apiReference: [
+			{
+				id: "button",
+				title: "<Button />",
+				props: [
+					{
+						name: "variant",
+						type: "'primary' | 'destructive' | 'black' | 'secondary' | 'outline' | 'transparent' | 'link'",
+						default: "primary",
+					},
+					{
+						name: "size",
+						type: "'xs' | 'sm' | 'md' | 'lg'",
+						default: "sm",
+					},
+					{
+						name: "shape",
+						type: "'rounded' | 'square' | 'pill'",
+						default: "rounded",
+					},
+					{
+						name: "isIconOnly",
+						type: "boolean",
+						default: "false",
+					},
+					{
+						name: "before",
+						type: "React.ReactElement<HTMLElement>",
+						default: undefined,
+					},
+					{
+						name: "after",
+						type: "React.ReactElement<HTMLElement>",
+						default: undefined,
+					},
+					{
+						name: "asChild",
+						type: "boolean",
+						default: "false",
+					},
+				],
+			},
+		],
+		examples: [
+			{
+				id: "variants",
+				title: "Variants",
+				description:
+					"The following example shows all variants of the Button component: `primary`, `destructive`, `black`, `secondary`, `outline`, `transparent`, `link`.",
+				source: "components/common/examples/button/variant-example.tsx",
+			},
+			{
+				id: "icons",
+				title: "Icons",
+				description:
+					"The following example shows how to use an icon on the left or right side of the button.",
+				source: "components/common/examples/button/icon-example.tsx",
 			},
 		],
 	},

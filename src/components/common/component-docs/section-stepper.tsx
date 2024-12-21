@@ -7,7 +7,7 @@ import { TextIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const buttonClass =
-	"text-secondary-foreground rounded-none hover:font-medium hover:no-underline dark:hover:text-white hover:text-black cursor-pointer transition-all duration-300";
+	"text-secondary-foreground pl-5 py-2 rounded-none hover:font-medium hover:no-underline dark:hover:text-white hover:text-black cursor-pointer transition-all duration-300";
 const activeButtonClass =
 	"font-medium text-primary border-l-2 border-primary  scale-105 dark:hover:text-primary hover:text-primary";
 
@@ -54,12 +54,22 @@ export default function SectionStepper({
 			const element = document.getElementById(api.id);
 			if (element) observer.observe(element);
 		}
+		for (const example of componentData.examples || []) {
+			const element = document.getElementById(example.id);
+			if (element) observer.observe(element);
+		}
 
 		return () => observer.disconnect();
 	}, [componentData.apiReference, componentData.examples]);
 
 	const isApiSubsection = () => {
 		return componentData.apiReference?.some((api) => api.id === activeSection);
+	};
+
+	const isExampleSubsection = () => {
+		return componentData.examples?.some(
+			(example) => example.id === activeSection,
+		);
 	};
 
 	const scrollToSection = (elementId: string, offset = 70) => {
@@ -79,19 +89,19 @@ export default function SectionStepper({
 				<TextIcon className="size-4" />
 				<p className="text-md font-medium">On this page</p>
 			</div>
-			<div className="flex border-l flex-col items-start">
-				<Button
+			<div className="flex border-l flex-col items-start justify-start">
+				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+				<div
 					className={cn(
 						buttonClass,
 						activeSection === "usage" ? activeButtonClass : "",
 					)}
-					variant={"link"}
 					onClick={() => scrollToSection("usage", 220)}
 				>
 					Usage
-				</Button>
-				<Button
-					variant={"link"}
+				</div>
+				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+				<div
 					className={cn(
 						buttonClass,
 						activeSection === "installation" ? activeButtonClass : "",
@@ -99,49 +109,70 @@ export default function SectionStepper({
 					onClick={() => scrollToSection("installation")}
 				>
 					Installation
-				</Button>
+				</div>
 				{componentData.apiReference && (
 					<div>
-						<Button
+						{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+						<div
 							className={cn(
 								buttonClass,
 								activeSection === "api-reference" || isApiSubsection()
 									? activeButtonClass
 									: "",
 							)}
-							variant={"link"}
 							onClick={() => scrollToSection("api-reference")}
 						>
 							API Reference
-						</Button>
+						</div>
 						<div className="flex flex-col">
 							{componentData.apiReference.map((api) => (
-								<Button
+								// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+								<div
 									className={cn(
 										buttonClass,
 										activeSection === api.id ? activeButtonClass : "",
+										"text-left justify-start",
 									)}
-									variant={"link"}
 									key={api.id}
 									onClick={() => scrollToSection(api.id)}
 								>
-									{api.title}
-								</Button>
+									<p className="pl-6">{api.title}</p>
+								</div>
 							))}
 						</div>
 					</div>
 				)}
 				{componentData.examples && (
-					<Button
-						className={cn(
-							buttonClass,
-							activeSection === "examples" ? activeButtonClass : "",
-						)}
-						variant={"link"}
-						onClick={() => scrollToSection("examples")}
-					>
-						Examples
-					</Button>
+					<div>
+						{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+						<div
+							className={cn(
+								buttonClass,
+								activeSection === "examples" || isExampleSubsection()
+									? activeButtonClass
+									: "",
+							)}
+							onClick={() => scrollToSection("api-reference")}
+						>
+							Examples
+						</div>
+						<div className="flex flex-col">
+							{componentData.examples.map((example) => (
+								// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+								<div
+									className={cn(
+										buttonClass,
+										activeSection === example.id ? activeButtonClass : "",
+										"text-left justify-start",
+									)}
+									key={example.id}
+									onClick={() => scrollToSection(example.id)}
+								>
+									<p className="pl-6">{example.title}</p>
+								</div>
+							))}
+						</div>
+					</div>
 				)}
 			</div>
 		</div>

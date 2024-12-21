@@ -58,12 +58,18 @@ export default function ApiReferenceTable({
 												</Badge>
 											</td>
 											<td className="p-4">
-												<Badge
-													size={"sm"}
-													className="text-xs border border-neutral-600 font-medium font-mono text-secondary-foreground"
-												>
-													{prop.default ?? "/"}
-												</Badge>
+												{prop.default ? (
+													<Badge
+														size={"sm"}
+														className="text-xs border border-neutral-600 font-medium font-mono text-secondary-foreground"
+													>
+														{prop.default}
+													</Badge>
+												) : (
+													<p className="text-secondary-foreground opacity-20">
+														/
+													</p>
+												)}
 											</td>
 										</tr>
 									))}

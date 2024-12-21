@@ -1,6 +1,5 @@
 import Badge from "@/components/ui/badge";
 import { getExampleSource, splitJsxAndImports } from "@/lib/general";
-import { ChevronDownIcon } from "lucide-react";
 import * as React from "react";
 import CodeBlock from "../code-blocks/code-block";
 import { CommandBlock } from "../code-blocks/command-block";
@@ -38,9 +37,6 @@ export default async function InstallationSection({
 									yarn={`yarn add ${dependency}`}
 									bun={`bun add ${dependency}`}
 								/>
-								{index < dependencies.length - 1 && (
-									<ChevronDownIcon className="w-4 h-4 text-secondary-foreground" />
-								)}
 							</React.Fragment>
 						))}
 					</div>

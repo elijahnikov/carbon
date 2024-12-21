@@ -19,12 +19,13 @@ export async function getExampleSource(filePath: string) {
 export const splitJsxAndImports = (code: string) => {
 	const imports = code.split(/\n\s*\n/)[0];
 	// biome-ignore lint/correctness/noEmptyCharacterClassInRegex: <explanation>
-	const jsxRegex = /return\s*\(\s*([^]*?)\s*\);/;
+	const jsxRegex = /return\s*(?:\(\s*([^]*?)\s*\)|\s+([^;]*));/;
 	const jsxMatch = code.match(jsxRegex);
 
 	let jsx = "";
 	if (jsxMatch) {
-		const rawJsx = jsxMatch[1];
+		// jsxMatch[1] for multi-line (parentheses), jsxMatch[2] for single-line
+		const rawJsx = jsxMatch[1] || jsxMatch[2];
 		// Remove the first two levels of indentation (8 spaces or 2 tabs)
 		jsx = rawJsx
 			? rawJsx
