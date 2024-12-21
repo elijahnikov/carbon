@@ -1,5 +1,7 @@
 import DemoSection from "@/components/common/pages/home/demo/demo-section";
 import MainText from "@/components/common/pages/home/main-text";
+import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function HomePage() {
 	return (
