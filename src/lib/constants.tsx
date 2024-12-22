@@ -17,6 +17,7 @@ export const components = [
 	"slider",
 	"toast",
 	"switch",
+	"spinner",
 	"textarea",
 	"tooltip",
 	"tabs",
@@ -26,7 +27,6 @@ export const comingSoon = [
 	"accordion",
 	"table",
 	"drawer",
-	"spinner",
 	"command",
 	"date-picker",
 ];

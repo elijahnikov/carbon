@@ -813,4 +813,22 @@ export const componentData: ComponentData = {
 			},
 		],
 	},
+	spinner: {
+		title: "Spinner",
+		description: "Displays a spinner to the user, indicating loading state.",
+		showcaseFileSource:
+			"components/common/examples/spinner/showcase-example.tsx",
+		installationSource: "components/ui/spinner.tsx",
+		basicUsageFileSource:
+			"components/common/examples/spinner/showcase-example.tsx",
+		examples: [
+			{
+				id: "size",
+				title: "Size",
+				description:
+					"The following example shows how to use the `size` prop on the Spinner component.",
+				source: "components/common/examples/spinner/size-example.tsx",
+			},
+		],
+	},
 };
