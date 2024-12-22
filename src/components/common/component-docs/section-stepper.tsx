@@ -83,10 +83,10 @@ export default function SectionStepper({
 		}
 	};
 	return (
-		<div className="hidden  xl:flex fixed top-24 right-8 flex-col gap-2 text-sm">
+		<div className="hidden  min-w-[260px] max-w-[300px] xl:flex fixed top-24 right-8 flex-col gap-2 text-sm">
 			<div className="flex items-center gap-2">
 				<TextIcon className="size-4" />
-				<p className="text-md font-medium">On this page</p>
+				<p className="text-sm font-medium">On this page</p>
 			</div>
 			<div className="flex border-l flex-col items-start justify-start overflow-y-auto">
 				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}

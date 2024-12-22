@@ -580,4 +580,70 @@ export const componentData: ComponentData = {
 			},
 		],
 	},
+	input: {
+		title: "Input",
+		description: "Displays an input to the user.",
+		showcaseFileSource: "components/common/examples/input/showcase-example.tsx",
+		installationSource: "components/ui/input.tsx",
+		basicUsageFileSource:
+			"components/common/examples/input/showcase-example.tsx",
+		apiReference: [
+			{
+				id: "input",
+				title: "<Input />",
+				props: [
+					{
+						name: "label",
+						type: "string",
+						default: "undefined",
+					},
+					{
+						name: "required",
+						type: "boolean",
+						default: "false",
+					},
+					{
+						name: "disabled",
+						type: "boolean",
+						default: "false",
+					},
+					{
+						name: "tooltip",
+						type: "React.ReactNode",
+						default: "undefined",
+					},
+				],
+			},
+		],
+		examples: [
+			{
+				id: "label",
+				title: "Label",
+				description:
+					"The following example shows how to use the `label` prop on the Input component to show more information about the input.",
+				source: "components/common/examples/input/label-example.tsx",
+			},
+			{
+				id: "required",
+				title: "Required",
+				description:
+					"The following example shows how to use the `required` prop on the Input component to show a required indicator.",
+				source: "components/common/examples/input/required-example.tsx",
+			},
+			{
+				id: "tooltip",
+				title: "Tooltip",
+				description:
+					"The following example shows how to use the `tooltip` prop on the Input component to show a tooltip. The tooltip prop must be used in tandem with the `label` prop.",
+				source: "components/common/examples/input/tooltip-example.tsx",
+			},
+			{
+				id: "disabled",
+				title: "Disabled",
+				description:
+					"The following example shows how to use the `disabled` prop on the Input component to disable the input.",
+				source: "components/common/examples/input/disabled-example.tsx",
+			},
+		],
+	},
 };
