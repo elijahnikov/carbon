@@ -701,4 +701,36 @@ export const componentData: ComponentData = {
 			},
 		],
 	},
+	popover: {
+		title: "Popover",
+		description: "Displays a popover to the user.",
+		showcaseFileSource:
+			"components/common/examples/popover/showcase-example.tsx",
+		installationSource: "components/ui/popover.tsx",
+		basicUsageFileSource:
+			"components/common/examples/popover/basic-example.tsx",
+		dependencies: ["@radix-ui/react-popover"],
+		radixSource: "https://www.radix-ui.com/primitives/docs/components/popover",
+		apiReference: [
+			{
+				id: "popover",
+				title: "<Popover />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/popover#root",
+			},
+			{
+				id: "popover-trigger",
+				title: "<PopoverTrigger />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/popover#trigger",
+			},
+			{
+				id: "popover-content",
+				title: "<PopoverContent />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/popover#content",
+			},
+		],
+		examples: [],
+	},
 };
