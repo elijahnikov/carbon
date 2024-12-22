@@ -6,9 +6,9 @@ import { TextIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const buttonClass =
-	"text-secondary-foreground pl-5 py-2 rounded-none hover:font-medium hover:no-underline dark:hover:text-white hover:text-black cursor-pointer transition-all duration-300";
+	"text-secondary-foreground text-xs pl-5 py-1.5 rounded-none hover:font-medium hover:no-underline dark:hover:text-white hover:text-black cursor-pointer transition-all duration-300";
 const activeButtonClass =
-	"font-medium text-primary border-l-2 border-primary  scale-105 dark:hover:text-primary hover:text-primary";
+	"font-medium text-primary border-l-2 border-primary dark:hover:text-primary hover:text-primary";
 
 export default function SectionStepper({
 	componentData,
@@ -83,12 +83,12 @@ export default function SectionStepper({
 		}
 	};
 	return (
-		<div className="hidden xl:flex fixed top-24 right-32 flex-col gap-2 text-sm">
+		<div className="hidden  xl:flex fixed top-24 right-8 flex-col gap-2 text-sm">
 			<div className="flex items-center gap-2">
 				<TextIcon className="size-4" />
 				<p className="text-md font-medium">On this page</p>
 			</div>
-			<div className="flex border-l flex-col items-start justify-start">
+			<div className="flex border-l flex-col items-start justify-start overflow-y-auto">
 				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 				<div
 					className={cn(
@@ -135,7 +135,7 @@ export default function SectionStepper({
 									key={api.id}
 									onClick={() => scrollToSection(api.id)}
 								>
-									<p className="pl-6">{api.title}</p>
+									<p className="pl-4">{api.title}</p>
 								</div>
 							))}
 						</div>
@@ -167,7 +167,7 @@ export default function SectionStepper({
 									key={example.id}
 									onClick={() => scrollToSection(example.id)}
 								>
-									<p className="pl-6">{example.title}</p>
+									<p className="pl-4">{example.title}</p>
 								</div>
 							))}
 						</div>

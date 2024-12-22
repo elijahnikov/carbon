@@ -450,7 +450,134 @@ export const componentData: ComponentData = {
 		radixSource:
 			"https://www.radix-ui.com/primitives/docs/components/dropdown-menu",
 		dependencies: ["@radix-ui/react-dropdown-menu"],
-		apiReference: [],
-		examples: [],
+		apiReference: [
+			{
+				id: "dropdown-menu",
+				title: "<DropdownMenu />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#root",
+			},
+			{
+				id: "dropdown-menu-trigger",
+				title: "<DropdownMenuTrigger />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#trigger",
+			},
+			{
+				id: "dropdown-menu-content",
+				title: "<DropdownMenuContent />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#content",
+			},
+			{
+				id: "dropdown-menu-item",
+				title: "<DropdownMenuItem />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#item",
+			},
+			{
+				id: "dropdown-menu-group",
+				title: "<DropdownMenuGroup />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#group",
+			},
+			{
+				id: "dropdown-menu-label",
+				title: "<DropdownMenuLabel />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#label",
+			},
+			{
+				id: "dropdown-menu-shortcut",
+				title: "<DropdownMenuShortcut />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#shortcut",
+			},
+			{
+				id: "dropdown-menu-sub",
+				title: "<DropdownMenuSub />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#sub",
+			},
+			{
+				id: "dropdown-menu-sub-trigger",
+				title: "<DropdownMenuSubTrigger />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#subtrigger",
+			},
+			{
+				id: "dropdown-menu-sub-content",
+				title: "<DropdownMenuSubContent />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#subcontent",
+			},
+			{
+				id: "dropdown-menu-portal",
+				title: "<DropdownMenuPortal />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#portal",
+			},
+			{
+				id: "dropdown-menu-separator",
+				title: "<DropdownMenuSeparator />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#separator",
+			},
+			{
+				id: "dropdown-menu-radio-group",
+				title: "<DropdownMenuRadioGroup />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#radiogroup",
+			},
+			{
+				id: "dropdown-menu-radio-item",
+				title: "<DropdownMenuRadioItem />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#radioitem",
+			},
+			{
+				id: "dropdown-menu-checkbox-item",
+				title: "<DropdownMenuCheckboxItem />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dropdown-menu#checkboxitem",
+			},
+		],
+		examples: [
+			{
+				id: "checkbox",
+				title: "Checkbox",
+				description:
+					"The following example shows how to render a checkbox item in the Dropdown Menu component.",
+				source: "components/common/examples/dropdown-menu/checkbox-example.tsx",
+			},
+			{
+				id: "radio",
+				title: "Radio",
+				description:
+					"The following example shows how to render a radio item in the Dropdown Menu component.",
+				source: "components/common/examples/dropdown-menu/radio-example.tsx",
+			},
+			{
+				id: "disabled",
+				title: "Disabled",
+				description:
+					"The following example shows how to render a disabled item in the Dropdown Menu component.",
+				source: "components/common/examples/dropdown-menu/disabled-example.tsx",
+			},
+			{
+				id: "shortcut",
+				title: "Shortcut",
+				description:
+					"The following example shows how to render a shortcut key for a Dropdown Menu Item.",
+				source: "components/common/examples/dropdown-menu/shortcut-example.tsx",
+			},
+			{
+				id: "icon",
+				title: "Icon",
+				description:
+					"The following example shows how to render an icon in a Dropdown Menu Item.",
+				source: "components/common/examples/dropdown-menu/icon-example.tsx",
+			},
+		],
 	},
 };
