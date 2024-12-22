@@ -4,6 +4,10 @@ export type ComponentObject = {
 	title: string;
 	description: string;
 	installationSource: string;
+	extraInstallationSource?: {
+		fileName: string;
+		code: string;
+	};
 	radixSource?: string;
 	showcaseFileSource: string;
 	basicUsageFileSource?: string;
@@ -768,5 +772,28 @@ export const componentData: ComponentData = {
 					"https://www.radix-ui.com/primitives/docs/components/select#item",
 			},
 		],
+	},
+	skeleton: {
+		title: "Skeleton",
+		description:
+			"Displays a skeleton to the user, indicating that content is loading.",
+		showcaseFileSource:
+			"components/common/examples/skeleton/showcase-example.tsx",
+		extraInstallationSource: {
+			code: `animation: {
+				shimmer: "shimmer 1.5s infinite",
+			},
+			keyframes: {
+				shimmer: {
+					"100%": {
+						transform: "translateX(100%)",
+					},
+				},
+			},`,
+			fileName: "tailwind.config.ts",
+		},
+		installationSource: "components/ui/skeleton.tsx",
+		basicUsageFileSource:
+			"components/common/examples/skeleton/showcase-example.tsx",
 	},
 };

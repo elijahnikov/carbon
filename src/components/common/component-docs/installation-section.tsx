@@ -1,5 +1,9 @@
 import Badge from "@/components/ui/badge";
-import { getExampleSource, splitJsxAndImports } from "@/lib/general";
+import {
+	getExampleSource,
+	indentCode,
+	splitJsxAndImports,
+} from "@/lib/general";
 import * as React from "react";
 import CodeBlock from "../code-blocks/code-block";
 import { CommandBlock } from "../code-blocks/command-block";
@@ -8,10 +12,16 @@ export default async function InstallationSection({
 	dependencies,
 	installationSource,
 	basicUsageFileSource,
+	extraInstallationSource,
 }: {
 	dependencies?: string[];
 	installationSource: string;
 	basicUsageFileSource: string;
+	extraInstallationSource?: {
+		code: string;
+		fileName: string;
+		highlightedLines?: number[];
+	};
 }) {
 	const basicUsageFile =
 		(await getExampleSource(`src/${basicUsageFileSource}`)) ?? "";
@@ -47,6 +57,13 @@ export default async function InstallationSection({
 						Copy & paste the following code into your project.
 					</p>
 				</div>
+				{extraInstallationSource && (
+					<CodeBlock
+						fileName={extraInstallationSource.fileName}
+						highlightedLines={extraInstallationSource.highlightedLines}
+						code={indentCode(extraInstallationSource.code)}
+					/>
+				)}
 				<CodeBlock source={`${installationSource}`} />
 				<div className="inline-flex items-center gap-2">
 					<Badge>{dependencies && dependencies.length > 0 ? 3 : 2}</Badge>

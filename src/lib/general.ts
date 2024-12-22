@@ -38,3 +38,11 @@ export const splitJsxAndImports = (code: string) => {
 
 	return { imports, jsx };
 };
+
+export const indentCode = (code: string) => {
+	return code
+		.split("\n")
+		.map((line) => line.replace(/^\t\t|\s{8}/, ""))
+		.join("\n")
+		.trim();
+};

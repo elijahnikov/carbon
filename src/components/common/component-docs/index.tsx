@@ -34,6 +34,7 @@ export default async function ComponentPage({ slug }: ComponentPageProps) {
 					dependencies={component.dependencies}
 					installationSource={component.installationSource}
 					basicUsageFileSource={component.basicUsageFileSource ?? ""}
+					extraInstallationSource={component.extraInstallationSource}
 				/>
 				{component.apiReference && component.apiReference.length > 0 && (
 					<ApiReferenceTable
