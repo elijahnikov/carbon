@@ -9,7 +9,7 @@ export type ComponentObject = {
 	basicUsageFileSource?: string;
 	dependencies?: string[];
 	apiReference?: ApiReference;
-	examples: Examples;
+	examples?: Examples;
 };
 
 export type ComponentData = Record<
@@ -731,6 +731,42 @@ export const componentData: ComponentData = {
 					"https://www.radix-ui.com/primitives/docs/components/popover#content",
 			},
 		],
-		examples: [],
+	},
+	select: {
+		title: "Select",
+		description: "Displays a select input to the user.",
+		showcaseFileSource:
+			"components/common/examples/select/showcase-example.tsx",
+		installationSource: "components/ui/select.tsx",
+		basicUsageFileSource:
+			"components/common/examples/select/showcase-example.tsx",
+		dependencies: ["@radix-ui/react-select"],
+		radixSource: "https://www.radix-ui.com/primitives/docs/components/select",
+		apiReference: [
+			{
+				id: "select",
+				title: "<Select />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/select#root",
+			},
+			{
+				id: "select-trigger",
+				title: "<SelectTrigger />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/select#trigger",
+			},
+			{
+				id: "select-content",
+				title: "<SelectContent />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/select#content",
+			},
+			{
+				id: "select-item",
+				title: "<SelectItem />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/select#item",
+			},
+		],
 	},
 };
