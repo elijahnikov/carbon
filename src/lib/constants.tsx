@@ -10,6 +10,7 @@ export const components = [
 	"dialog",
 	"dropdown-menu",
 	"input",
+	"label",
 	"popover",
 	"select",
 	"skeleton",
@@ -28,7 +29,6 @@ export const comingSoon = [
 	"spinner",
 	"command",
 	"date-picker",
-	"label",
 ];
 
 export const variations = [

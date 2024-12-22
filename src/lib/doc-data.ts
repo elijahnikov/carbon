@@ -585,6 +585,7 @@ export const componentData: ComponentData = {
 		description: "Displays an input to the user.",
 		showcaseFileSource: "components/common/examples/input/showcase-example.tsx",
 		installationSource: "components/ui/input.tsx",
+		dependencies: ["@radix-ui/react-tooltip", "@radix-ui/react-label"],
 		basicUsageFileSource:
 			"components/common/examples/input/showcase-example.tsx",
 		apiReference: [
@@ -643,6 +644,60 @@ export const componentData: ComponentData = {
 				description:
 					"The following example shows how to use the `disabled` prop on the Input component to disable the input.",
 				source: "components/common/examples/input/disabled-example.tsx",
+			},
+		],
+	},
+	label: {
+		title: "Label",
+		description: "Displays a label to the user.",
+		showcaseFileSource: "components/common/examples/label/showcase-example.tsx",
+		installationSource: "components/ui/label.tsx",
+		basicUsageFileSource:
+			"components/common/examples/label/showcase-example.tsx",
+		apiReference: [
+			{
+				id: "label",
+				title: "<Label />",
+				props: [
+					{
+						name: "required",
+						type: "boolean",
+						default: "false",
+					},
+					{
+						name: "tooltip",
+						type: "React.ReactNode",
+						default: "undefined",
+					},
+					{
+						name: "disabled",
+						type: "boolean",
+						default: "false",
+					},
+				],
+			},
+		],
+		examples: [
+			{
+				id: "required",
+				title: "Required",
+				description:
+					"The following example shows how to use the `required` prop on the Label component to show a required indicator.",
+				source: "components/common/examples/label/required-example.tsx",
+			},
+			{
+				id: "tooltip",
+				title: "Tooltip",
+				description:
+					"The following example shows how to use the `tooltip` prop on the Label component to show a tooltip.",
+				source: "components/common/examples/label/tooltip-example.tsx",
+			},
+			{
+				id: "disabled",
+				title: "Disabled",
+				description:
+					"The following example shows how to use the `disabled` prop on the Label component to disable the label.",
+				source: "components/common/examples/label/disabled-example.tsx",
 			},
 		],
 	},
