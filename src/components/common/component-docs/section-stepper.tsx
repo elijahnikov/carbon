@@ -141,7 +141,7 @@ export default function SectionStepper({
 						</div>
 					</div>
 				)}
-				{componentData.examples && (
+				{componentData.examples && componentData.examples.length > 0 && (
 					<div>
 						{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 						<div

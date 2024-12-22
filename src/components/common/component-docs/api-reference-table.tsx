@@ -1,9 +1,15 @@
 import Badge from "@/components/ui/badge";
 import type { ApiReference } from "@/lib/doc-data";
+import { ArrowUpRightIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function ApiReferenceTable({
 	apiReference,
-}: { apiReference: ApiReference }) {
+	radixSource,
+}: {
+	apiReference: ApiReference;
+	radixSource?: string;
+}) {
 	return (
 		<section id="api-reference" className="mt-8">
 			<h1 className="text-xl mb-4 font-medium">API Reference</h1>
@@ -14,7 +20,7 @@ export default function ApiReferenceTable({
 						{api.title && (
 							<h2
 								id={api.id}
-								className="text-lg font-semibold text-secondary-foreground"
+								className="text-md font-medium text-secondary-foreground"
 							>
 								{api.title}
 							</h2>
@@ -24,20 +30,34 @@ export default function ApiReferenceTable({
 								{api.description}
 							</p>
 						)}
-						<div className="border mt-2 dark:bg-carbon-dark-200 rounded-xl dark:shadow-sm-dark ring-1 ring-carbon-dark-500 overflow-hidden">
-							<table className="w-full">
-								<thead className="dark:bg-carbon-dark-400">
-									<tr>
-										<th className="py-2 px-4 font-medium text-left">Name</th>
-										<th className="py-2 px-4 font-medium text-left">Type</th>
-										<th className="py-2 px-4 font-medium text-left">
-											Description
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									{api.props.length > 0 &&
-										api.props.map((prop) => (
+						{api.radixReference && (
+							<div className="text-sm flex items-center gap-1 text-neutral-400">
+								Extends Radix{" "}
+								<Link
+									target="_blank"
+									href={api.radixReference}
+									className="underline underline-offset-2 text-primary flex items-center"
+								>
+									{api.title}
+									<ArrowUpRightIcon className="size-4" />
+								</Link>{" "}
+								primitive props.
+							</div>
+						)}
+						{api.props && api.props.length > 0 && (
+							<div className="border mt-2 dark:bg-carbon-dark-200 rounded-xl dark:shadow-sm-dark ring-1 ring-carbon-dark-500 overflow-hidden">
+								<table className="w-full">
+									<thead className="dark:bg-carbon-dark-400">
+										<tr>
+											<th className="py-2 px-4 font-medium text-left">Name</th>
+											<th className="py-2 px-4 font-medium text-left">Type</th>
+											<th className="py-2 px-4 font-medium text-left">
+												Description
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										{api.props.map((prop) => (
 											<tr
 												key={prop.name}
 												className="border-t border-carbon-dark-500"
@@ -74,9 +94,10 @@ export default function ApiReferenceTable({
 												</td>
 											</tr>
 										))}
-								</tbody>
-							</table>
-						</div>
+									</tbody>
+								</table>
+							</div>
+						)}
 					</div>
 				))}
 			</div>

@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 export const getSourceUrl = (componentName: string) => {
-	return `https://github.com/elijahnikov/carbon/blob/main/src/components/common/examples/${componentName}-example.tsx`;
+	return `https://github.com/elijahnikov/carbon/blob/main/src/components/ui/${componentName}.tsx`;
 };
 
 export async function getExampleSource(filePath: string) {

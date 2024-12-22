@@ -36,7 +36,10 @@ export default async function ComponentPage({ slug }: ComponentPageProps) {
 					basicUsageFileSource={component.basicUsageFileSource ?? ""}
 				/>
 				{component.apiReference && component.apiReference.length > 0 && (
-					<ApiReferenceTable apiReference={component.apiReference} />
+					<ApiReferenceTable
+						apiReference={component.apiReference}
+						radixSource={component.radixSource}
+					/>
 				)}
 				{component.examples && component.examples.length > 0 && (
 					<MoreExamples examples={component.examples} />

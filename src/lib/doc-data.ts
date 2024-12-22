@@ -28,7 +28,8 @@ export type ApiReference = Array<{
 	id: string;
 	title?: string;
 	description?: string;
-	props: Props[];
+	radixReference?: string;
+	props?: Props[];
 }>;
 
 export type Examples = Array<{
@@ -389,6 +390,55 @@ export const componentData: ComponentData = {
 			},
 		],
 	},
+	dialog: {
+		title: "Dialog",
+		description: "Displays a dialog popup to the user.",
+		showcaseFileSource:
+			"components/common/examples/dialog/showcase-example.tsx",
+		radixSource: "https://www.radix-ui.com/primitives/docs/components/dialog",
+		basicUsageFileSource: "components/common/examples/dialog/basic-example.tsx",
+		installationSource: "components/ui/dialog.tsx",
+		dependencies: ["@radix-ui/react-dialog"],
+		apiReference: [
+			{
+				id: "dialog",
+				title: "<Dialog />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dialog#root",
+			},
+			{
+				id: "dialog-trigger",
+				title: "<DialogTrigger />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dialog#trigger",
+			},
+			{
+				id: "dialog-content",
+				title: "<DialogContent />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dialog#content",
+			},
+			{
+				id: "dialog-close",
+				title: "<DialogClose />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dialog#close",
+			},
+			{
+				id: "dialog-title",
+				title: "<DialogTitle />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dialog#title",
+			},
+			{
+				id: "dialog-description",
+				title: "<DialogDescription />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/dialog#description",
+			},
+		],
+		examples: [],
+	},
 	"dropdown-menu": {
 		title: "Dropdown Menu",
 		description: "Displays a menu of options to the user.",
@@ -400,15 +450,6 @@ export const componentData: ComponentData = {
 		radixSource:
 			"https://www.radix-ui.com/primitives/docs/components/dropdown-menu",
 		dependencies: ["@radix-ui/react-dropdown-menu"],
-		apiReference: [],
-		examples: [],
-	},
-	dialog: {
-		title: "Dialog",
-		description: "Displays a dialog to the user.",
-		showcaseFileSource: "components/common/examples/dialog-example.tsx",
-		installationSource: "components/ui/dialog.tsx",
-		dependencies: ["@radix-ui/react-dialog"],
 		apiReference: [],
 		examples: [],
 	},
