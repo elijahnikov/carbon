@@ -831,4 +831,21 @@ export const componentData: ComponentData = {
 			},
 		],
 	},
+	switch: {
+		title: "Switch",
+		description: "Displays a switch to the user.",
+		showcaseFileSource:
+			"components/common/examples/switch/showcase-example.tsx",
+		installationSource: "components/ui/switch.tsx",
+		dependencies: ["@radix-ui/react-switch"],
+		basicUsageFileSource: "components/common/examples/switch/basic-example.tsx",
+		apiReference: [
+			{
+				id: "switch",
+				title: "<Switch />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/switch#root",
+			},
+		],
+	},
 };
