@@ -796,4 +796,21 @@ export const componentData: ComponentData = {
 		basicUsageFileSource:
 			"components/common/examples/skeleton/showcase-example.tsx",
 	},
+	slider: {
+		title: "Slider",
+		description: "Displays a slider to the user.",
+		showcaseFileSource:
+			"components/common/examples/slider/showcase-example.tsx",
+		installationSource: "components/ui/slider.tsx",
+		dependencies: ["@radix-ui/react-slider"],
+		basicUsageFileSource: "components/common/examples/slider/basic-example.tsx",
+		apiReference: [
+			{
+				id: "slider",
+				title: "<Slider />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/slider#root",
+			},
+		],
+	},
 };
