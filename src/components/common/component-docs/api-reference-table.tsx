@@ -1,4 +1,5 @@
 import Badge from "@/components/ui/badge";
+import { cn } from "@/components/utils/cn";
 import type { ApiReference } from "@/lib/doc-data";
 import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
@@ -13,7 +14,7 @@ export default function ApiReferenceTable({
 	return (
 		<section id="api-reference" className="mt-8">
 			<h1 className="text-xl mb-4 font-medium">API Reference</h1>
-			<div className="flex flex-col gap-4">
+			<div className="flex flex-col gap-6">
 				{apiReference.map((api, index) => (
 					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 					<div key={index}>
@@ -31,7 +32,12 @@ export default function ApiReferenceTable({
 							</p>
 						)}
 						{api.radixReference && (
-							<div className="text-sm flex items-center gap-1 text-neutral-400">
+							<div
+								className={cn(
+									"text-sm flex items-center gap-1 text-neutral-400",
+									api.props && api.props.length > 0 && "mb-4",
+								)}
+							>
 								Extends Radix{" "}
 								<Link
 									target="_blank"

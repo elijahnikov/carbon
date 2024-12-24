@@ -77,23 +77,25 @@ function useTabsContext() {
 }
 
 const Tabs = React.forwardRef<TabsElement, TabsProps>(
-	({ children, className, orientation = "horizontal", ...props }, ref) => (
-		<TabsPrimitive.Root
-			ref={ref}
-			className={cn(
-				"antialiased",
-				orientation === "vertical" && "flex flex-wrap space-x-6",
-				orientation === "horizontal" && "space-y-3",
-				className,
-			)}
-			orientation={orientation}
-			{...props}
-		>
-			<TabsContext.Provider value={{ variant: props.variant }}>
-				{children}
-			</TabsContext.Provider>
-		</TabsPrimitive.Root>
-	),
+	({ children, className, orientation = "horizontal", ...props }, ref) => {
+		return (
+			<TabsPrimitive.Root
+				ref={ref}
+				className={cn(
+					"antialiased",
+					orientation === "vertical" && "flex flex-wrap space-x-6",
+					orientation === "horizontal" && "space-y-6",
+					className,
+				)}
+				orientation={orientation}
+				{...props}
+			>
+				<TabsContext.Provider value={{ variant: props.variant, orientation }}>
+					{children}
+				</TabsContext.Provider>
+			</TabsPrimitive.Root>
+		);
+	},
 );
 
 const TabsList = React.forwardRef<
@@ -171,6 +173,7 @@ const TabsTrigger = React.forwardRef<
 	return (
 		<TabsPrimitive.Trigger
 			ref={ref}
+			asChild={asChild}
 			className={cn(
 				"inline-flex items-center justify-center whitespace-nowrap gap-1 px-3 py-2 text-sm ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
 				tabVariants({ variant }),

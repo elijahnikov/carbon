@@ -848,4 +848,74 @@ export const componentData: ComponentData = {
 			},
 		],
 	},
+	tabs: {
+		title: "Tabs",
+		description:
+			"Displays a set of sections to the user, displaying one at a time.",
+		showcaseFileSource: "components/common/examples/tabs/showcase-example.tsx",
+		installationSource: "components/ui/tabs.tsx",
+		dependencies: ["@radix-ui/react-tabs"],
+		basicUsageFileSource: "components/common/examples/tabs/basic-example.tsx",
+		apiReference: [
+			{
+				id: "tabs",
+				title: "<Tabs />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/tabs#root",
+				props: [
+					{
+						name: "variant",
+						type: "fill | underlined | underlined-fill | pill",
+						default: "underlined",
+					},
+					{
+						name: "orientation",
+						type: "horizontal | vertical",
+						default: "horizontal",
+					},
+				],
+			},
+			{
+				id: "tabs-list",
+				title: "<TabsList />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/tabs#list",
+				props: [
+					{
+						name: "stretch",
+						type: "boolean",
+						default: "false",
+					},
+				],
+			},
+			{
+				id: "tabs-trigger",
+				title: "<TabsTrigger />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/tabs#trigger",
+			},
+			{
+				id: "tabs-content",
+				title: "<TabsContent />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/tabs#content",
+			},
+		],
+		examples: [
+			{
+				id: "variant",
+				title: "Variant",
+				description:
+					"The following example shows how to use the `variant` prop on the Tabs component to change the appearance of the tabs.",
+				source: "components/common/examples/tabs/variant-example.tsx",
+			},
+			{
+				id: "orientation",
+				title: "Orientation",
+				description:
+					"The following example shows how to use the `orientation` prop on the Tabs component to change the orientation of the tabs.",
+				source: "components/common/examples/tabs/orientation-example.tsx",
+			},
+		],
+	},
 };
