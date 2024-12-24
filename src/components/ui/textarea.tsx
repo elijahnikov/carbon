@@ -4,7 +4,7 @@ import { Label } from "./label";
 
 export type InputProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
 	label?: string;
-	required?: string;
+	required?: boolean;
 	disabled?: boolean;
 	tooltip?: React.ReactNode;
 };

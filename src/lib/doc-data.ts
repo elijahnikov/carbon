@@ -918,4 +918,71 @@ export const componentData: ComponentData = {
 			},
 		],
 	},
+	textarea: {
+		title: "Textarea",
+		description: "Displays a textarea to the user.",
+		showcaseFileSource:
+			"components/common/examples/textarea/showcase-example.tsx",
+		installationSource: "components/ui/textarea.tsx",
+		basicUsageFileSource:
+			"components/common/examples/textarea/showcase-example.tsx",
+		apiReference: [
+			{
+				id: "textarea",
+				title: "<Textarea />",
+				props: [
+					{
+						name: "label",
+						type: "string",
+						default: "undefined",
+					},
+					{
+						name: "required",
+						type: "boolean",
+						default: "false",
+					},
+					{
+						name: "tooltip",
+						type: "React.ReactNode",
+						default: "undefined",
+					},
+					{
+						name: "disabled",
+						type: "boolean",
+						default: "false",
+					},
+				],
+			},
+		],
+		examples: [
+			{
+				id: "label",
+				title: "Label",
+				description:
+					"The following example shows how to use the `label` prop on the Textarea component to display a label.",
+				source: "components/common/examples/textarea/label-example.tsx",
+			},
+			{
+				id: "required",
+				title: "Required",
+				description:
+					"The following example shows how to use the `required` prop on the Textarea component to show a required indicator.",
+				source: "components/common/examples/textarea/required-example.tsx",
+			},
+			{
+				id: "tooltip",
+				title: "Tooltip",
+				description:
+					"The following example shows how to use the `tooltip` prop on the Textarea component to show a tooltip. The tooltip prop must be used in tandem with the `label` prop.",
+				source: "components/common/examples/textarea/tooltip-example.tsx",
+			},
+			{
+				id: "disabled",
+				title: "Disabled",
+				description:
+					"The following example shows how to use the `disabled` prop on the Textarea component to disable the textarea.",
+				source: "components/common/examples/textarea/disabled-example.tsx",
+			},
+		],
+	},
 };
