@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { logos } from "@/lib/constants";
 import { getSourceUrl } from "@/lib/general";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { SocialLoginIcons } from "../pages/home/demo/login";
 
@@ -8,12 +9,12 @@ export default function Header({
 	title,
 	description,
 	slug,
-	radixSource,
+	apiSource,
 }: {
 	title: string;
 	description: string;
 	slug: string;
-	radixSource?: string;
+	apiSource?: string;
 }) {
 	return (
 		<div className="text-left w-full space-y-4">
@@ -30,9 +31,17 @@ export default function Header({
 				>
 					<Link href={getSourceUrl(slug)}>View Source</Link>
 				</Button>
-				{radixSource && (
-					<Button before={logos.radix} variant={"secondary"} asChild>
-						<Link href={radixSource}>Radix</Link>
+				{apiSource && (
+					<Button
+						before={
+							apiSource.includes("radix") ? logos.radix : <ArrowUpRight />
+						}
+						variant={"secondary"}
+						asChild
+					>
+						<Link href={apiSource}>
+							{apiSource.includes("radix") ? "Radix" : "Docs"}
+						</Link>
 					</Button>
 				)}
 			</div>

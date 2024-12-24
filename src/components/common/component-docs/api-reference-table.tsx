@@ -38,7 +38,7 @@ export default function ApiReferenceTable({
 									api.props && api.props.length > 0 && "mb-4",
 								)}
 							>
-								Extends Radix{" "}
+								{api.customLabel ? api.customLabel : "Extends Radix"}
 								<Link
 									target="_blank"
 									href={api.radixReference}
@@ -47,7 +47,7 @@ export default function ApiReferenceTable({
 									{api.title}
 									<ArrowUpRightIcon className="size-4" />
 								</Link>{" "}
-								primitive props.
+								props.
 							</div>
 						)}
 						{api.props && api.props.length > 0 && (

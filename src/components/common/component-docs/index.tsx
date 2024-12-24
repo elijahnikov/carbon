@@ -25,7 +25,7 @@ export default async function ComponentPage({ slug }: ComponentPageProps) {
 					title={component.title}
 					description={component.description}
 					slug={slug}
-					radixSource={component.radixSource}
+					apiSource={component.apiSource}
 				/>
 				<section id="usage">
 					<ShowcaseCodeBlock filePath={`${component.showcaseFileSource}`} />
@@ -39,7 +39,7 @@ export default async function ComponentPage({ slug }: ComponentPageProps) {
 				{component.apiReference && component.apiReference.length > 0 && (
 					<ApiReferenceTable
 						apiReference={component.apiReference}
-						radixSource={component.radixSource}
+						radixSource={component.apiSource}
 					/>
 				)}
 				{component.examples && component.examples.length > 0 && (

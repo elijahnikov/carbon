@@ -8,7 +8,7 @@ export type ComponentObject = {
 		fileName: string;
 		code: string;
 	};
-	radixSource?: string;
+	apiSource?: string;
 	showcaseFileSource: string;
 	basicUsageFileSource?: string;
 	dependencies?: string[];
@@ -33,6 +33,7 @@ export type ApiReference = Array<{
 	title?: string;
 	description?: string;
 	radixReference?: string;
+	customLabel?: string;
 	props?: Props[];
 }>;
 
@@ -399,7 +400,7 @@ export const componentData: ComponentData = {
 		description: "Displays a dialog popup to the user.",
 		showcaseFileSource:
 			"components/common/examples/dialog/showcase-example.tsx",
-		radixSource: "https://www.radix-ui.com/primitives/docs/components/dialog",
+		apiSource: "https://www.radix-ui.com/primitives/docs/components/dialog",
 		basicUsageFileSource: "components/common/examples/dialog/basic-example.tsx",
 		installationSource: "components/ui/dialog.tsx",
 		dependencies: ["@radix-ui/react-dialog"],
@@ -451,7 +452,7 @@ export const componentData: ComponentData = {
 		basicUsageFileSource:
 			"components/common/examples/dropdown-menu/basic-example.tsx",
 		installationSource: "components/ui/dropdown-menu.tsx",
-		radixSource:
+		apiSource:
 			"https://www.radix-ui.com/primitives/docs/components/dropdown-menu",
 		dependencies: ["@radix-ui/react-dropdown-menu"],
 		apiReference: [
@@ -714,7 +715,7 @@ export const componentData: ComponentData = {
 		basicUsageFileSource:
 			"components/common/examples/popover/basic-example.tsx",
 		dependencies: ["@radix-ui/react-popover"],
-		radixSource: "https://www.radix-ui.com/primitives/docs/components/popover",
+		apiSource: "https://www.radix-ui.com/primitives/docs/components/popover",
 		apiReference: [
 			{
 				id: "popover",
@@ -745,7 +746,7 @@ export const componentData: ComponentData = {
 		basicUsageFileSource:
 			"components/common/examples/select/showcase-example.tsx",
 		dependencies: ["@radix-ui/react-select"],
-		radixSource: "https://www.radix-ui.com/primitives/docs/components/select",
+		apiSource: "https://www.radix-ui.com/primitives/docs/components/select",
 		apiReference: [
 			{
 				id: "select",
@@ -982,6 +983,56 @@ export const componentData: ComponentData = {
 				description:
 					"The following example shows how to use the `disabled` prop on the Textarea component to disable the textarea.",
 				source: "components/common/examples/textarea/disabled-example.tsx",
+			},
+		],
+	},
+	toast: {
+		title: "Toast",
+		description: "Displays a toast to the user using the sonner library.",
+		showcaseFileSource: "components/common/examples/toast/showcase-example.tsx",
+		basicUsageFileSource:
+			"components/common/examples/toast/showcase-example.tsx",
+		dependencies: ["sonner"],
+		installationSource: "components/ui/sonner.tsx",
+		apiSource: "https://sonner.emilkowal.ski/docs/api/toast",
+		extraInstallationSource: {
+			code: `export default function RootLayout({
+	children,
+}: Readonly<{ children: React.ReactNode }>) {
+	return (
+				<html suppressHydrationWarning lang="en">
+					<body className="min-h-screen bg-background antialiased">
+						{children}
+						<Toaster position="bottom-center" />
+					</body>
+				</html>
+	);
+}
+`,
+			fileName: "app/layout.tsx",
+		},
+		apiReference: [
+			{
+				id: "toast",
+				title: "<Toast />",
+				customLabel: "Extends Sonner's ",
+				radixReference: "https://sonner.emilkowal.ski/docs/api/toast",
+			},
+		],
+		examples: [
+			{
+				id: "action",
+				title: "Action",
+				description:
+					"The following example shows how to use the `action` prop on the Toast component to add an action to the toast.",
+				source: "components/common/examples/toast/action-example.tsx",
+			},
+			{
+				id: "variants",
+				title: "Variants",
+				description:
+					"The following example shows how to use the `toast` function to display different types of toasts.",
+				source: "components/common/examples/toast/variants-example.tsx",
 			},
 		],
 	},
