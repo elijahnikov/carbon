@@ -1036,4 +1036,41 @@ export const componentData: ComponentData = {
 			},
 		],
 	},
+	tooltip: {
+		title: "Tooltip",
+		description: "Displays a tooltip to the user.",
+		showcaseFileSource:
+			"components/common/examples/tooltip/showcase-example.tsx",
+		installationSource: "components/ui/tooltip.tsx",
+		basicUsageFileSource:
+			"components/common/examples/tooltip/showcase-example.tsx",
+		dependencies: ["@radix-ui/react-tooltip"],
+		apiSource: "https://www.radix-ui.com/primitives/docs/components/tooltip",
+		apiReference: [
+			{
+				id: "tooltip-provider",
+				title: "<TooltipProvider />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/tooltip#provider",
+			},
+			{
+				id: "tooltip",
+				title: "<Tooltip />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/tooltip#root",
+			},
+			{
+				id: "tooltip-trigger",
+				title: "<TooltipTrigger />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/tooltip#trigger",
+			},
+			{
+				id: "tooltip-content",
+				title: "<TooltipContent />",
+				radixReference:
+					"https://www.radix-ui.com/primitives/docs/components/tooltip#content",
+			},
+		],
+	},
 };

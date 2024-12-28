@@ -4,23 +4,25 @@ import _ from "lodash";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
+
 export default function PageStepper({ slug }: { slug: string }) {
-	const currentIndex = components.indexOf(slug);
+	const sortedComponents = [...components].sort();
+	const currentIndex = sortedComponents.indexOf(slug);
 
 	const previousComponent = React.useMemo(
 		() =>
 			currentIndex === 0
-				? components[components.length - 1]
-				: components[currentIndex - 1],
-		[currentIndex],
+				? sortedComponents[sortedComponents.length - 1]
+				: sortedComponents[currentIndex - 1],
+		[currentIndex, sortedComponents],
 	);
 
 	const nextComponent = React.useMemo(
 		() =>
-			currentIndex === components.length - 1
-				? components[0]
-				: components[currentIndex + 1],
-		[currentIndex],
+			currentIndex === sortedComponents.length - 1
+				? sortedComponents[0]
+				: sortedComponents[currentIndex + 1],
+		[currentIndex, sortedComponents],
 	);
 
 	return (
