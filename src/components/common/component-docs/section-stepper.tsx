@@ -6,7 +6,7 @@ import { TextIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const buttonClass =
-	"text-secondary-foreground text-xs pl-5 py-1.5 rounded-none hover:font-medium hover:no-underline dark:hover:text-white hover:text-black cursor-pointer transition-all duration-300";
+	"text-secondary-foreground text-sm pl-5 py-1.5 rounded-none hover:font-medium hover:no-underline dark:hover:text-white hover:text-black cursor-pointer transition-all duration-300";
 const activeButtonClass =
 	"font-medium text-primary border-l-2 border-primary dark:hover:text-primary hover:text-primary";
 
@@ -83,10 +83,10 @@ export default function SectionStepper({
 		}
 	};
 	return (
-		<div className="hidden  min-w-[260px] max-w-[300px] xl:flex fixed top-24 right-8 flex-col gap-2 text-sm">
+		<div className="hidden min-w-[260px] max-w-[300px] xl:flex fixed top-24 right-8 flex-col gap-2">
 			<div className="flex items-center gap-2">
 				<TextIcon className="size-4" />
-				<p className="text-sm font-medium">On this page</p>
+				<p className="text-md font-medium">On this page</p>
 			</div>
 			<div className="flex border-l flex-col items-start justify-start overflow-y-auto">
 				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}

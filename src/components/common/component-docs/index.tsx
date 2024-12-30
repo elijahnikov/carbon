@@ -19,7 +19,7 @@ export default async function ComponentPage({ slug }: ComponentPageProps) {
 	const component = componentData[slug]!;
 
 	return (
-		<div className="flex pb-32 justify-between px-16">
+		<div className="flex pt-8 pb-32 justify-between px-16">
 			<div className="flex flex-col gap-8 w-full min-w-[500px] max-w-[50vw]">
 				<Header
 					title={component.title}

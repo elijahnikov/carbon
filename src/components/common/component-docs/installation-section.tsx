@@ -15,7 +15,7 @@ export default async function InstallationSection({
 	extraInstallationSource,
 }: {
 	dependencies?: string[];
-	installationSource: string;
+	installationSource: string | string[];
 	basicUsageFileSource: string;
 	extraInstallationSource?: {
 		code: string;
@@ -64,7 +64,21 @@ export default async function InstallationSection({
 						code={indentCode(extraInstallationSource.code)}
 					/>
 				)}
-				<CodeBlock source={`${installationSource}`} />
+				{Array.isArray(installationSource) ? (
+					installationSource.map((source, index) => (
+						<CodeBlock
+							fileName={`${source}`}
+							source={`${source}`}
+							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+							key={index}
+						/>
+					))
+				) : (
+					<CodeBlock
+						fileName={`${installationSource}`}
+						source={`${installationSource}`}
+					/>
+				)}
 				<div className="inline-flex items-center gap-2">
 					<Badge>{dependencies && dependencies.length > 0 ? 3 : 2}</Badge>
 					<p className="text-sm font-medium text-secondary-foreground">

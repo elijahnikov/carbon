@@ -3,7 +3,7 @@ import type { components } from "./constants";
 export type ComponentObject = {
 	title: string;
 	description: string;
-	installationSource: string;
+	installationSource: string | string[];
 	extraInstallationSource?: {
 		fileName: string;
 		code: string;
@@ -56,6 +56,33 @@ export const componentData: ComponentData = {
 			"components/common/examples/avatar/showcase-example.tsx",
 		dependencies: ["@radix-ui/react-avatar"],
 		apiReference: [],
+		examples: [],
+	},
+	"avatar-group": {
+		title: "Avatar Group",
+		description: "Displays a group of avatars to the user.",
+		showcaseFileSource:
+			"components/common/examples/avatar-group/showcase-example.tsx",
+		installationSource: [
+			"components/ui/avatar.tsx",
+			"components/ui/avatar-group.tsx",
+		],
+		basicUsageFileSource:
+			"components/common/examples/avatar-group/showcase-example.tsx",
+		dependencies: ["@radix-ui/react-avatar"],
+		apiReference: [
+			{
+				id: "avatar-group",
+				title: "<AvatarGroup />",
+				props: [
+					{
+						name: "size",
+						type: "'sm' | 'md' | 'lg'",
+						default: "md",
+					},
+				],
+			},
+		],
 		examples: [],
 	},
 	// ALERT
@@ -254,7 +281,10 @@ export const componentData: ComponentData = {
 		description: "Displays a group of buttons to the user.",
 		showcaseFileSource:
 			"components/common/examples/button-group/showcase-example.tsx",
-		installationSource: "components/ui/button-group.tsx",
+		installationSource: [
+			"components/ui/button.tsx",
+			"components/ui/button-group.tsx",
+		],
 		basicUsageFileSource:
 			"components/common/examples/button-group/showcase-example.tsx",
 		apiReference: [
@@ -1058,6 +1088,13 @@ export const componentData: ComponentData = {
 				title: "<Tooltip />",
 				radixReference:
 					"https://www.radix-ui.com/primitives/docs/components/tooltip#root",
+				props: [
+					{
+						name: "delayDuration",
+						type: "number",
+						default: "200",
+					},
+				],
 			},
 			{
 				id: "tooltip-trigger",
@@ -1070,6 +1107,18 @@ export const componentData: ComponentData = {
 				title: "<TooltipContent />",
 				radixReference:
 					"https://www.radix-ui.com/primitives/docs/components/tooltip#content",
+				props: [
+					{
+						name: "side",
+						type: "bottom | left | right | top",
+						default: "top",
+					},
+					{
+						name: "sideOffset",
+						type: "number",
+						default: "8",
+					},
+				],
 			},
 		],
 	},
