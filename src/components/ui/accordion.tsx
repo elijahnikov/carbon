@@ -11,8 +11,10 @@ const accordionItemVariants = cva("", {
 	variants: {
 		variant: {
 			line: "border-b",
-			"full-border": "border mt-2 rounded-lg px-3",
+			"full-border":
+				"border-0 dark:ring-1 ring-inset dark:ring-carbon-dark-400 dark:border-t dark:border-carbon-dark-500 mt-2 border-carbon-400 shadow-overlay rounded-xl dark:bg-carbon-dark-300 bg-carbon-100 px-3",
 			table: "border px-3",
+			"table-fill": "px-3",
 		},
 	},
 	defaultVariants: {
@@ -65,7 +67,15 @@ const Accordion = React.forwardRef<AccordionElement, AccordionProps>(
 		ref,
 	) => {
 		return (
-			<AccordionPrimitive.Root ref={ref} className={className} {...props}>
+			<AccordionPrimitive.Root
+				ref={ref}
+				className={cn(
+					variant === "table-fill" &&
+						"border-0 dark:ring-1 ring-inset dark:ring-carbon-dark-400 dark:border-t dark:border-carbon-dark-500 mt-2 border-carbon-400 shadow-overlay rounded-lg dark:bg-carbon-dark-300 bg-carbon-100",
+					className,
+				)}
+				{...props}
+			>
 				<AccordionContext.Provider
 					value={{
 						iconType,
@@ -92,6 +102,7 @@ const AccordionItem = React.forwardRef<
 			className={cn(
 				variant === "table" &&
 					"first-of-type:rounded-t-lg -my-px last-of-type:rounded-b-lg",
+				variant === "table-fill" && "border-b last:border-b-0",
 				accordionItemVariants({ variant }),
 				className,
 			)}
@@ -184,7 +195,9 @@ const AccordionContent = React.forwardRef<
 		className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
 		{...props}
 	>
-		<div className={cn("pb-4 pt-0", className)}>{children}</div>
+		<div className={cn("pb-4 pt-0 text-secondary-foreground", className)}>
+			{children}
+		</div>
 	</AccordionPrimitive.Content>
 ));
 

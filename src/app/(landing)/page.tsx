@@ -78,7 +78,7 @@ export default function HomePage() {
 						type="single"
 						collapsible
 						className="mt-4"
-						variant={"table"}
+						variant={"table-fill"}
 					>
 						<AccordionItem value="item-1">
 							<AccordionTrigger icon={<CommandIcon />}>
@@ -89,13 +89,17 @@ export default function HomePage() {
 							</AccordionContent>
 						</AccordionItem>
 						<AccordionItem value="item-2">
-							<AccordionTrigger>Is it accessible?</AccordionTrigger>
+							<AccordionTrigger icon={<CommandIcon />}>
+								Is it accessible?
+							</AccordionTrigger>
 							<AccordionContent>
 								Yes. It adheres to the WAI-ARIA design pattern.
 							</AccordionContent>
 						</AccordionItem>
 						<AccordionItem value="item-3">
-							<AccordionTrigger>Is it accessible?</AccordionTrigger>
+							<AccordionTrigger icon={<CommandIcon />}>
+								Is it accessible?
+							</AccordionTrigger>
 							<AccordionContent>
 								Yes. It adheres to the WAI-ARIA design pattern.
 							</AccordionContent>
