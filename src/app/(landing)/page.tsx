@@ -1,6 +1,5 @@
 import DemoSection from "@/components/common/pages/home/demo/demo-section";
 import MainText from "@/components/common/pages/home/main-text";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function HomePage() {
 	return (

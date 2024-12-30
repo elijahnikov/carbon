@@ -3,7 +3,6 @@ import { getExampleSource } from "@/lib/general";
 import { getCachedHighlighter } from "@/lib/highighter";
 import { EyeIcon, TerminalSquareIcon } from "lucide-react";
 import dynamic from "next/dynamic";
-import { createHighlighter } from "shiki";
 import CopyButton from "../component-docs/copy-button";
 
 export default async function ShowcaseCodeBlock({

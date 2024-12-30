@@ -1,6 +1,6 @@
 import { getExampleSource } from "@/lib/general";
+import { getCachedHighlighter } from "@/lib/highighter";
 import { FileIcon } from "lucide-react";
-import { createHighlighter } from "shiki";
 import CopyButton from "../component-docs/copy-button";
 import ExpandableCodeContent from "./expandable-code-content";
 
@@ -17,10 +17,7 @@ export default async function CodeBlock({
 }) {
 	const file = source ? ((await getExampleSource(`src/${source}`)) ?? "") : "";
 
-	const highlighter = await createHighlighter({
-		themes: ["poimandres", "github-light"],
-		langs: ["tsx"],
-	});
+	const highlighter = await getCachedHighlighter();
 
 	const _code = source ? file : (code ?? "");
 	const out = highlighter.codeToHtml(_code, {
