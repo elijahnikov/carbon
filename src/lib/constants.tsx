@@ -21,15 +21,10 @@ export const components = [
 	"textarea",
 	"tooltip",
 	"tabs",
+	"accordion",
 ];
 
-export const comingSoon = [
-	"accordion",
-	"table",
-	"drawer",
-	"command",
-	"date-picker",
-];
+export const comingSoon = ["table", "drawer", "command", "date-picker"];
 
 export const variations = [
 	"web app",

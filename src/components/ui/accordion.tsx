@@ -12,7 +12,7 @@ const accordionItemVariants = cva("", {
 		variant: {
 			line: "border-b",
 			"full-border":
-				"border-0 dark:ring-1 ring-inset dark:ring-carbon-dark-400 dark:border-t dark:border-carbon-dark-500 mt-2 border-carbon-400 shadow-overlay rounded-xl dark:bg-carbon-dark-300 bg-carbon-100 px-3",
+				"border-0 dark:ring-1 ring-inset dark:ring-carbon-dark-400 dark:border-t dark:border-carbon-dark-500 border-carbon-400 shadow-overlay rounded-xl dark:bg-carbon-dark-300 bg-carbon-100 px-3",
 			table: "border px-3",
 			"table-fill": "px-3",
 		},
@@ -70,8 +70,9 @@ const Accordion = React.forwardRef<AccordionElement, AccordionProps>(
 			<AccordionPrimitive.Root
 				ref={ref}
 				className={cn(
+					variant === "full-border" && "flex flex-col gap-2",
 					variant === "table-fill" &&
-						"border-0 dark:ring-1 ring-inset dark:ring-carbon-dark-400 dark:border-t dark:border-carbon-dark-500 mt-2 border-carbon-400 shadow-overlay rounded-lg dark:bg-carbon-dark-300 bg-carbon-100",
+						"border-0 dark:ring-1 ring-inset dark:ring-carbon-dark-400 dark:border-t dark:border-carbon-dark-500 border-carbon-400 shadow-overlay rounded-lg dark:bg-carbon-dark-300 bg-carbon-100",
 					className,
 				)}
 				{...props}
@@ -162,7 +163,9 @@ const AccordionTrigger = React.forwardRef<
 				{iconPosition === "left" && toggleIcon}
 				{icon && renderIcon(icon)}
 			</div>
-			<span className={cn(iconPosition === "left" && !icon && "ml-2")}>
+			<span
+				className={cn("text-sm", iconPosition === "left" && !icon && "ml-2")}
+			>
 				{children}
 			</span>
 			{iconPosition === "right" && <div className="ml-auto">{toggleIcon}</div>}

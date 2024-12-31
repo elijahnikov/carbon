@@ -45,7 +45,117 @@ export type Examples = Array<{
 }>;
 
 export const componentData: ComponentData = {
-	// AVATAR
+	accordion: {
+		title: "Accordion",
+		description: "Displays collapsible content to the user.",
+		showcaseFileSource:
+			"components/common/examples/accordion/showcase-example.tsx",
+		installationSource: "components/ui/accordion.tsx",
+		basicUsageFileSource:
+			"components/common/examples/accordion/showcase-example.tsx",
+		dependencies: ["@radix-ui/react-accordion"],
+		apiSource: "https://www.radix-ui.com/docs/primitives/components/accordion",
+		extraInstallationSource: {
+			fileName: "tailwind.config.ts",
+			code: `animation: {
+				"accordion-down": "accordion-down 0.2s ease-out",
+				"accordion-up": "accordion-up 0.2s ease-out",
+			},
+			keyframes: {
+				"accordion-down": {
+					from: { height: "0" },
+					to: { height: "var(--radix-accordion-content-height)" },
+				},
+				"accordion-up": {
+					from: { height: "var(--radix-accordion-content-height)" },
+					to: { height: "0" },
+				},
+			},`,
+		},
+		apiReference: [
+			{
+				id: "accordion",
+				title: "<Accordion />",
+				radixReference:
+					"https://www.radix-ui.com/docs/primitives/components/accordion",
+				props: [
+					{
+						name: "iconType",
+						type: "'chevron' | 'plus'",
+						default: "chevron",
+					},
+					{
+						name: "iconPosition",
+						type: "'left' | 'right'",
+						default: "right",
+					},
+					{
+						name: "variant",
+						type: "'line' | 'table-fill' | 'table' | 'full-border'",
+						default: "line",
+					},
+					{
+						name: "type",
+						type: "'single' | 'multiple'",
+						default: "single",
+					},
+					{
+						name: "collapsible",
+						type: "boolean",
+						default: "false",
+					},
+				],
+			},
+			{
+				id: "accordion-item",
+				title: "<AccordionItem />",
+				radixReference:
+					"https://www.radix-ui.com/docs/primitives/components/accordion#accordionitem",
+			},
+			{
+				id: "accordion-trigger",
+				title: "<AccordionTrigger />",
+				radixReference:
+					"https://www.radix-ui.com/docs/primitives/components/accordion#accordiontrigger",
+				props: [
+					{
+						name: "icon",
+						type: "React.ReactElement<HTMLElement>",
+						default: undefined,
+					},
+				],
+			},
+			{
+				id: "accordion-content",
+				title: "<AccordionContent />",
+				radixReference:
+					"https://www.radix-ui.com/docs/primitives/components/accordion#accordioncontent",
+			},
+		],
+		examples: [
+			{
+				id: "variants",
+				title: "Variants",
+				description:
+					"The following example shows all variants of the Accordion component.",
+				source: "components/common/examples/accordion/variants-example.tsx",
+			},
+			{
+				id: "icon",
+				title: "Icon",
+				description:
+					"The following example shows how to use a custom icon on for the AccordionTrigger.",
+				source: "components/common/examples/accordion/icon-example.tsx",
+			},
+			{
+				id: "trigger-icon",
+				title: "Trigger Icon",
+				description:
+					"The following example shows how to change the icon position in the trigger, and how to choose between a `Plus` or `Chevron` icon.",
+				source: "components/common/examples/accordion/trigger-icon-example.tsx",
+			},
+		],
+	},
 	avatar: {
 		title: "Avatar",
 		description: "Displays an avatar to the user.",
