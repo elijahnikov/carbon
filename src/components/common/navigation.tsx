@@ -19,8 +19,8 @@ const links = [
 
 export default function Navigation() {
 	return (
-		<div className="h-12 z-50 bg-background fixed w-full border-b flex items-center justify-center">
-			<div className="w-full px-2 flex items-center justify-between h-12">
+		<div className="h-16 z-50 bg-background fixed w-full border-b flex items-center justify-center">
+			<div className="w-[70%] px-2 flex items-center justify-between h-12">
 				<Link href="/">
 					<div className="flex items-center gap-2">
 						<CarbonLogo />

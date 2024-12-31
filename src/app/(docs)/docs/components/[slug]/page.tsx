@@ -2,7 +2,7 @@ import ComponentPage from "@/components/common/component-docs";
 import { components } from "@/lib/constants";
 import { redirect } from "next/navigation";
 
-export default async function AlertPage({
+export default async function SingleComponentPage({
 	params,
 }: { params: { slug: string } }) {
 	const { slug } = await params;

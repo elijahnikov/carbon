@@ -6,7 +6,7 @@ export default function DocsLayout({
 	return (
 		<div className="flex min-h-[calc(100vh-3rem)]">
 			<SidebarNavigation />
-			<main className="flex-1 p-6 relative mt-12 ml-64">{children}</main>
+			<main className="flex-1 ml-[450px]">{children}</main>
 		</div>
 	);
 }

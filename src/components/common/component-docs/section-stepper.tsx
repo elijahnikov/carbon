@@ -83,7 +83,7 @@ export default function SectionStepper({
 		}
 	};
 	return (
-		<div className="hidden min-w-[260px] max-w-[300px] xl:flex fixed top-24 right-8 flex-col gap-2">
+		<div className="hidden min-w-[260px] max-w-[300px] xl:flex fixed top-24 right-3 flex-col gap-2">
 			<div className="flex items-center gap-2">
 				<TextIcon className="size-4" />
 				<p className="text-md font-medium">On this page</p>

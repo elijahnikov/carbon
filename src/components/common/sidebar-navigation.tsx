@@ -1,6 +1,11 @@
 "use client";
 
-import { comingSoon, components } from "@/lib/constants";
+import {
+	blocks,
+	blocksComingSoon,
+	comingSoon,
+	components,
+} from "@/lib/constants";
 import _ from "lodash";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -21,6 +26,19 @@ const allComponents = [
 	})),
 ].sort((a, b) => a.title.localeCompare(b.title));
 
+const allBlocks = [
+	...blocks.map((block) => ({
+		title: _.upperFirst(String(block).replace(/-/g, " ")),
+		href: `/docs/blocks/${block}`,
+		status: "available",
+	})),
+	...blocksComingSoon.map((block) => ({
+		title: _.upperFirst(String(block).replace(/-/g, " ")),
+		href: `/docs/blocks/${block}`,
+		status: "coming-soon",
+	})),
+].sort((a, b) => a.title.localeCompare(b.title));
+
 const navigationLinks = {
 	"Getting Started": [
 		{
@@ -36,12 +54,7 @@ const navigationLinks = {
 			href: "/docs/colors",
 		},
 	],
-	Blocks: [
-		{
-			title: "Dialog",
-			href: "/docs/blocks/dialog",
-		},
-	],
+	Blocks: allBlocks,
 	Components: allComponents,
 };
 
@@ -49,12 +62,14 @@ export function SidebarNavigation() {
 	const pathname = usePathname();
 
 	return (
-		<aside className="w-64 bg-background border-r px-6 pt-6 fixed top-12 bottom-0 overflow-y-auto">
-			<nav className="gap-4 flex flex-col">
+		<aside className="w-[450px] bg-background border-r border-dashed px-6 pt-12 fixed top-12 bottom-0 overflow-y-auto place-content-end place-items-end">
+			<nav className="gap-4 w-[205px] flex flex-col">
 				{Object.entries(navigationLinks).map(([section, links]) => (
 					<div key={section}>
-						<h2 className="text-sm font-semibold text-carbon-900">{section}</h2>
-						<ul className="mt-2 flex space-y-1 flex-col">
+						<h2 className="text-sm ml-2.5 font-semibold dark:text-neutral-500">
+							{section}
+						</h2>
+						<ul className="mt-2 gap-0.5 flex flex-col">
 							{links.map((link) =>
 								"status" in link && link.status === "coming-soon" ? (
 									<div
@@ -76,8 +91,8 @@ export function SidebarNavigation() {
 										className={cn(
 											"text-sm group flex items-center justify-between text-secondary-foreground  dark:ring-carbon-dark-500 ring-carbon-dark-500/20 ring-inset rounded-md px-3 py-2",
 											pathname === link.href
-												? "shadow-sm-dark ring-1 text-black bg-carbon-dark-200 dark:text-white"
-												: "hover:ring-1 hover:text-black dark:hover:text-white dark:hover:shadow-sm-dark hover:bg-carbon-dark-200",
+												? "text-black bg-carbon-dark-300 dark:text-white"
+												: " hover:text-black dark:hover:text-white hover:bg-carbon-dark-300",
 										)}
 										key={link.href}
 										href={link.href}

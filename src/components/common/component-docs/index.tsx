@@ -19,8 +19,8 @@ export default async function ComponentPage({ slug }: ComponentPageProps) {
 	const component = componentData[slug]!;
 
 	return (
-		<div className="flex pt-8 pb-32 justify-between px-16">
-			<div className="flex flex-col gap-8 w-full min-w-[500px] max-w-[50vw]">
+		<div className="flex pl-8">
+			<div className="flex border-r border-dashed pr-8 pt-20 pb-16 flex-col gap-8 w-full min-w-[500px] max-w-[48vw]">
 				<Header
 					title={component.title}
 					description={component.description}
@@ -47,7 +47,6 @@ export default async function ComponentPage({ slug }: ComponentPageProps) {
 				)}
 				<PageStepper slug={slug} />
 			</div>
-			<SectionStepper componentData={component} />
 		</div>
 	);
 }
