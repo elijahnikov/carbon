@@ -1,21 +1,15 @@
-type SingleBlock = {
-	title: string;
-	id: string;
-	path: string;
-};
-type BlockData = Record<string, SingleBlock[]>;
+type SingleBlock = string[];
+type BlockData = Record<string, SingleBlock>;
 
 export const blocksData: BlockData = {
 	dropdowns: [
-		{
-			title: "Base",
-			id: "base",
-			path: "components/common/blocks/dropdowns/base.tsx",
-		},
-		{
-			title: "With Icon",
-			id: "with-icon",
-			path: "components/common/blocks/dropdowns/with-icon.tsx",
-		},
+		"components/common/blocks/dropdowns/base.tsx",
+		"components/common/blocks/dropdowns/with-icons.tsx",
+		"components/common/blocks/dropdowns/grouped-items.tsx",
+		"components/common/blocks/dropdowns/checkbox-items.tsx",
+		"components/common/blocks/dropdowns/radio-items.tsx",
+		"components/common/blocks/dropdowns/full-feature-set.tsx",
+		"components/common/blocks/dropdowns/user-menu.tsx",
+		"components/common/blocks/dropdowns/user-menu-with-avatar.tsx",
 	],
 };

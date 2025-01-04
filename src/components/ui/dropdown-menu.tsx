@@ -48,12 +48,16 @@ const DropdownMenuItem = React.forwardRef<
 	React.ElementRef<typeof DropdownMenuPrimitive.Item>,
 	React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
 		inset?: boolean;
+		destructive?: boolean;
 	}
->(({ className, inset, ...props }, ref) => (
+>(({ className, inset, destructive = false, ...props }, ref) => (
 	<DropdownMenuPrimitive.Item
 		ref={ref}
 		className={cn(
-			"relative flex cursor-default select-none items-center gap-2 px-4 py-1.5 text-sm outline-none transition-colors focus:bg-primary focus:text-carbon-100 dark:focus:text-secondary-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:text-carbon-900 dark:[&_svg]:text-carbon-900 [&_svg]:dark:focus:text-secondary-foreground [&_svg]:focus:text-carbon-100 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+			destructive
+				? "text-destructive [&_svg]:text-destructive"
+				: "[&_svg]:text-carbon-900 dark:[&_svg]:text-carbon-900",
+			"relative flex cursor-default select-none items-center gap-2 px-4 py-1.5 text-sm outline-none transition-colors focus:bg-primary focus:text-carbon-100 dark:focus:text-secondary-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50  [&_svg]:dark:focus:text-secondary-foreground [&_svg]:focus:text-carbon-100 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
 			inset && "pl-8",
 			className,
 		)}
@@ -117,7 +121,7 @@ const DropdownMenuLabel = React.forwardRef<
 	<DropdownMenuPrimitive.Label
 		ref={ref}
 		className={cn(
-			"px-4 py-1.5 text-sm font-semibold",
+			"px-4 py-1.5 text-[13px] font-medium",
 			inset && "pl-8",
 			className,
 		)}
