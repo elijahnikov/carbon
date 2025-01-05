@@ -26,7 +26,7 @@ export default function CopyButton({
 		<Button
 			size="sm"
 			variant={variant}
-			className="absolute top-2 z-50 right-2"
+			className="absolute top-2 z-40 right-2"
 			onClick={copy}
 			isIconOnly
 		>
