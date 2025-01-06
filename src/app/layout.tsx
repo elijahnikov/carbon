@@ -27,8 +27,8 @@ export default function RootLayout({
 				<JotaiProvider>
 					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 						<div
-							className="fixed inset-0 -z-10 pattern-cross dark:pattern-carbon-dark-500 pattern-bg-background 
-  pattern-size-4 pattern-opacity-20"
+							className="fixed inset-0 -z-10 pattern-cross dark:pattern-carbon-dark-500 pattern-carbon-dark-500 pattern-bg-background 
+  pattern-size-4 dark:pattern-opacity-20 pattern-opacity-5"
 						/>
 
 						<Navigation />

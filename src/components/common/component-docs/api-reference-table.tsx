@@ -51,9 +51,9 @@ export default function ApiReferenceTable({
 							</div>
 						)}
 						{api.props && api.props.length > 0 && (
-							<div className="border mt-2 dark:bg-carbon-dark-200 rounded-xl dark:shadow-sm-dark ring-1 ring-carbon-dark-500 overflow-hidden">
+							<div className="border mt-2 dark:bg-carbon-dark-200 rounded-xl dark:shadow-sm-dark ring-1 ring-carbon-300 dark:ring-carbon-dark-500 overflow-hidden">
 								<table className="w-full">
-									<thead className="dark:bg-carbon-dark-400">
+									<thead className="dark:bg-carbon-dark-400 bg-carbon-100">
 										<tr>
 											<th className="py-2 px-4 font-medium text-left">Name</th>
 											<th className="py-2 px-4 font-medium text-left">Type</th>
@@ -66,12 +66,12 @@ export default function ApiReferenceTable({
 										{api.props.map((prop) => (
 											<tr
 												key={prop.name}
-												className="border-t border-carbon-dark-500"
+												className="border-t dark:border-carbon-dark-500"
 											>
 												<td className="p-4">
 													<Badge
 														size={"sm"}
-														className="text-xs border border-neutral-600 font-medium font-mono text-secondary-foreground"
+														className="text-xs border bg-carbon-100 dark:border-neutral-600 font-medium font-mono text-secondary-foreground"
 													>
 														{prop.name}
 													</Badge>
@@ -79,7 +79,7 @@ export default function ApiReferenceTable({
 												<td className="p-4">
 													<Badge
 														size={"sm"}
-														className="text-xs border border-neutral-600 max-w-[250px] font-medium whitespace-break-spaces font-mono text-secondary-foreground break-words"
+														className="text-xs border bg-carbon-100 dark:border-neutral-600 max-w-[250px] font-medium whitespace-break-spaces font-mono text-secondary-foreground break-words"
 													>
 														{prop.type}
 													</Badge>
@@ -88,7 +88,7 @@ export default function ApiReferenceTable({
 													{prop.default ? (
 														<Badge
 															size={"sm"}
-															className="text-xs border border-neutral-600 font-medium font-mono text-secondary-foreground"
+															className="text-xs border bg-carbon-100 dark:border-neutral-600 font-medium font-mono text-secondary-foreground"
 														>
 															{prop.default}
 														</Badge>

@@ -26,7 +26,7 @@ export default function ExpandableCodeContent({
 				dangerouslySetInnerHTML={{ __html: html }}
 			/>
 			{isExpandable && !isExpanded && (
-				<div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-carbon-dark-300 to-transparent pointer-events-none" />
+				<div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t dark:from-carbon-dark-300 from-white to-transparent pointer-events-none" />
 			)}
 			{isExpandable && (
 				<div className="absolute bottom-2 left-0 right-0 flex justify-center">

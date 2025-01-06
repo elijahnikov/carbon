@@ -38,7 +38,7 @@ export default async function CodeBlock({
 
 	const allowExpand = _code.length > 1000;
 	return (
-		<div className="relative dark:bg-carbon-dark-300 w-full overflow-auto min-h-max rounded-xl dark:shadow-sm-dark ring-1 ring-carbon-dark-500">
+		<div className="relative bg-white dark:bg-carbon-dark-300 w-full overflow-auto min-h-max rounded-xl dark:shadow-sm-dark ring-1 ring-carbon-500 dark:ring-carbon-dark-500">
 			{fileName && (
 				<div className="text-sm font-medium text-secondary-foreground border-b px-7 py-2 w-full flex items-center gap-2">
 					<FileIcon className="size-4" />

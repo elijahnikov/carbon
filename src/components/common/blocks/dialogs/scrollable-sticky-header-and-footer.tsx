@@ -40,7 +40,7 @@ export default function ScrollableStickyHeaderAndFooterDialog() {
 					onScroll={handleScroll}
 					className="max-h-[300px] -my-4 overflow-y-auto"
 				>
-					<div className="p-6 space-y-4">
+					<div className="p-6 space-y-2">
 						<h3 className="font-semibold text-sm">1. Acceptance of Terms</h3>
 						<p className="text-xs text-secondary-foreground">
 							By accessing and using this website, you accept and agree to be
