@@ -15,4 +15,10 @@ export const blocksData: BlockData = {
 		"components/common/blocks/dropdowns/theme.tsx",
 		"components/common/blocks/dropdowns/add.tsx",
 	],
+	dialogs: [
+		"components/common/blocks/dialogs/base.tsx",
+		"components/common/blocks/dialogs/login.tsx",
+		"components/common/blocks/dialogs/scrollable-sticky-header-and-footer.tsx",
+		"components/common/blocks/dialogs/delete-project.tsx",
+	],
 };
