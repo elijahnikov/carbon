@@ -91,8 +91,8 @@ export function SidebarNavigation() {
 										className={cn(
 											"text-sm group flex items-center justify-between text-secondary-foreground  dark:ring-carbon-dark-500 ring-carbon-dark-500/20 ring-inset rounded-md px-3 py-2",
 											pathname === link.href
-												? "text-black bg-carbon-dark-300 dark:text-white"
-												: " hover:text-black dark:hover:text-white hover:bg-carbon-dark-300",
+												? "text-black dark:bg-carbon-dark-300 bg-carbon-400 dark:text-white"
+												: " hover:text-black dark:hover:text-white hover:bg-carbon-400 dark:hover:bg-carbon-dark-300",
 										)}
 										key={link.href}
 										href={link.href}

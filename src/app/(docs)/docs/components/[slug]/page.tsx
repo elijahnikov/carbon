@@ -1,6 +1,17 @@
 import ComponentPage from "@/components/common/component-docs";
 import { components } from "@/lib/constants";
+import _ from "lodash";
+import type { Metadata } from "next";
+import Head from "next/head";
 import { redirect } from "next/navigation";
+
+export async function generateMetadata({
+	params,
+}: { params: { slug: string } }): Promise<Metadata> {
+	return {
+		title: `Carbon UI - ${_.startCase(params.slug)}`,
+	};
+}
 
 export default async function SingleComponentPage({
 	params,
@@ -11,5 +22,12 @@ export default async function SingleComponentPage({
 		return redirect("/");
 	}
 
-	return <ComponentPage slug={slug} />;
+	return (
+		<>
+			<Head>
+				<title>Carbon UI - {slug}</title>
+			</Head>
+			<ComponentPage slug={slug} />
+		</>
+	);
 }

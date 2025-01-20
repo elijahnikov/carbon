@@ -29,7 +29,7 @@ export default function ScrollableStickyHeaderAndFooterDialog() {
 			<DialogTrigger asChild>
 				<Button variant="outline">Scrollable</Button>
 			</DialogTrigger>
-			<DialogContent className="bg-blue-200 max-h-[500px] -p-6">
+			<DialogContent className="max-h-[500px] -p-6">
 				<DialogHeader className="p-6 border-b">
 					<DialogTitle>Terms & Conditions</DialogTitle>
 					<DialogDescription>

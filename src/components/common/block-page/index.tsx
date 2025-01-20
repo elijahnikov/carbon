@@ -1,5 +1,6 @@
 "use server";
 
+import { Button } from "@/components/ui/button";
 import { blocksData } from "@/lib/blocks-data";
 import { getExampleSource } from "@/lib/general";
 import _ from "lodash";
@@ -61,6 +62,14 @@ export default async function BlockPage({ slug }: { slug: string }) {
 							</div>
 						);
 					})}
+				</div>
+				<div className="flex flex-col items-center justify-center gap-2 my-16">
+					<h1 className="text-md text-secondary-foreground font-semibold">
+						Have an idea for a new block?
+					</h1>
+					<Button variant={"secondary"} shape={"pill"}>
+						Send your ideas
+					</Button>
 				</div>
 			</div>
 		</div>

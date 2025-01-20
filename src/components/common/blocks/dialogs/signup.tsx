@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
 	Dialog,
 	DialogContent,
@@ -10,11 +9,11 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
-export default function LoginDialog() {
+export default function SignupDialog() {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<Button>Login</Button>
+				<Button>Sign up</Button>
 			</DialogTrigger>
 			<DialogContent className="max-w-sm">
 				<div className="flex flex-col items-center gap-2">
@@ -44,42 +43,42 @@ export default function LoginDialog() {
 						</svg>
 					</div>
 					<DialogHeader>
-						<DialogTitle className="sm:text-center">Welcome back</DialogTitle>
+						<DialogTitle className="sm:text-center">
+							Create an account
+						</DialogTitle>
 						<DialogDescription className="sm:text-center">
-							Enter your credentials to login to your account.
+							Enter your credentials to create an account.
 						</DialogDescription>
 					</DialogHeader>
 				</div>
 
 				<div className="space-y-4">
 					<Input
+						label="Name"
+						id="signup-name"
+						placeholder="Enter your name"
+						type="text"
+					/>
+					<Input
 						label="Email"
-						id="login-email"
+						id="signup-email"
 						placeholder="hi@yourcompany.com"
 						type="email"
 					/>
 					<Input
 						label="Password"
-						id="login-password"
+						id="signup-password"
 						placeholder="Enter your password"
 						type="password"
 					/>
+					<Input
+						id="signup-confirm-password"
+						placeholder="Confirm your password"
+						type="password"
+					/>
 				</div>
-				<div className="flex justify-between gap-2">
-					<div className="flex items-center gap-2">
-						<Checkbox id="login-remember" />
-						<label
-							htmlFor="login-remember"
-							className="font-medium text-sm text-secondary-foreground"
-						>
-							Remember me
-						</label>
-					</div>
-					<Button variant={"link"} size="sm">
-						Forgot password?
-					</Button>
-				</div>
-				<Button className="w-full">Sign in</Button>
+
+				<Button className="w-full">Sign up</Button>
 
 				<div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">
 					<span className="text-xs text-secondary-foreground">Or</span>

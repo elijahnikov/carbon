@@ -25,7 +25,9 @@ export default function DeleteProjectDialog() {
 			</DialogTrigger>
 			<DialogContent className="max-w-sm text-center">
 				<DialogHeader className="flex flex-col items-center">
-					<InfoIcon className="size-10 mb-1 text-secondary-foreground/70 border rounded-full p-2" />
+					<div className="border rounded-full p-2 dark:shadow-overlay-dark shadow-overlay">
+						<InfoIcon />
+					</div>
 					<DialogTitle className="text-center">
 						Delete your project?
 					</DialogTitle>
