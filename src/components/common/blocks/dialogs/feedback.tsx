@@ -15,7 +15,7 @@ import { SendIcon } from "lucide-react";
 import * as React from "react";
 
 export default function FeedbackDialog() {
-	const [rating, setRating] = React.useState<number>(0);
+	const [rating, setRating] = React.useState<number | null>(null);
 	return (
 		<Dialog>
 			<DialogTrigger asChild>

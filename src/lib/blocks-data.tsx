@@ -23,5 +23,7 @@ export const blocksData: BlockData = {
 		"components/common/blocks/dialogs/delete-project.tsx",
 		"components/common/blocks/dialogs/checkout.tsx",
 		"components/common/blocks/dialogs/feedback.tsx",
+		"components/common/blocks/dialogs/create-post.tsx",
+		"components/common/blocks/dialogs/team-access.tsx",
 	],
 };
