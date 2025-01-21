@@ -107,7 +107,10 @@ export const logos = {
 	),
 };
 
-export const carbonColors = [
+export const carbonColors: {
+	name: string;
+	shades: Record<string, string>;
+}[] = [
 	{
 		name: "carbon",
 		shades: {

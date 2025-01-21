@@ -1,4 +1,5 @@
 import CodeBlock from "@/components/common/code-blocks/code-block";
+import Swatches from "@/components/common/colors-page/swatches";
 import { carbonColors, tailwindDefaults } from "@/lib/constants";
 import { getExampleSource } from "@/lib/general";
 import _ from "lodash";
@@ -40,25 +41,7 @@ export default async function ColorsPage() {
 					</p>
 					<div className="flex flex-col mt-4 gap-4">
 						{tailwindDefaults.map((color) => (
-							<div key={color.name} className="flex flex-col gap-2">
-								<p className="font-medium">{_.startCase(color.name)}</p>
-								<div className="flex w-full gap-2">
-									{Object.entries(color.shades).map(([shade, value]) => (
-										<div className="w-full" key={shade}>
-											<div
-												className="w-full h-12 shadow-overlay dark:shadow-overlay-dark rounded-md"
-												style={{ backgroundColor: value }}
-											/>
-											<p className="text-xs mt-[2px] text-secondary-foreground">
-												{shade}
-											</p>
-											<p className="text-[10px] mt-[2px] uppercase font-mono text-secondary-foreground/75">
-												{value}
-											</p>
-										</div>
-									))}
-								</div>
-							</div>
+							<Swatches color={color} key={color.name} />
 						))}
 					</div>
 					<h2 className="text-md mt-8 text-black dark:text-white font-medium">
@@ -70,32 +53,12 @@ export default async function ColorsPage() {
 					</p>
 					<div className="flex flex-col mt-4 gap-4">
 						{carbonColors.map((color) => (
-							<div key={color.name} className="flex flex-col gap-2">
-								<p className="font-medium">{_.startCase(color.name)}</p>
-								<div className="flex w-full gap-2">
-									{Object.entries(color.shades)
-										.sort((a, b) => b[0].localeCompare(a[0]))
-										.map(([shade, value]) => (
-											<div className="w-full" key={shade}>
-												<div
-													className="w-full h-12 shadow-overlay dark:shadow-overlay-dark rounded-md"
-													style={{ backgroundColor: value }}
-												/>
-												<p className="text-xs mt-[2px] text-secondary-foreground">
-													{shade}
-												</p>
-												<p className="text-[10px] mt-[2px] uppercase font-mono text-secondary-foreground/75">
-													{value}
-												</p>
-											</div>
-										))}
-								</div>
-							</div>
+							<Swatches color={color} key={color.name} />
 						))}
 					</div>
 
-					<div className="mt-8">
-						<p className="text-sm mb-2">
+					<div className="mt-12">
+						<p className="text-sm font-medium mb-2">
 							Copy the code below to your tailwind.config.ts file to use the
 							Carbon UI colors.
 						</p>
