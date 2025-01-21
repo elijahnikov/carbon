@@ -17,7 +17,7 @@ export default function Header({
 	apiSource?: string;
 }) {
 	return (
-		<div className="bg-background border-b border-dashed justify-between -mx-8 px-4 bg-carbon-light-200 flex items-center py-4 min-h-12 -mt-4 gap-2">
+		<div className="border-b border-dashed justify-between -mx-8 px-4 bg-carbon-light-200 flex items-center py-4 min-h-12 -mt-4 gap-2">
 			<div className="flex flex-col">
 				<h1 className="font-semibold">{title}</h1>
 				<p className="text-xs text-secondary-foreground font-mono">
