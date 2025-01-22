@@ -28,13 +28,14 @@ export const badgeVariants = cva(
 					"dark:bg-orange-800 dark:border-orange-700 dark:text-orange-200 bg-orange-400 border-orange-500 text-orange-900",
 				pink: "dark:bg-pink-800 dark:border-pink-700 dark:text-pink-200 bg-pink-400 border-pink-500 text-pink-900",
 				teal: "dark:bg-teal-800 dark:border-teal-700 dark:text-teal-200 bg-teal-400 border-teal-500 text-teal-900",
+				white: "bg-white text-black",
 			},
 			shape: {
 				rounded: "rounded-md",
 				pill: "rounded-full",
 			},
 			stroke: {
-				true: "border",
+				true: "border border-carbon-900 dark:border-carbon-500/20",
 				false: "",
 			},
 		},
@@ -60,6 +61,7 @@ export const iconVariants = cva("size-4", {
 			blue: "text-blue-700",
 			yellow: "text-yellow-700",
 			teal: "text-teal-700",
+			white: "text-white",
 		},
 	},
 	compoundVariants: [
@@ -75,6 +77,7 @@ export const iconVariants = cva("size-4", {
 				"blue",
 				"yellow",
 				"teal",
+				"white",
 			],
 			class: "text-current",
 		},

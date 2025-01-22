@@ -26,7 +26,7 @@ export const components = [
 
 export const comingSoon = ["table", "drawer", "command", "date-picker"];
 
-export const blocks = ["dropdowns", "dialogs"];
+export const blocks = ["dropdowns", "dialogs", "buttons"];
 export const blocksComingSoon = [];
 
 export const variations = [

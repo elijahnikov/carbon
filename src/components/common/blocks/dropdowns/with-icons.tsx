@@ -14,6 +14,7 @@ import {
 	MailIcon,
 	PinIcon,
 	RedoIcon,
+	TrashIcon,
 } from "lucide-react";
 
 export default function WithIconDropdown() {
@@ -38,6 +39,7 @@ export default function WithIconDropdown() {
 						<DownloadIcon />
 						<span>Download</span>
 					</DropdownMenuItem>
+					<DropdownMenuSeparator />
 				</DropdownMenuGroup>
 			</DropdownMenuContent>
 		</DropdownMenu>

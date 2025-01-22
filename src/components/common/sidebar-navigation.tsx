@@ -66,7 +66,7 @@ export function SidebarNavigation() {
 			<nav className="gap-4 w-[205px] flex flex-col">
 				{Object.entries(navigationLinks).map(([section, links]) => (
 					<div key={section}>
-						<h2 className="text-sm ml-2.5 font-semibold dark:text-neutral-500">
+						<h2 className="text-sm ml-2.5 font-semibold text-neutral-700 dark:text-neutral-500">
 							{section}
 						</h2>
 						<ul className="mt-2 gap-0.5 flex flex-col">

@@ -47,7 +47,7 @@ export default async function BlockPage({ slug }: { slug: string }) {
 						const isLastItem = index === combined.length - 1;
 						return (
 							<div
-								className={`flex px-8 dark:bg-carbon-dark-200 bg-none py-14 border-dashed flex-col relative justify-between items-center
+								className={`flex px-8 dark:bg-carbon-dark-200 bg-none py-14 border-dashed flex-col relative justify-center items-center
 									${!isEven ? "border-l" : ""} 
 									${!isFirstRow ? "border-t" : ""}
 									${isLastRow ? "border-b" : ""}
