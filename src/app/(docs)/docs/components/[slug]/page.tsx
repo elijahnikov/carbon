@@ -7,9 +7,11 @@ import { redirect } from "next/navigation";
 
 export async function generateMetadata({
 	params,
-}: { params: { slug: string } }): Promise<Metadata> {
+}: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+	const { slug } = await params;
+
 	return {
-		title: `Carbon UI - ${_.startCase(params.slug)}`,
+		title: `Carbon UI - ${_.startCase(slug)}`,
 	};
 }
 
