@@ -9,7 +9,7 @@ export default async function ShowcaseCodeBlock({
 	filePath,
 }: { filePath: string }) {
 	const file = (await getExampleSource(`src/${filePath}`)) ?? "";
-	const Component = dynamic(() => import(`@/${filePath}`));
+	const Component = dynamic(() => import(`src/${filePath}`));
 
 	const highlighter = await getCachedHighlighter();
 	const out = highlighter.codeToHtml(file, {
