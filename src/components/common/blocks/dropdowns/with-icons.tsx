@@ -39,7 +39,6 @@ export default function WithIconDropdown() {
 						<DownloadIcon />
 						<span>Download</span>
 					</DropdownMenuItem>
-					<DropdownMenuSeparator />
 				</DropdownMenuGroup>
 			</DropdownMenuContent>
 		</DropdownMenu>

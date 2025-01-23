@@ -26,7 +26,7 @@ export const components = [
 
 export const comingSoon = ["table", "drawer", "command", "date-picker"];
 
-export const blocks = ["dropdowns", "dialogs", "buttons"];
+export const blocks = ["dropdowns", "dialogs", "buttons", "input-and-textarea"];
 export const blocksComingSoon = [];
 
 export const variations = [
@@ -48,7 +48,6 @@ export const variations = [
 
 export const logos = {
 	tailwind: (
-		// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
 		<svg
 			viewBox="0 0 256 154"
 			width="24"
@@ -75,7 +74,6 @@ export const logos = {
 		</svg>
 	),
 	react: (
-		// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
 		<svg
 			viewBox="0 0 256 228"
 			width="20"
@@ -90,7 +88,6 @@ export const logos = {
 		</svg>
 	),
 	radix: (
-		// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			className="dark:fill-white fill-black"

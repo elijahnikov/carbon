@@ -13,14 +13,17 @@ import { usePathname } from "next/navigation";
 import Badge from "../ui/badge";
 import { cn } from "../utils/cn";
 
+const formatTitle = (title: string) =>
+	_.startCase(title.replace(/-/g, " ")).replaceAll("And", "and");
+
 const allComponents = [
 	...components.map((component) => ({
-		title: _.upperFirst(component.replace(/-/g, " ")),
+		title: formatTitle(component),
 		href: `/docs/components/${component}`,
 		status: "available",
 	})),
 	...comingSoon.map((component) => ({
-		title: _.upperFirst(component.replace(/-/g, " ")),
+		title: formatTitle(component),
 		href: `/docs/components/${component}`,
 		status: "coming-soon",
 	})),
@@ -28,12 +31,12 @@ const allComponents = [
 
 const allBlocks = [
 	...blocks.map((block) => ({
-		title: _.upperFirst(String(block).replace(/-/g, " ")),
+		title: formatTitle(block),
 		href: `/docs/blocks/${block}`,
 		status: "available",
 	})),
 	...blocksComingSoon.map((block) => ({
-		title: _.upperFirst(String(block).replace(/-/g, " ")),
+		title: formatTitle(block),
 		href: `/docs/blocks/${block}`,
 		status: "coming-soon",
 	})),

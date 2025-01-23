@@ -1,7 +1,7 @@
 "use server";
 
+import fs from "node:fs";
 import { Button } from "@/components/ui/button";
-import { blocksData } from "@/lib/blocks-data";
 import { getExampleSource } from "@/lib/general";
 import _ from "lodash";
 import dynamic from "next/dynamic";
@@ -9,32 +9,51 @@ import CopyButton from "../component-docs/copy-button";
 
 const getBlockName = (path: string) => {
 	const componentName = path.split("/").pop()?.replace(".tsx", "") ?? "";
-	return componentName.replace(/-/g, " ");
+	return componentName.replace(/-/g, " ").replace(/\d+/g, "");
+};
+
+const getBlockSources = async (slug: string) => {
+	const blockFolder = `src/components/common/blocks/${slug}`;
+	const files = fs.readdirSync(blockFolder);
+
+	const filesWithStats = files
+		.filter((file) => file.endsWith(".tsx"))
+		.map((file) => {
+			const fullPath = `${blockFolder}/${file}`;
+			const stats = fs.statSync(fullPath);
+			return {
+				path: `components/common/blocks/${slug}/${file}`,
+				birthtime: stats.birthtime,
+			};
+		})
+		.sort((a, b) => a.birthtime.getTime() - b.birthtime.getTime());
+
+	return filesWithStats.map((file) => file.path);
 };
 
 export default async function BlockPage({ slug }: { slug: string }) {
-	const blockData = blocksData[slug];
-
+	const filePaths = await getBlockSources(slug);
 	const fileSources = await Promise.all(
-		(blockData ?? []).map((path) => getExampleSource(`src/${path}`)),
+		filePaths.map((path) => getExampleSource(`src/${path}`)),
 	);
 	const components = (await Promise.all(
-		(blockData ?? []).map((path) => dynamic(() => import(`@/${path}`))),
+		filePaths.map((path) => dynamic(() => import(`src/${path}`))),
 	)) as unknown as Array<React.ComponentType>;
 
 	const combined = fileSources.map((source, index) => ({
-		source: source ?? "",
-		// biome-ignore lint/style/noNonNullAssertion: <explanation>
-		Component: components[index]!,
-		title: getBlockName(blockData?.[index] ?? "") ?? "",
 		id: index,
+		source,
+		Component: (components[index] as React.ComponentType) ?? <span>Empty</span>,
+		title: getBlockName(filePaths[index] as string),
 	}));
 
 	return (
 		<div className="flex min-h-screen">
 			<div className="flex border-r border-dashed mt-16 flex-col w-full min-w-[500px] max-w-[50vw] min-h-[calc(100vh-128px)]">
 				<div className="dark:bg-carbon-dark-200 border-b border-dashed h-12 px-4 bg-carbon-light-200 flex items-center justify-between">
-					<h1 className="font-semibold">{_.startCase(slug)}</h1>
+					<h1 className="font-semibold">
+						{_.startCase(slug).replaceAll("And", "and")}
+					</h1>
 					<p className="text-xs text-secondary-foreground/75 font-mono uppercase">
 						{combined.length} blocks
 					</p>
