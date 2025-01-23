@@ -15,7 +15,7 @@ export async function generateMetadata({
 
 export default async function SingleComponentPage({
 	params,
-}: { params: { slug: string } }) {
+}: { params: Promise<{ slug: string }> }) {
 	const { slug } = await params;
 
 	if (!components.includes(slug)) {
