@@ -13,25 +13,6 @@ const getBlockName = (path: string) => {
 	return componentName.replace(/-/g, " ").replace(/\d+/g, "");
 };
 
-// const getBlockSources = async (slug: string) => {
-// 	const blockFolder = `src/components/common/blocks/${slug}`;
-// 	const files = fs.readdirSync(blockFolder);
-
-// 	const filesWithStats = files
-// 		.filter((file) => file.endsWith(".tsx"))
-// 		.map((file) => {
-// 			const fullPath = `${blockFolder}/${file}`;
-// 			const stats = fs.statSync(fullPath);
-// 			return {
-// 				path: `components/common/blocks/${slug}/${file}`,
-// 				birthtime: stats.birthtime,
-// 			};
-// 		})
-// 		.sort((a, b) => a.birthtime.getTime() - b.birthtime.getTime());
-
-// 	return filesWithStats.map((file) => file.path);
-// };
-
 export default async function BlockPage({ slug }: { slug: string }) {
 	if (!blockData[slug]) {
 		return <h1>Block not found</h1>;
