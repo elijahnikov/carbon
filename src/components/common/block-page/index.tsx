@@ -2,6 +2,7 @@
 
 import fs from "node:fs";
 import { Button } from "@/components/ui/button";
+import { blockData } from "@/lib/block-data";
 import { getExampleSource } from "@/lib/general";
 import _ from "lodash";
 import dynamic from "next/dynamic";
@@ -12,27 +13,31 @@ const getBlockName = (path: string) => {
 	return componentName.replace(/-/g, " ").replace(/\d+/g, "");
 };
 
-const getBlockSources = async (slug: string) => {
-	const blockFolder = `src/components/common/blocks/${slug}`;
-	const files = fs.readdirSync(blockFolder);
+// const getBlockSources = async (slug: string) => {
+// 	const blockFolder = `src/components/common/blocks/${slug}`;
+// 	const files = fs.readdirSync(blockFolder);
 
-	const filesWithStats = files
-		.filter((file) => file.endsWith(".tsx"))
-		.map((file) => {
-			const fullPath = `${blockFolder}/${file}`;
-			const stats = fs.statSync(fullPath);
-			return {
-				path: `components/common/blocks/${slug}/${file}`,
-				birthtime: stats.birthtime,
-			};
-		})
-		.sort((a, b) => a.birthtime.getTime() - b.birthtime.getTime());
+// 	const filesWithStats = files
+// 		.filter((file) => file.endsWith(".tsx"))
+// 		.map((file) => {
+// 			const fullPath = `${blockFolder}/${file}`;
+// 			const stats = fs.statSync(fullPath);
+// 			return {
+// 				path: `components/common/blocks/${slug}/${file}`,
+// 				birthtime: stats.birthtime,
+// 			};
+// 		})
+// 		.sort((a, b) => a.birthtime.getTime() - b.birthtime.getTime());
 
-	return filesWithStats.map((file) => file.path);
-};
+// 	return filesWithStats.map((file) => file.path);
+// };
 
 export default async function BlockPage({ slug }: { slug: string }) {
-	const filePaths = await getBlockSources(slug);
+	if (!blockData[slug]) {
+		return <h1>Block not found</h1>;
+	}
+
+	const filePaths = blockData[slug];
 	const fileSources = await Promise.all(
 		filePaths.map((path) => getExampleSource(`src/${path}`)),
 	);
