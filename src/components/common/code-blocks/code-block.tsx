@@ -19,8 +19,8 @@ export default async function CodeBlock({
 	if (!source) {
 		return null;
 	}
-	const file = source ? ((await getExampleSource(`src/${source}`)) ?? "") : "";
-	console.log(`src/${source}`);
+	const file = (await getExampleSource(`src/${source}`)) ?? "";
+
 	const highlighter = await getCachedHighlighter();
 
 	const _code = source ? file : (code ?? "");

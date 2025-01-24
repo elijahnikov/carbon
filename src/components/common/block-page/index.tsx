@@ -25,6 +25,7 @@ export default async function BlockPage({ slug }: { slug: string }) {
 			getExampleSource(`src/${blockBasePath}/${slug}/${path}.tsx`),
 		),
 	);
+	// src/components/common/blocks/dropdowns/base.tsx
 	const components = (await Promise.all(
 		filePaths.map((path) =>
 			dynamic(() => import(`../../../${blockBasePath}/${slug}/${path}.tsx`)),
