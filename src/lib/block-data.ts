@@ -35,7 +35,7 @@ export const blockData: Record<string, string[]> = {
 		"icon-only",
 		"links",
 		"rotate-animation",
-		"shortcute",
+		"shortcut",
 		"social-buttons",
 		"theme",
 		"two-icons",
