@@ -1,3 +1,5 @@
+"use server";
+
 import ComponentPage from "@/components/common/component-docs";
 import { components } from "@/lib/constants";
 import _ from "lodash";

@@ -9,7 +9,7 @@ import MoreExamples from "./examples";
 import Header from "./header";
 import InstallationSection from "./installation-section";
 import PageStepper from "./page-stepper";
-import SectionStepper from "./section-stepper";
+
 type ComponentPageProps = {
 	slug: string;
 };

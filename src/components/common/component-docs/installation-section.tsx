@@ -29,7 +29,7 @@ export default async function InstallationSection({
 		(await getExampleSource(`src/${basicUsageFileSource}`)) ?? "";
 
 	const { imports, jsx } = splitJsxAndImports(basicUsageFile);
-
+	console.log({ basicUsageFile, imports, jsx });
 	return (
 		<section id="installation" className="mt-8">
 			<h1 className="text-xl mb-4 font-medium">Installation & Usage</h1>
@@ -68,13 +68,20 @@ export default async function InstallationSection({
 					/>
 				)}
 				{Array.isArray(installationSource) ? (
-					installationSource.map((source, index) => (
-						<CodeBlock fileName={source} source={source} key={index} />
-					))
+					installationSource
+						.filter(
+							(source) =>
+								source !== "" &&
+								typeof source === "string" &&
+								typeof source !== "undefined",
+						)
+						.map((source, index) => (
+							<CodeBlock fileName={source} source={source} key={index} />
+						))
 				) : (
 					<CodeBlock
-						fileName={`${installationSource}`}
-						source={`${installationSource}`}
+						fileName={installationSource}
+						source={installationSource}
 					/>
 				)}
 				<div className="inline-flex items-center gap-2">
