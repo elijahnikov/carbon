@@ -392,7 +392,7 @@ export const componentData: ComponentData = {
 		showcaseFileSource:
 			"components/common/examples/button-group/showcase-example.tsx",
 		installationSource: [
-			"components/ui/button.tsx",
+			"components/ui/popover.tsx",
 			"components/ui/button-group.tsx",
 		],
 		basicUsageFileSource:
