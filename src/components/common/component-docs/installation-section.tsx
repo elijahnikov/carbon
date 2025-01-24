@@ -69,7 +69,6 @@ export default async function InstallationSection({
 						<CodeBlock
 							fileName={`${source}`}
 							source={`${source}`}
-							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 							key={index}
 						/>
 					))

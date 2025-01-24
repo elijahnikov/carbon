@@ -1,6 +1,5 @@
 "use server";
 
-import fs from "node:fs";
 import { Button } from "@/components/ui/button";
 import { blockData } from "@/lib/block-data";
 import { getExampleSource } from "@/lib/general";
@@ -19,8 +18,8 @@ export default async function BlockPage({ slug }: { slug: string }) {
 	if (!blockData[slug]) {
 		return <h1>Block not found</h1>;
 	}
-
 	const filePaths = blockData[slug];
+	console.log(1, `src/${blockBasePath}/${slug}/${filePaths[0]}.tsx`);
 	const fileSources = await Promise.all(
 		filePaths.map((path) =>
 			getExampleSource(`src/${blockBasePath}/${slug}/${path}.tsx`),

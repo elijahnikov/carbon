@@ -1,3 +1,5 @@
+"use server";
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getExampleSource } from "@/lib/general";
 import { getCachedHighlighter } from "@/lib/highighter";
