@@ -10,15 +10,17 @@ export default async function CodeBlock({
 	source,
 	code,
 	fileName,
-	highlightedLines,
 }: {
 	source?: string;
 	code?: string;
 	fileName?: string;
 	highlightedLines?: number[];
 }) {
+	if (!source) {
+		return null;
+	}
 	const file = source ? ((await getExampleSource(`src/${source}`)) ?? "") : "";
-
+	console.log(`src/${source}`);
 	const highlighter = await getCachedHighlighter();
 
 	const _code = source ? file : (code ?? "");
