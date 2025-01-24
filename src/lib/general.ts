@@ -1,4 +1,5 @@
-import fs from "node:fs/promises";
+// biome-ignore lint/style/useNodejsImportProtocol: <explanation>
+import { promises as fs } from "fs";
 import path from "node:path";
 
 export const getSourceUrl = (componentName: string) => {

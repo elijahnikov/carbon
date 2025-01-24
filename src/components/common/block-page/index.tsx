@@ -13,7 +13,7 @@ const getBlockName = (path: string) => {
 	return componentName.replace(/-/g, " ").replace(/\d+/g, "");
 };
 
-const blockBasePath = "src/components/common/blocks";
+const blockBasePath = "components/common/blocks";
 
 export default async function BlockPage({ slug }: { slug: string }) {
 	if (!blockData[slug]) {
@@ -23,12 +23,12 @@ export default async function BlockPage({ slug }: { slug: string }) {
 	const filePaths = blockData[slug];
 	const fileSources = await Promise.all(
 		filePaths.map((path) =>
-			getExampleSource(`${blockBasePath}/${slug}/${path}.tsx`),
+			getExampleSource(`src/${blockBasePath}/${slug}/${path}.tsx`),
 		),
 	);
 	const components = (await Promise.all(
 		filePaths.map((path) =>
-			dynamic(() => import(`${blockBasePath}/${slug}/${path}.tsx`)),
+			dynamic(() => import(`../../../${blockBasePath}/${slug}/${path}.tsx`)),
 		),
 	)) as unknown as Array<React.ComponentType>;
 
