@@ -16,7 +16,6 @@ export default function ApiReferenceTable({
 			<h1 className="text-xl mb-4 font-medium">API Reference</h1>
 			<div className="flex flex-col gap-6">
 				{apiReference.map((api, index) => (
-					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 					<div key={index}>
 						{api.title && (
 							<h2
@@ -71,7 +70,7 @@ export default function ApiReferenceTable({
 												<td className="p-4">
 													<Badge
 														size={"sm"}
-														className="text-xs border bg-carbon-100 dark:border-neutral-600 font-medium font-mono text-secondary-foreground"
+														className="text-xs border font-medium font-mono text-secondary-foreground"
 													>
 														{prop.name}
 													</Badge>
@@ -79,7 +78,7 @@ export default function ApiReferenceTable({
 												<td className="p-4">
 													<Badge
 														size={"sm"}
-														className="text-xs border bg-carbon-100 dark:border-neutral-600 max-w-[250px] font-medium whitespace-break-spaces font-mono text-secondary-foreground break-words"
+														className="text-xs border max-w-[250px] font-medium whitespace-break-spaces font-mono text-secondary-foreground break-words"
 													>
 														{prop.type}
 													</Badge>
@@ -88,7 +87,7 @@ export default function ApiReferenceTable({
 													{prop.default ? (
 														<Badge
 															size={"sm"}
-															className="text-xs border bg-carbon-100 dark:border-neutral-600 font-medium font-mono text-secondary-foreground"
+															className="text-xs border font-medium font-mono text-secondary-foreground"
 														>
 															{prop.default}
 														</Badge>
