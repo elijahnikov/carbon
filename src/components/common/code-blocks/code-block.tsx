@@ -1,3 +1,5 @@
+"use server";
+
 import { getExampleSource } from "@/lib/general";
 import { getCachedHighlighter } from "@/lib/highighter";
 import { FileIcon } from "lucide-react";
