@@ -50,7 +50,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 						type={type}
 						disabled={disabled}
 						className={cn(
-							"focus-visible:outline-none bg-transparent disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-ring",
+							"focus-visible:outline-none bg-transparent w-full disabled:cursor-not-allowed focus-visible:ring-0 focus-visible:ring-ring placeholder:text-secondary-foreground/50",
 							prefix && "pl-2",
 							suffix && "pr-2",
 							className,

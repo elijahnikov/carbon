@@ -1,3 +1,4 @@
+import Badge from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Grid2x2Icon, PuzzleIcon } from "lucide-react";
 import Link from "next/link";
@@ -24,6 +25,9 @@ export default function Navigation() {
 				<Link href="/">
 					<div className="flex items-center gap-2">
 						<CarbonLogo />
+						<Badge color="yellow" className="text-xs py-0 px-1">
+							Beta
+						</Badge>
 					</div>
 				</Link>
 				<div className="flex items-center gap-4">

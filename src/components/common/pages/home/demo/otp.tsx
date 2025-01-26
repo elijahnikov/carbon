@@ -20,13 +20,11 @@ export default function Otp() {
 				</div>
 				<div className="flex mt-2 items-center gap-2">
 					{Array.from({ length: 3 }).map((_, index) => (
-						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-						<Input disabled className="w-10" key={index} />
+						<Input disabled className="w-4" key={index} />
 					))}
 					<Dot />
 					{Array.from({ length: 3 }).map((_, index) => (
-						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-						<Input disabled className="w-10" key={index} />
+						<Input disabled className="w-4" key={index} />
 					))}
 				</div>
 				<div className="mt-2 -mb-2">
