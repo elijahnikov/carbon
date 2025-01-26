@@ -28,6 +28,9 @@ export default function Navigation() {
 						<Badge color="yellow" className="text-xs py-0 px-1">
 							Beta
 						</Badge>
+						<Badge color="green" className="text-xs py-0 px-1">
+							WIP
+						</Badge>
 					</div>
 				</Link>
 				<div className="flex items-center gap-4">
