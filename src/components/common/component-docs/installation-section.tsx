@@ -77,19 +77,11 @@ export default async function InstallationSection({
 								typeof source !== "undefined",
 						)
 						.map((source, index) => (
-							<CodeBlock
-								fileName={source.split("/").pop()}
-								source={source}
-								key={index}
-							/>
+							<CodeBlock fileName={source} source={source} key={index} />
 						))
 				) : (
 					<CodeBlock
-						fileName={
-							typeof installationSource === "string"
-								? installationSource.split("/").pop()
-								: undefined
-						}
+						fileName={installationSource}
 						source={installationSource}
 					/>
 				)}
