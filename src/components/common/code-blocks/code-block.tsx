@@ -16,11 +16,29 @@ export default async function CodeBlock({
 	fileName?: string;
 	highlightedLines?: number[];
 }) {
-	const file = source ? ((await getExampleSource(`src/${source}`)) ?? "") : "";
+	console.log(
+		"Processing source path:",
+		source ? `src/${source}` : "no source",
+	);
+
+	let file = "";
+	if (source) {
+		const result = await getExampleSource(`src/${source}`);
+		if (result === null) {
+			console.error(`Failed to load source file: src/${source}`);
+		} else {
+			file = result;
+		}
+	} else if (code) {
+		file = code;
+	}
+	console.log("File content length:", file.length);
+
+	const _code = file || "";
+	console.log("Final code length:", _code.length);
 
 	const highlighter = await getCachedHighlighter();
 
-	const _code = source ? file : (code ?? "");
 	const out = highlighter.codeToHtml(_code, {
 		lang: "tsx",
 		themes: {
