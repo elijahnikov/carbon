@@ -30,8 +30,7 @@ export default async function InstallationSection({
 		(await getExampleSource(`src/${basicUsageFileSource}`)) ?? "";
 
 	const { imports, jsx } = splitJsxAndImports(basicUsageFile);
-	// console.log({ basicUsageFile, imports, jsx });
-	console.log({ installationSource });
+
 	return (
 		<section id="installation" className="mt-8">
 			<h1 className="text-xl mb-4 font-medium">Installation & Usage</h1>

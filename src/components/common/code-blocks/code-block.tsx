@@ -16,7 +16,6 @@ export default async function CodeBlock({
 	fileName?: string;
 	highlightedLines?: number[];
 }) {
-	console.log("source", source);
 	const file = source ? ((await getExampleSource(`src/${source}`)) ?? "") : "";
 
 	const highlighter = await getCachedHighlighter();
