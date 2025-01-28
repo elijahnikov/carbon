@@ -1,7 +1,8 @@
 import Badge from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Grid2x2Icon, PuzzleIcon } from "lucide-react";
-import Link from "next/link";
+
+import { Link } from "./link";
 import CarbonLogo from "./logo";
 import ThemeToggle from "./theme-toggle";
 
