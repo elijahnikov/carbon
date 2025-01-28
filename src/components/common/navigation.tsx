@@ -41,7 +41,11 @@ export default function Navigation() {
 							variant={"link"}
 							before={link.icon}
 						>
-							<Link className="text-sm cursor-pointer gap-1" href={link.href}>
+							<Link
+								prefetch
+								className="text-sm cursor-pointer gap-1"
+								href={link.href}
+							>
 								{link.label}
 							</Link>
 						</Button>
