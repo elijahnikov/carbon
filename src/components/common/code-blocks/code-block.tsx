@@ -16,39 +16,12 @@ export default async function CodeBlock({
 	fileName?: string;
 	highlightedLines?: number[];
 }) {
-	// Create a unique identifier for this instance
-	const instanceId = Math.random().toString(36).substring(7);
-	console.log(`[${instanceId}] CodeBlock render start:`, {
-		hasSource: !!source,
-		hasCode: !!code,
-		fileName,
-	});
-
-	let file = "";
-	if (source) {
-		try {
-			const result = await getExampleSource(`src/${source}`);
-			if (result === null) {
-				throw new Error(`Failed to load source file: src/${source}`);
-			}
-			file = result;
-			console.log(
-				`[${instanceId}] Successfully loaded source file, length:`,
-				file.length,
-			);
-		} catch (error) {
-			console.error(`[${instanceId}] Error:`, error);
-		}
-	} else if (code) {
-		file = code;
-		console.log(`[${instanceId}] Using provided code, length:`, file.length);
-	}
-
-	const _code = file || "";
-	console.log("Final code length:", _code.length);
+	console.log("source", source);
+	const file = source ? ((await getExampleSource(`src/${source}`)) ?? "") : "";
 
 	const highlighter = await getCachedHighlighter();
 
+	const _code = source ? file : (code ?? "");
 	const out = highlighter.codeToHtml(_code, {
 		lang: "tsx",
 		themes: {

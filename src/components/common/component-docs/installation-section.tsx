@@ -1,6 +1,7 @@
 "use server";
 
 import Badge from "@/components/ui/badge";
+import sourceFiles from "@/generated/source-files/source-files.json";
 import {
 	getExampleSource,
 	indentCode,
@@ -69,20 +70,17 @@ export default async function InstallationSection({
 					/>
 				)}
 				{Array.isArray(installationSource) ? (
-					installationSource
-						.filter(
-							(source) =>
-								source !== "" &&
-								typeof source === "string" &&
-								typeof source !== "undefined",
-						)
-						.map((source, index) => (
-							<CodeBlock fileName={source} source={source} key={index} />
-						))
+					installationSource.map((source, index) => (
+						<CodeBlock
+							fileName={source}
+							code={sourceFiles[source]}
+							key={index}
+						/>
+					))
 				) : (
 					<CodeBlock
 						fileName={installationSource}
-						source={installationSource}
+						code={sourceFiles[installationSource]}
 					/>
 				)}
 				<div className="inline-flex items-center gap-2">

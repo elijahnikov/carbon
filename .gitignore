@@ -44,3 +44,6 @@ yarn-error.log*
 
 # idea files
 .idea
+
+src/generated/source-files/*
+!src/generated/source-files/.gitkeep
