@@ -7,7 +7,6 @@ export const getSourceUrl = (componentName: string) => {
 };
 
 export async function getExampleSource(filePath: string) {
-	console.log("filePath", filePath);
 	try {
 		const fullPath = path.join(process.cwd(), filePath);
 		const source = await fs.readFile(fullPath, "utf-8");
