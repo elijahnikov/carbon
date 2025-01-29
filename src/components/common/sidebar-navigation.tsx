@@ -8,10 +8,11 @@ import {
 } from "@/lib/constants";
 import _ from "lodash";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+
 import { usePathname } from "next/navigation";
 import Badge from "../ui/badge";
 import { cn } from "../utils/cn";
+import { Link } from "./link";
 
 const formatTitle = (title: string) =>
 	_.startCase(title.replace(/-/g, " ")).replaceAll("And", "and");
