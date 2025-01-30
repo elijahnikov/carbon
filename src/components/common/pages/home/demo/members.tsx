@@ -38,16 +38,6 @@ export default function Members() {
 					</SelectContent>
 				</Select>
 				<Input className="col-span-2" placeholder="Email" />
-				<Select>
-					<SelectTrigger>
-						<SelectValue placeholder="Select role" />
-					</SelectTrigger>
-					<SelectContent>
-						<SelectItem value="admin">Admin</SelectItem>
-						<SelectItem value="member">Member</SelectItem>
-						<SelectItem value="viewer">Viewer</SelectItem>
-					</SelectContent>
-				</Select>
 			</div>
 			<Button className="mb-6 mt-2" size="sm" before={<PlusCircle />}>
 				Add more
