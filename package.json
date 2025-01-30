@@ -56,7 +56,7 @@
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"postcss": "^8.4.39",
-		"shiki": "^1.24.2",
+		"shiki": "^2.1.0",
 		"tailwindcss": "^3.4.3",
 		"tailwindcss-bg-patterns": "^0.3.0",
 		"ts-node": "^10.9.2",

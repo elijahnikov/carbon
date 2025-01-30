@@ -42,7 +42,7 @@ export const blockData: Record<string, string[]> = {
 		"with-dropdown",
 		"with-popover",
 	],
-	"input-and-textarea": [
+	input: [
 		"base-input",
 		"disabled",
 		"required",
@@ -54,11 +54,16 @@ export const blockData: Record<string, string[]> = {
 		"input-with-icon",
 		"input-with-prefix",
 		"input-with-suffix",
+		"input-with-helper-text",
 		"number-increment",
 		"tags",
+	],
+	textarea: [
 		"base-textarea",
 		"disabled-textarea",
-		"required-text-area",
+		"required-textarea",
 		"tooltip-textarea",
+		"textarea-with-helper-text",
+		"textarea-with-button",
 	],
 };

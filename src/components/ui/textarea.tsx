@@ -7,11 +7,20 @@ export type InputProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
 	required?: boolean;
 	disabled?: boolean;
 	tooltip?: React.ReactNode;
+	helperText?: React.ReactNode;
 };
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, InputProps>(
 	(
-		{ className, disabled = false, label, required, tooltip, ...props },
+		{
+			className,
+			disabled = false,
+			label,
+			required,
+			tooltip,
+			helperText,
+			...props
+		},
 		ref,
 	) => {
 		return (
@@ -31,6 +40,9 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, InputProps>(
 					ref={ref}
 					{...props}
 				/>
+				{helperText && (
+					<div className="text-xs text-secondary-foreground">{helperText}</div>
+				)}
 			</div>
 		);
 	},

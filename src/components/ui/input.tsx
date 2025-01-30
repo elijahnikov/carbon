@@ -12,6 +12,7 @@ export type InputProps = Omit<
 	disabled?: boolean;
 	prefix?: React.ReactNode;
 	suffix?: React.ReactNode;
+	helperText?: React.ReactNode;
 };
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -25,6 +26,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 			tooltip,
 			prefix,
 			suffix,
+			helperText,
 			...props
 		},
 		ref,
@@ -64,6 +66,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 						</div>
 					)}
 				</div>
+				{helperText && (
+					<div className="text-xs text-secondary-foreground">{helperText}</div>
+				)}
 			</div>
 		);
 	},
